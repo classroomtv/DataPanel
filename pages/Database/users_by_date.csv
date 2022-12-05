@@ -1,0 +1,860 @@
+id,Cliente,"Usuarios totales","Usuarios activos","Usuarios cargados 2018","Usuarios cargados 2019","Usuarios cargados 2020","Usuarios cargados 2021","Usuarios cargados 2022","Usuarios con ingreso a plataforma 2019","Usuarios con ingreso a plataforma 2020","Usuarios con ingreso a plataforma 2021","Usuarios con ingreso a plataforma 2022"
+1,"Pontificia Universidad Católica de Chile",7182,7,670,259,14,4,2,657,115,3,1
+2,Google,831,169,1,0,0,0,0,2,0,0,0
+4,"Khan Academy",669,181,0,0,0,0,0,0,0,0,1
+5,"Indian Institute of Technology",502,117,2,0,0,0,0,0,0,0,0
+6,"The University of New South Wales",148,50,3,0,0,0,0,0,0,0,0
+7,"Government of Chile",387,42,0,0,0,0,0,0,0,0,0
+8,"Counsyl - Inc.",2,2,0,0,0,0,0,0,0,0,0
+10,"Universidad Técnica Federico Santa María",10,8,0,0,1,0,0,0,1,0,1
+11,Epicenter,1,1,0,0,0,0,0,0,0,0,0
+12,"Educación Continua UC",2098,1756,100,64,151,160,129,165,211,278,244
+13,Endeavor,727,357,4,1,0,0,0,4,1,0,2
+14,"Universidad del Desarrollo",475,432,5,7,6,154,214,8,6,181,174
+15,"Massachusetts Institute of Technology",1591,529,2,0,0,0,0,3,1,0,1
+16,"Harvard University",429,74,0,0,0,0,0,0,0,0,0
+17,"University of California-Berkeley",402,99,0,0,1,0,0,1,0,0,0
+18,"Yale University",721,244,2,0,0,0,0,4,0,0,1
+19,"Princeton University",1,1,0,0,0,0,0,0,0,0,0
+20,"Cornell University",2,2,0,0,0,0,0,0,0,0,0
+21,"Carnegie Mellon University",1,1,0,0,0,0,0,0,0,0,0
+22,"Brown University",2,1,0,0,0,0,0,0,0,0,0
+23,"Stanford University",1013,359,4,0,0,0,0,2,1,0,1
+24,Codelco,33,28,0,1,0,0,1,3,2,1,1
+25,"Banco Penta",3,3,0,0,0,0,0,0,0,0,0
+26,"Duoc UC",26,21,0,0,0,0,0,0,0,0,0
+27,Salfacorp,15,14,0,0,0,1,0,0,0,0,0
+28,Univesp,2,2,0,0,0,0,0,0,0,0,0
+29,"Universidad Diego Portales",4823,2089,1095,490,3,4,4,830,68,16,9
+30,"University of Calfornia - Los Angeles",266,72,2,0,0,0,1,1,0,0,0
+31,"University of Michigan - Ann Arbor",87,29,1,0,0,0,0,0,0,1,0
+32,"University of Oregon",63,22,0,0,0,0,0,1,0,0,0
+33,"Universidade Estadual de Campinas",141,20,0,0,0,0,0,1,0,0,0
+34,"Universidade Estadual Paulista",66,19,0,0,0,0,0,0,0,0,0
+35,"Universidade de São Paulo",1,1,0,0,0,0,0,0,0,0,0
+36,"Demo University",196,195,0,26,152,12,2,10,100,16,4
+37,"Jump Chile",143,56,0,0,0,0,0,0,0,0,0
+38,RASU,980,591,2,0,0,0,1,0,1,1,1
+39,"Núcleo Milenio",6,6,0,0,0,0,0,0,0,0,0
+40,"Isapre Consalud",30,30,0,27,0,0,0,27,0,0,1
+41,Abril,4,2,0,0,0,0,0,0,0,0,0
+43,"Engie Energia Chile",1647,1642,3,0,0,0,1,2,0,0,0
+44,"Universidad de Chile",4624,3930,30,0,1,0,0,22,11,4,1
+45,"Compara Online",51,49,0,0,0,2,0,0,0,0,0
+46,Cencosud,19,11,0,0,0,0,0,0,0,0,0
+47,"Perimeter Institute for Theoretical Physics",112,67,0,0,0,0,0,0,0,0,0
+48,Classroomtv,3846,3781,238,418,1558,182,234,1028,231,62,87
+49,CorpAcademy,14,7,1,0,0,0,0,0,0,0,0
+50,"Startup Chile",46,19,1,0,0,0,0,0,0,0,0
+51,"University of Washington",3,3,0,0,0,0,0,0,0,0,0
+52,"Wientjes Academy",2,2,0,0,0,0,0,0,0,0,0
+53,"Universidad de los Andes",250,249,0,0,0,0,32,0,0,0,21
+54,Consorcio,2054,1986,0,0,21,2,2,7,0,0,0
+55,EuroAmerica,354,341,0,0,2,0,0,0,0,1,1
+56,engVid,2,2,0,0,0,0,0,0,0,0,0
+57,Smartlink,2,2,0,0,0,0,0,0,0,0,0
+58,BetaZeta,2,2,0,0,0,0,0,0,0,0,0
+59,"Universidad de Santiago de Chile",4,3,0,0,0,0,0,0,0,0,1
+61,AppAppeal,2,2,0,0,0,0,0,0,0,0,0
+62,"Media factory-Latam",3,3,0,0,0,0,0,0,0,0,0
+63,"SOLV campus Tuinbouw",2,2,0,0,0,0,0,0,0,0,0
+64,Miclase,2,2,0,0,0,0,0,0,0,0,0
+65,cepheid,2,2,0,0,0,0,0,0,0,0,0
+66,Curso,2,2,0,0,0,0,0,0,0,0,0
+67,DIBG,2,2,0,0,0,0,0,0,0,0,0
+68,"Mas Cerca",265,263,0,0,0,0,0,0,2,0,1
+69,"Academia Judicial",404,400,0,0,0,0,1,0,0,0,0
+70,Duke,2,2,0,0,0,0,0,0,0,0,0
+71,Pucobre,2,2,0,0,0,0,0,0,0,0,0
+72,test_inst,1,1,0,0,0,0,0,1,0,0,0
+73,"Central Michigan University",2,2,0,0,0,0,0,0,0,0,0
+74,"Descargas para Ingenieros",2,1,0,0,0,0,0,0,0,0,0
+75,"Clínica Dávila",8581,8487,1079,990,2112,53,0,995,1019,87,18
+76,"TeselaGen Biotechnology",45,42,1,0,0,0,0,0,0,0,0
+77,"Legacy Labs - LLC",2,2,0,0,0,0,0,0,0,0,0
+78,"Mobitelio SPA",1,1,0,0,0,0,0,0,0,0,0
+79,"Footscray Insitute of Tafe",2,2,0,0,0,0,0,0,0,0,0
+80,comparaonline.com,2,2,0,0,0,0,0,0,0,0,1
+81,eathisa,2,2,0,0,0,0,0,0,0,0,0
+82,"Fundación Jaime Guzmán",44,44,40,0,0,0,0,3,0,0,1
+83,"Inzpiral S.A.",4,4,0,0,0,0,0,0,0,0,0
+84,knowhowklub,2,2,0,0,0,0,0,0,0,0,0
+85,Frogmi,11,6,0,0,0,0,0,0,0,0,0
+86,"inst politecnico industrial de telecomunicacioness",2,2,0,0,0,0,0,0,0,0,0
+87,I-Contrata,10,2,0,0,0,0,0,0,0,0,0
+88,"Chile California Council",82,15,0,0,0,0,0,0,0,0,0
+90,songee,2,2,0,0,0,0,0,0,0,0,0
+91,CTVDemo,22,22,0,0,0,20,0,0,0,1,5
+92,Chanimal,4,4,0,0,0,0,0,0,0,0,0
+93,PUni,1,1,0,0,0,0,0,0,0,0,0
+94,"Palo Alto University",2,2,0,0,0,0,0,0,0,0,0
+95,pau2,1,1,0,0,0,0,0,0,0,0,0
+96,"Portal Minero",4,2,0,0,0,0,0,0,0,0,0
+97,"Universidad Andrés Bello",32,13,0,0,0,0,0,0,0,0,0
+98,"Programa de Acceso Inclusivo; Equidad y Permanencia Usach",32,18,0,0,0,0,0,0,0,0,0
+99,sfdsf,2,2,0,0,0,0,0,0,0,0,0
+100,Teaminside,2,2,0,0,0,0,0,0,0,0,0
+101,"Municipalidad de Vitacura",3,2,0,0,0,0,0,0,0,0,0
+102,"Larrain Vial",2,2,0,0,0,0,0,0,0,0,0
+103,Inacap,4,3,0,0,0,0,0,0,0,0,0
+104,"La Gran",2,2,0,0,0,0,0,0,0,0,0
+105,Nico,2,2,0,0,0,0,0,0,0,0,0
+106,"ICP Pachayachachiq",2,2,0,0,0,0,0,0,0,0,0
+107,"Derco Parts",6,6,0,0,0,0,0,0,0,0,0
+108,d3SAS,2,2,0,0,0,0,0,0,0,0,0
+109,ninguna,2,2,0,0,0,0,0,0,0,0,0
+110,"Code Academy",2,2,0,0,0,0,0,0,0,0,0
+111,"La Serena Jam",3,2,0,0,0,0,0,0,0,0,0
+112,Abrasol,2,2,0,0,0,0,0,0,0,0,0
+113,"U de Chile",2,2,0,0,0,0,0,0,0,0,0
+114,Socmed,3,2,0,0,0,0,0,0,0,0,0
+115,"Postgrados Universidad Diego Portales",211,200,23,120,26,28,0,18,94,42,7
+116,"Ideas corporativas",2,2,0,0,0,0,0,0,0,0,0
+117,"Facultad de Ciencias Económicas y Empresariales - Universidad de los Andes",30,29,0,0,0,0,0,0,0,0,0
+118,home,2,2,0,0,0,0,0,0,0,0,0
+119,"Diario Financiero",886,848,0,0,0,0,0,1,1,0,2
+120,StartX,1,1,0,0,0,0,0,0,0,0,0
+121,matt,1,1,0,0,0,0,0,0,0,0,0
+122,horny,1,1,0,0,0,0,0,0,0,0,0
+123,"perimeter institute of theoritical physics",2,2,0,0,0,0,0,0,0,0,0
+124,AppDemo,3,3,0,0,0,0,0,0,0,0,0
+125,"Instituto de prueba",3,2,0,0,0,0,0,0,0,0,0
+126,"Prueba Uchile",2,2,0,0,0,0,0,0,0,0,0
+127,"Andes Digital ",106,69,3,0,0,0,1,0,0,0,0
+128,AndesDigital.tv,3,2,0,0,0,0,0,0,0,0,0
+129,iberoamericana,2,2,0,0,0,0,0,0,0,0,0
+130,"Academia de Hebreo Bíblico",2,2,0,0,0,0,0,0,0,0,0
+131,"Pontificia Universidad Javeriana",1,1,0,0,0,0,0,0,0,0,0
+132,"Corporacion Universitaria Iberoamericana",1,1,0,0,0,0,0,0,0,0,0
+133,"Corporacion Universitaria Ibero Americana",1,1,0,0,0,0,0,0,0,0,0
+134,"Universidad de los Andes Colombia",1,1,0,0,0,0,0,0,0,0,0
+135,LOGyCA,4,3,0,0,0,0,0,0,0,0,0
+136,"Universidad Externado de Colombia",1,1,0,0,0,0,0,0,0,0,0
+137,"Fundacion Mustakis",1,1,0,0,0,0,0,0,0,0,0
+138,"Institution Name",1,1,0,0,0,0,0,0,0,0,0
+139,"Not in institiute",2,2,0,0,0,0,0,0,0,0,0
+140,Berkeley,2,2,0,0,0,0,0,0,0,0,0
+141,Education,2,2,0,0,0,0,0,0,0,0,0
+142,catalog,2,2,0,0,0,0,0,0,0,0,0
+143,"SB Capacitación",4,2,0,0,0,0,0,0,0,0,0
+144,logyca,1,1,0,0,0,0,0,0,0,0,0
+145,Salesforce,7,3,0,0,0,0,0,0,0,0,0
+146,none,2,2,0,0,0,0,0,0,0,0,0
+147,Cegos,2,2,0,0,0,0,0,0,0,0,0
+148,"Sia Partners",2,2,0,0,0,0,0,0,0,0,0
+149,"Andes Iron",10,9,0,0,0,0,0,0,0,0,0
+150,"CNN Chile",1,1,0,0,0,0,0,0,0,0,0
+151,Komensky,4,4,0,0,0,0,0,0,0,0,0
+152,SpringBoard,1,1,0,0,0,0,0,0,0,0,0
+153,Hult,2,2,0,0,0,0,0,0,0,0,0
+154,Testing,2,2,0,0,0,0,0,1,0,0,0
+155,Elecmetal,1,1,0,0,0,0,0,0,0,0,0
+156,"Universidad de La Serena",2,2,0,0,0,0,0,0,0,0,0
+157,"UDP en Línea",578,246,4,0,0,0,0,2,3,0,1
+158,Privado,2,2,0,0,0,0,0,1,0,0,0
+159,"KAMK University of Applied Sciences",2,2,0,0,0,0,0,0,0,0,0
+160,Alkance,2,2,0,0,0,0,0,0,0,0,0
+161,teste,1,1,0,0,0,0,0,0,0,0,0
+162,blaabl,1,1,0,0,0,0,0,0,0,0,0
+163,"UC Berkeley Center for Executive Education",45,45,0,0,0,1,0,0,0,0,0
+164,ctv2,2,2,0,0,0,0,0,0,0,0,0
+165,"I.E.S.INGLÉS Y FRANCÉS",2,2,0,0,0,0,0,0,0,0,0
+166,UCBerkeley,1,1,0,0,0,0,0,0,0,0,0
+167,Iutepi,2,2,0,0,0,0,0,0,0,0,0
+168,"CHRISTOPHE PRAUD",2,2,0,0,0,0,0,0,0,0,0
+169,"Escuela Colombiana de Carreras Industriales ECCI",5,4,0,0,0,0,0,0,0,0,0
+170,Y-nov,2,2,0,0,0,0,0,0,0,0,0
+172,Webkeyz,2,2,0,0,0,0,0,0,0,0,0
+173,Consultor,2,2,0,0,0,0,0,0,0,0,0
+174,"ASCS Capacitación",4,4,0,0,0,0,0,0,0,0,0
+175,Emilio,2,2,0,0,0,0,0,0,0,0,0
+176,plop,1,1,0,0,0,0,0,0,0,0,0
+177,Schaeffler,2,2,0,0,0,0,0,0,0,0,0
+178,INNCUBATED,1,1,0,0,0,0,0,0,0,0,0
+179,CrossKnowledge,2,2,0,0,0,0,0,0,0,0,0
+180,Individual,2,2,0,0,0,0,0,0,0,0,0
+181,"Universidad ",2,2,0,0,0,0,0,0,0,0,0
+182,"instituto valle central",2,2,0,0,0,0,0,0,0,0,0
+183,"Centro de Capacitación World Vision",2,2,0,0,0,0,0,0,0,0,0
+184,"Poder Judicial",2,2,0,0,0,0,0,0,0,0,0
+185,"eLearning Latin America",2,2,0,0,0,0,0,0,0,0,0
+186,"Clase Ejecutiva",2,2,0,0,0,0,0,0,0,0,0
+187,"Insightly University",3,3,0,0,0,0,0,0,0,0,0
+188,Redemprendia,9,5,0,0,0,0,0,0,0,0,0
+189,iLabUC,3,2,0,0,0,0,0,0,0,0,0
+190,"Amir Kabir University of Tehran",2,2,0,0,0,0,0,0,0,0,0
+191,"instituto einstein",1,1,0,0,0,0,0,0,0,0,0
+192,"Zoominfo University",4,4,0,0,0,0,0,0,0,0,0
+193,UNIS-MG,2,2,0,0,0,0,0,0,0,0,0
+194,Fundacap,2,2,0,0,0,0,0,0,0,0,0
+195,personal,2,2,0,0,0,0,0,0,0,0,0
+196,"Think & co",2,2,0,0,0,0,0,0,0,0,0
+197,"Schneider Electric",2,2,0,0,0,0,0,0,0,0,0
+198,"Universidad Rey Juan Carlos online",2,2,0,0,0,0,0,0,0,0,0
+199,Innspiral,2,2,0,0,0,0,0,0,0,0,0
+200,EscolaMedicinaSãoPaulo,1,1,0,0,0,0,0,0,0,0,0
+201,JCCM,1,1,0,0,0,0,0,0,0,0,0
+202,NeoSpheres,2,2,0,0,0,0,0,0,0,0,0
+203,"Pontificia universidad catolica  ",2,2,0,0,0,0,0,1,0,0,0
+204,Institution,2,2,0,0,0,0,0,0,0,0,0
+205,"Draper University",6,4,0,0,0,0,0,0,0,0,0
+206,"Escuela Bancaria y Comercial",6,5,0,0,0,0,0,0,0,0,0
+207,"Strongroom Solutions",2,2,0,0,0,0,0,0,0,0,0
+208,"Programmes de formation MS Inc.",2,2,0,0,0,0,0,0,0,0,0
+209,"Ministerio de Educación de Chile",2,2,0,0,0,0,0,0,0,0,0
+210,UTFSM,2,2,0,0,0,0,0,0,0,0,0
+211,Resonance,2,2,0,0,0,0,0,0,0,0,0
+212,"Prefeitura Dois Vizinhos",2,2,0,0,0,0,0,0,0,0,0
+213,"White Hole Creative",2,2,0,0,0,0,0,0,0,0,0
+214,"colegio almenar",2,2,0,0,0,0,0,0,0,0,0
+215,"Universidade Chile",2,2,0,0,0,0,0,0,0,0,0
+217,"Facultad de Ciencias Físicas y Matemáticas",3,3,0,0,0,0,0,0,0,0,0
+218,ICETEX,1,1,0,0,0,0,0,0,0,0,0
+219,"Depto de Gestión de la Calidad",2,2,0,0,0,0,0,0,0,0,0
+220,"Fraud; Forensics & Compliance",2,2,0,0,0,0,0,0,0,0,0
+221,Independiente,2,2,0,0,0,0,0,0,0,0,0
+222,"HEC PARIS",2,2,0,0,0,0,0,0,0,0,0
+223,"Samsung Electronics France",2,2,0,0,0,0,0,0,0,0,0
+224,"Samsung France ",2,2,0,0,0,0,0,0,0,0,0
+225,PROPIO,2,2,0,0,0,0,0,0,0,0,0
+226,"centre de formation",2,2,0,0,0,0,0,0,0,0,0
+227,"colegio juan ignacio molina de la florida talca",2,2,0,0,0,0,0,0,0,0,0
+228,"Vida Integra",2376,2337,1,3,147,7,0,7,1,1,1
+229,Dksml,2,2,0,0,0,0,0,0,0,0,0
+230,qualquer,2,2,0,0,0,0,0,0,0,0,0
+231,"(NO)Universidad Santo Tomás",2,2,0,0,0,0,0,0,0,0,0
+232,"More Magic",2,2,0,0,0,0,0,0,0,0,0
+233,xonathan,6,6,0,0,0,4,0,0,0,0,0
+234,inspiration,2,2,0,0,0,0,0,0,0,0,0
+235,Alma,2,2,0,0,0,0,0,0,0,0,0
+236,"De César Martínez",2,2,0,0,0,0,0,0,0,0,0
+237,ceuclar,2,2,0,0,0,0,0,0,0,0,0
+238,"Instituto Federal de Birigui",2,2,0,0,0,0,0,0,0,0,0
+239,"Estacio de Sa",2,2,0,0,0,0,0,0,0,0,0
+240,Kaufmann,112,111,0,0,0,107,0,0,0,91,1
+241,colsanter,2,2,0,0,0,0,0,0,0,0,0
+242,ayili,2,2,0,0,0,0,0,0,0,0,0
+243,HunarNasserTradingCo,2,2,0,0,0,0,0,0,0,0,0
+244,"no san camilo",2,2,0,0,0,0,0,0,0,0,0
+245,"escola publica",2,2,0,0,0,0,0,0,0,0,0
+246,"Community Manager Venezuela ",2,2,0,0,0,0,0,0,0,0,0
+247,"ING Direct",2,2,0,0,0,0,0,0,0,0,0
+248,"Monica Prieto",1,1,0,0,0,0,0,0,0,0,0
+249,UCSC,2,2,0,0,0,0,0,0,0,0,0
+250,SJTU,2,2,0,0,0,0,0,0,0,0,0
+251,nada,2,2,0,0,0,0,0,0,0,0,0
+252,UChile,2,2,0,0,0,0,0,0,0,0,0
+253,"Universida de Chile",2,2,0,0,0,0,0,0,0,0,0
+254,"Proyecto Omnivoros Fondart",191,191,0,0,0,0,0,0,0,0,0
+255,Indi,2,2,0,0,0,0,0,0,0,0,0
+256,"Mary Queen of Peace ",2,2,0,0,0,0,0,0,0,0,0
+257,"Army Public School",2,2,0,0,0,0,0,0,0,0,0
+258,"Hospital Regional Rancagua",2,2,0,0,0,0,0,0,0,0,0
+259,unnes,2,2,0,0,0,0,0,0,0,0,0
+260,Tuspagosweb.com,2,2,0,0,0,0,0,0,0,0,0
+261,Aiec,2,2,0,0,0,0,0,0,0,0,0
+262,"Aulas Particulares de Inglês em Contagem - MG",1,1,0,0,0,0,0,0,0,0,0
+263,PMMG,2,2,0,0,0,0,0,0,0,0,0
+264,"liceo sagrado corazon",2,2,0,0,0,0,0,0,0,0,0
+265,cinaps,2,2,0,0,0,0,0,0,0,0,0
+266,salud,2,2,0,0,0,0,0,0,0,0,0
+267,"Universidad Nacional de Trujillo/Peru",2,2,0,0,0,0,0,0,0,0,0
+268,"Colegio San Ramon Nonato - Curico",2,2,0,0,0,0,0,0,0,0,0
+269,FCFM,2,2,0,0,0,0,0,0,0,0,0
+270,"les echos",2,2,0,0,0,0,0,0,0,0,0
+271,particular,2,2,0,0,0,0,0,0,0,0,0
+272,"Universite de bretagne occidentale",2,2,0,0,0,0,0,0,0,0,0
+273,"TEATRO REGIONAL DEL MAULE",2,2,0,0,0,0,0,0,0,0,0
+274,FUCAEP,3,2,0,0,0,0,0,0,0,0,0
+275,Gatitos,1,1,0,0,0,0,0,0,0,0,0
+277,Multirotorcourses,2,2,0,0,0,0,0,0,0,0,0
+278,"Pontificia Universidad Católica de Chile",2,2,0,0,0,0,0,0,0,0,0
+279,"Corporacion Educacional CEPAC",2,2,0,0,0,0,0,0,0,0,0
+280,"aura sa",2,2,0,0,0,0,0,0,0,0,0
+281,"universidad arturo prat",2,2,0,0,0,0,0,0,0,0,0
+282,"Universidad Central del Ecuador",2,2,0,0,0,0,0,0,0,0,0
+283,"Claudia's Virtual Classroom",2,2,0,0,0,0,0,0,0,0,0
+284,"escuela anne eleonor roosevelt",2,2,0,0,0,0,0,0,0,0,0
+285,LaComiquera,2,2,0,0,0,0,0,0,0,0,0
+286,"bioingenieros sac",2,2,0,0,0,0,0,0,0,0,0
+287,"universidad federico santa maria",2,2,0,0,0,0,0,0,0,0,0
+288,Aprendemas,2,2,0,0,0,0,0,0,0,0,0
+289,"MAVA Consultores",2,2,0,0,0,0,0,0,0,0,0
+290,davila,26,26,1,4,11,0,0,0,0,0,1
+291,adProfe,2,2,0,0,0,0,0,0,0,0,0
+292,"Universidad de Concepción",2,2,0,0,0,0,0,0,0,0,0
+293,"Universidad mayor",2,2,0,0,0,0,0,0,0,0,0
+294,"Universidad Católica",2,2,0,0,0,0,0,0,0,0,0
+295,"Universidad Católica de Chile",2,2,0,0,0,0,0,0,0,0,0
+296,"Facultad de Ciencias física y matemáticas",2,2,0,0,0,0,0,0,0,0,0
+297,casa,2,2,0,0,0,0,0,0,0,0,0
+298,cs101,2,2,0,0,0,0,0,0,0,0,0
+299,ApoloCapacita,7,6,0,0,0,0,0,0,0,0,0
+300,Sena,2,2,0,0,0,0,0,0,0,0,1
+301,jose,2,2,0,0,0,0,0,0,0,0,0
+302,"Seminario Bìblico Teològico",2,2,0,0,0,0,0,0,0,0,0
+303,Unifor,2,2,0,0,0,0,0,0,0,0,0
+304,ucatolica,2,2,0,0,0,0,0,0,0,0,0
+305,"University of Chile",2,2,0,0,0,0,0,0,0,0,0
+306,"Pontifica Universidad Católica",2,2,0,0,0,0,0,0,0,0,0
+307,"colegio regina pacis",2,2,0,0,0,0,0,0,0,0,0
+308,Felipematus,2,2,0,0,0,0,0,0,0,0,0
+309,"Instituto Profesional los Leones",2,2,0,0,0,0,0,0,0,0,0
+310,"Tecnologías para la Seguridad del Paciente",70,70,0,0,0,0,0,2,1,0,1
+311,UNAP,2,2,0,0,0,0,0,0,0,0,0
+312,"English Online",3,2,0,0,0,0,0,0,0,0,0
+313,Dddd,2,2,0,0,0,0,0,0,0,0,0
+314,cibernautas,1,1,0,0,0,0,0,0,0,0,0
+315,Mulesoft,1,1,0,0,0,0,0,0,0,0,0
+316,"valita ",2,2,0,0,0,0,0,0,0,0,0
+317,"universidad catolica de santiago",2,2,0,0,0,0,0,0,0,0,0
+318,"colegio ",2,2,0,0,0,0,0,0,0,0,0
+319,PUCC,2,2,0,0,0,0,0,0,0,0,0
+320,"UPartners Consultoría",35,32,0,0,0,0,0,0,0,0,0
+321,Educaccionate,1,1,0,0,0,0,0,0,0,0,0
+322,"(no)Santo Tomas",3,3,0,0,0,0,1,0,0,0,0
+323,"Asociados Godoy Concha Limitada",4,4,0,0,1,0,0,0,0,0,0
+324,Mindkey,2,2,0,0,0,0,0,0,0,0,0
+325,Administrarte,3,3,0,0,0,0,0,1,0,0,1
+326,"Haute école de gestion de Genève",2,2,0,0,0,0,0,0,0,0,0
+327,FamillyTraining,2,2,0,0,0,0,0,0,0,0,0
+328,"universidad tecnologica de chile",2,2,0,0,0,0,0,0,0,0,0
+329,Audiovisual,2,2,0,0,0,0,0,0,0,0,0
+330,student,2,2,0,0,0,0,0,0,0,0,0
+331,educacion,2,2,0,0,0,0,0,0,0,0,0
+332,"liceo 1",2,2,0,0,0,0,0,0,0,0,0
+333,"Liceo A N° 5",2,2,0,0,0,0,0,0,0,0,0
+334,Duoc,2,2,0,0,0,0,0,0,0,0,0
+335,"Universidad tecnológica metropolitana de Chile ",2,2,0,0,0,0,0,0,0,0,0
+336,"liceo 4a",2,2,0,0,0,0,0,0,0,0,0
+337,"universidad catolica de la santisima concepcion",2,2,0,0,0,0,0,0,0,0,0
+338,"Andres Bello",2,2,0,0,0,0,0,0,0,0,0
+339,"Portafolio Digital",2,2,0,0,0,0,0,0,0,0,0
+340,Privada,2,2,0,0,0,0,0,0,0,0,0
+341,udla,2,2,0,0,0,0,0,0,0,0,0
+342,classroom,4,4,0,0,0,0,2,0,0,0,0
+343,Daniela,2,2,0,0,0,0,0,0,0,0,0
+344,"universidad catolica del norte ",2,2,0,0,0,0,0,0,0,0,0
+345,"defensa  civil chile",2,2,0,0,0,0,0,0,0,0,0
+346,Aprimin,3,3,0,0,0,0,0,0,0,0,0
+347,"liceo paulajaraquemada",2,2,0,0,0,0,0,0,0,0,0
+348,"Creator Up",3,3,0,0,0,0,0,0,0,0,0
+349,ariema,2,2,0,0,0,0,0,0,0,0,0
+351,"N.S. LAPA",2,2,0,0,0,0,0,0,0,0,0
+352,Vibgyor,2,2,0,0,0,0,0,0,0,0,0
+353,WEHRLI,2,2,0,0,0,0,0,0,0,0,0
+354,Veja,2,2,0,0,0,0,0,0,0,0,0
+355,"Endeavor Brasil",2,2,0,0,0,0,0,0,0,0,0
+356,Patricia,2,2,0,0,0,0,0,0,0,0,0
+357,"Universidad de atacama",2,2,0,0,0,0,0,0,0,0,0
+358,"Instituto federal da Paraíba",2,2,0,0,0,0,0,0,0,0,0
+359,"Universidad católica123",2,2,0,0,0,0,0,0,0,0,0
+360,"Universidad Católica Silva Henriquez",2,2,0,0,0,0,0,0,0,0,0
+361,"Classroom.tv Empresas",119,110,0,0,0,0,1,1,0,0,1
+362,"Mauro Casa",2,2,0,0,0,0,0,0,0,0,0
+363,TTM,2,2,0,0,0,0,0,0,0,0,0
+364,"Liceo Teniente  Dagoberto Godoy",2,2,0,0,0,0,0,0,0,0,0
+365,Captainfight,10,10,0,0,0,0,0,0,0,0,0
+366,"Conservatorio de Musica",2,2,0,0,0,0,0,0,0,0,0
+367,capgemini,2,2,0,0,0,0,0,0,0,0,0
+368,"Universidad Laica Eloy Alfaro Manabi",2,2,0,0,0,0,0,0,0,0,0
+369,"BETC DIGITAL",2,2,0,0,0,0,0,0,0,0,0
+370,Valparaíso,2,2,0,0,0,0,0,0,0,0,0
+371,ACADEMIAEF,2,2,0,0,0,0,0,0,0,0,0
+372,"Universidad Tecnologica de Chile INACAP",2,2,0,0,0,0,0,0,0,0,0
+373,"Centro universitario UNA",2,2,0,0,0,0,0,0,0,0,0
+374,"banco de credito e inversiones",2,2,0,0,0,0,0,0,0,0,0
+375,"Agentes Libres",943,919,0,0,1,0,0,4,1,0,1
+376,"MPA LTDA",2,2,0,0,0,0,0,0,0,0,0
+377,"Luis Enrique Besa Vial",2,2,0,0,0,0,0,0,0,0,0
+378,"Colégio Objetivo Itapetininga",2,2,0,0,0,0,0,0,0,0,0
+379,Nbbti,2,2,0,0,0,0,0,0,0,0,0
+380,"albertina ruiz",2,2,0,0,0,0,0,0,0,0,0
+381,mmcv,1,1,0,0,0,0,0,0,0,0,0
+382,"Universidad  San Sebastian",2,2,0,0,0,0,1,0,0,0,1
+383,PDI,2,2,0,0,0,0,0,0,0,0,0
+384,alexis,2,2,0,0,0,0,0,0,0,0,0
+385,"Gladis Valenzuela Valenzuela  Valenzuela vallejos",1,1,0,0,0,0,0,0,0,0,0
+386,"Instituto profesional duoc uc",2,2,0,0,0,0,0,0,0,0,0
+387,"cep san ramon",2,2,0,0,0,0,0,0,0,0,0
+388,"multiper sa",2,2,0,0,0,0,0,0,0,0,0
+389,Castorama,2,2,0,0,0,0,0,0,0,0,0
+390,"Musica & Arte",2,2,0,0,0,0,0,0,0,0,0
+391,Tjce,2,2,0,0,0,0,0,0,0,0,0
+392,arte,2,2,0,0,0,0,0,0,0,0,0
+393,"Agrupamento de escolas Amadora oeste",1,1,0,0,0,0,0,0,0,0,0
+394,"Ilustre Municipalidad de lo Espejo",2,2,0,0,0,0,0,0,0,0,0
+395,"maimonides school ",2,2,0,0,0,0,0,0,0,0,0
+396,"Universidad iberoamericana ",2,2,0,0,0,0,0,0,0,0,0
+397,Alyson,2,2,0,0,0,0,0,0,0,0,0
+398,Codarts,2,2,0,0,0,0,0,0,0,0,0
+399,"hernan moya",2,2,0,0,0,0,0,0,0,0,0
+400,"Pública ",2,2,0,0,0,0,0,0,0,0,0
+401,Socovesa,2,2,0,0,0,0,0,0,0,0,0
+402,"Colegio Juan Pablo Segundo",2,2,0,0,0,0,0,0,0,0,0
+403,notengo,2,2,0,0,0,0,0,0,0,0,0
+404,CORFO,2,2,0,0,0,0,0,0,0,0,0
+405,ABIERTA,2,2,0,0,0,0,0,0,0,0,0
+406,Vzmuñoz,2,2,0,0,0,0,0,0,0,0,0
+407,"Centro Emocional",2,2,0,0,0,0,0,0,0,0,0
+408,"Capacitación Metalurgicos",2,2,0,0,0,0,0,0,0,0,0
+409,"Universidad de las Américas ",2,2,0,0,0,0,0,0,0,0,0
+410,"U. Santiago",108,107,0,0,104,1,0,0,99,7,0
+411,"Colegio el bosque",2,2,0,0,0,0,0,0,0,0,0
+412,"Universidad de santiago",2,2,0,0,0,0,0,0,0,0,0
+413,"Universidad Católica los Ángeles de Chimbote",2,2,0,0,0,0,0,0,0,0,0
+414,Innovacoord,3,2,0,0,0,0,0,0,0,0,0
+415,"Universidad de los Lagos",2,2,0,0,0,0,0,0,0,0,0
+416,U.autonoma,2,2,0,0,0,0,0,0,0,0,0
+417,"ciber ingeniería ",2,2,0,0,0,0,0,0,0,0,0
+418,"Autonoma ",2,2,0,0,0,0,0,0,0,0,0
+419,ANONIMO,2,2,0,0,0,0,0,0,0,0,0
+420,"Nicolas Laczka",12,10,0,0,0,0,0,0,0,0,0
+421,"Centro Cultural Lakitas Eterna Juventud",2,2,0,0,0,0,0,0,0,0,0
+422,"U autonoma de Chile",2,2,0,0,0,0,0,0,0,0,0
+423,"Emtec Talca Spa",2,2,0,0,0,0,0,0,0,0,0
+424,quim,2,2,0,0,0,0,0,0,0,0,0
+425,"Universidad San Martin de Porres",2,2,0,0,0,0,0,0,0,0,0
+426,"Instituto Profecional AIEP",2,2,0,0,0,0,0,0,0,0,0
+427,katherine,2,2,0,0,0,0,0,0,0,0,0
+429,"Universidad Autónoma de Chile",2,2,0,0,0,0,0,0,0,0,0
+430,carabineros,2,2,0,0,0,0,0,0,0,0,0
+431,Test,2,1,0,0,0,0,0,0,0,0,0
+432,"(no)u.santo tomás",3,3,0,0,0,1,0,0,0,0,0
+433,"colegio umbral de curauma",2,2,0,0,0,0,0,0,0,0,0
+434,Siges,2,2,0,0,0,0,0,0,0,0,0
+435,"universidade de uberaba",2,2,0,0,0,0,0,0,0,0,0
+436,"Uni. of Kentucky",2,2,0,0,0,0,0,0,0,0,0
+437,"Universidad Privada del Norte",2,2,0,0,0,0,0,0,0,0,0
+438,lemsprod,2,2,0,0,0,0,0,0,0,0,0
+439,"DigiMarketing 2.0",2,2,0,0,0,0,0,0,0,0,0
+440,ChileProveedores,2,2,0,0,0,0,0,0,0,0,0
+441,miUniv,2,2,0,0,0,0,0,0,0,0,0
+442,Psicóloga,2,2,0,0,0,0,0,0,0,0,0
+443,MAPM,2,2,0,0,0,0,0,0,0,0,0
+444,"liceo miguel rafael prado",2,2,0,0,0,0,0,0,0,0,0
+445,homeschool,2,2,0,0,0,0,0,0,0,0,0
+446,Udec,2,2,0,0,0,0,0,0,0,0,0
+447,"Diego Portales",2,2,0,0,0,0,0,0,0,0,0
+448,challenges,2,2,0,0,0,0,0,0,0,0,0
+449,Merces,2,2,0,0,0,0,0,0,0,0,0
+450,"universidad miguel de cervantes",2,2,0,0,0,0,0,0,0,0,0
+451,"Universidad de Colima ",2,2,0,0,0,0,0,0,0,0,0
+452,PucRJ,2,2,0,0,0,0,0,0,0,0,0
+453,"colegio Emmanuel",2,2,0,0,0,0,0,0,0,0,0
+454,"Colegio Andres Bello - Cabildo",2,2,0,0,0,0,0,0,0,0,0
+455,"Bionico LTDA",2,2,0,0,0,0,0,0,0,0,0
+456,autonomo,1,1,0,0,0,0,0,0,0,0,0
+457,"PontificiaUniversidad Catolica De Chile",2,2,0,0,0,0,0,0,0,0,0
+458,"Escuela Digital 4.0",2,2,0,0,0,0,0,0,0,0,0
+459,"Universidad Iberoamericana",88,87,0,0,0,0,0,0,1,0,1
+460,pucatolica,2,2,0,0,0,0,0,0,0,0,0
+461,"Mudas Tech",3,3,0,0,0,0,0,0,0,0,0
+462,"Sekolah Menengah Kebangsaan ayer Baloi",2,2,0,0,0,0,0,0,0,0,0
+463,"Universidad pedagógica y tecnologica de colombia",2,2,0,0,0,0,0,0,0,0,0
+464,libre,2,2,0,0,0,0,0,0,0,0,0
+465,Self,2,2,0,0,0,0,0,0,0,0,0
+466,Barceló,2,2,0,0,0,0,0,0,0,0,0
+467,"Universidad de la Frontera",2,2,0,0,0,0,0,0,0,0,0
+468,"Banco Consorcio",1181,1177,0,0,0,0,0,1,0,0,0
+469,"sekolah menengah kebangsaan seremban 2",2,2,0,0,0,0,0,0,0,0,0
+470,"comando de binestar",2,2,0,0,0,0,0,0,0,0,0
+471,"Gelada express",2,2,0,0,0,0,0,0,0,0,0
+472,TestInstitution,2,2,0,0,0,0,0,0,0,0,0
+473,"Academia de la Felicidad IF",389,364,0,0,0,0,0,0,0,0,0
+474,"consorcio seguros de vida",2,2,0,0,0,0,0,0,0,0,0
+475,"Universidad Santa María",2,2,0,0,0,0,0,0,0,0,0
+476,"Pontificia Universidad Catolica de Chile",2,2,0,0,0,0,0,0,0,0,0
+477,Unip,2,2,0,0,0,0,0,0,0,0,0
+478,"Alberto Widmer",2,2,0,0,0,0,0,0,0,0,0
+479,trazos,2,2,0,0,0,0,0,0,0,0,0
+480,"Fundacion Universitaria Luis Amigo",2,2,0,0,0,0,0,0,0,0,0
+481,Havard,2,2,0,0,0,0,0,0,0,0,0
+482,Pitagoras,2,2,0,0,0,0,0,0,0,0,0
+483,"Escola Superior de Educação de Santarém",2,2,0,0,0,0,0,0,0,0,0
+484,tancredo,2,2,0,0,0,0,0,0,0,0,0
+485,UTESA,2,2,0,0,0,0,0,0,0,0,0
+486,grandviewhighschool,2,2,0,0,0,0,0,0,0,0,0
+487,3h33,2,2,0,0,0,0,0,0,0,0,0
+488,"Filgueiras Lima",2,2,0,0,0,0,0,0,0,0,0
+489,"karel de grote hogeschool antwerpen",2,2,0,0,0,0,0,0,0,0,0
+490,CuongDQ,2,2,0,0,0,0,0,0,0,0,0
+491,"Potificia Universidad Católica",2,2,0,0,0,0,0,0,0,0,0
+492,ulnx,2,2,0,0,0,0,0,0,0,0,0
+493,Josmar,2,2,0,0,0,0,0,0,0,0,0
+494,"IF Chile",2,1,0,0,0,0,0,0,0,0,0
+495,"TW Logistica",2,2,0,0,0,0,0,0,0,0,0
+496,SoSP,2,2,0,0,0,0,0,0,0,0,0
+499,UABC,2,2,0,0,0,0,0,0,0,0,0
+500,"CHROLE Consultorías e Informática",2,2,0,0,0,0,0,0,0,0,0
+501,"Gymnazium Klatovy",2,2,0,0,0,0,0,0,0,0,0
+502,mundo22,2,2,0,0,0,0,0,0,0,0,0
+503,igutcor,2,2,0,0,0,0,0,0,0,0,0
+504,"Innovaciones Tecnologicas Ltda.",2,2,0,0,0,0,0,0,0,0,0
+505,"Liceo politécnico Andes",2,2,0,0,0,0,0,0,0,0,0
+506,AVHS,2,2,0,0,0,0,0,0,0,0,0
+507,AVHT,2,2,0,0,0,0,0,0,0,0,0
+508,"IUPSM Barcelona",2,2,0,0,0,0,0,0,0,0,0
+509,"Centro Paula Souza",2,2,0,0,0,0,0,0,0,0,0
+510,"Gonzalo Hernandez",2,2,0,0,0,0,0,0,0,0,0
+511,"Colegio de Adultos Pulmahue",2,2,0,0,0,0,0,0,0,0,0
+512,nuncaestarde,2,2,0,0,0,0,0,0,0,0,0
+513,"adolfo ibáñez",2,2,0,0,0,0,0,0,0,0,0
+514,"Universidad UVM ",2,2,0,0,0,0,0,0,0,0,0
+515,peñalolen,2,2,0,0,0,0,0,0,0,0,0
+516,"Sant Bonaventura",2,2,0,0,0,0,0,0,0,0,0
+517,"ponticifia universidad catolica de chile ",2,2,0,0,0,0,0,0,0,0,0
+518,Ersil,2,2,0,0,0,0,0,0,0,0,0
+519,mayor,2,2,0,0,0,0,0,0,0,0,0
+520,mimotive,2,2,0,0,0,0,0,0,0,0,0
+521,"Universidad mayor temuco ",2,2,0,0,0,0,0,0,0,0,0
+524,"División El Teniente Codelco",969,963,2,2,0,0,0,14,2,1,2
+525,"Rainbow Free Learning",2,2,0,0,0,0,0,0,0,0,0
+526,"Fundación Imagen de Chile",2,2,0,0,0,0,0,0,0,0,0
+527,"Exprit - Gordon Crossings",2,2,0,0,0,0,0,0,0,0,0
+528,"Hemingway High School",2,2,0,0,0,0,0,0,0,0,0
+529,"CASER LTDA",2,2,0,0,0,0,0,0,0,0,0
+530,católica,2,2,0,0,0,0,0,0,0,0,0
+531,Explorabyedhec,2,2,0,0,0,0,0,0,0,0,0
+532,"Universidad Autónoma de Barcelona",2,2,0,0,0,0,0,0,0,0,0
+533,"York St John University",2,2,0,0,0,0,0,0,0,0,0
+534,"Fundacion Educacion Online",2,2,0,0,0,0,0,0,0,0,0
+535,"Instituto de Grafologìa Grafos",2,2,0,0,0,0,0,0,0,0,0
+536,"ClassroomTV Test",20,19,3,0,0,0,0,1,0,0,0
+537,"Instituto Aplaplac",4,3,1,0,0,0,0,0,0,0,0
+538,"Solandro ",2,2,0,0,0,0,0,0,0,0,0
+539,"Instituto de Estudios Bancarios Guillermo Subercaseux",3,2,0,0,0,0,0,0,0,0,0
+540,"Universidad Alberto Hurtado",2,2,0,0,0,0,0,0,0,0,0
+541,Treid,12863,12856,1657,2799,2001,378,1207,2607,1607,258,665
+542,"TREID Spa",3,3,0,0,0,0,0,0,1,0,0
+543,alger,2,2,0,0,0,0,0,0,0,0,0
+544,"ENCG agadir",2,2,0,0,0,0,0,0,0,0,0
+545,"UC del norte",2,2,0,0,0,0,0,0,0,0,0
+546,Dicomo,2,2,0,0,0,0,0,0,0,0,0
+547,"Ministerio de Transportes y Telecomunicaciones ",2,2,0,0,0,0,0,0,0,0,0
+548,"Instituto Online Desarrollo de competencias",2,2,0,0,0,0,0,0,0,0,0
+549,"Federico Santa María Technical University",2,2,0,0,0,0,0,0,0,0,0
+550,ECLSA,2,2,0,0,0,0,0,0,0,0,0
+551,"Impulsas SpA",2,2,0,0,0,0,0,0,0,0,0
+554,"Ministerio de Salud - SIAD",1194,1194,1169,9,0,2,0,160,44,24,14
+555,Buap,2,2,0,0,0,0,0,0,0,0,0
+556,mine,2,2,0,0,0,0,0,0,0,0,0
+557,"galvis workshop",2,2,0,0,0,0,0,0,0,0,0
+559,L,2,2,0,0,0,0,0,0,0,0,0
+560,www.sudlogistics.com,2,2,0,0,0,0,0,0,0,0,0
+561,"university of newcastle",2,2,0,0,0,0,0,0,0,0,0
+562,"Pontificia Uc",2,2,0,0,0,0,0,0,0,0,0
+563,"Total M&S",2,2,0,0,0,0,0,0,0,0,0
+565,UTFSMjlcv,2,2,0,0,0,0,0,0,0,0,0
+566,"HR Asociados Ltda",2,2,0,0,0,0,0,0,0,0,0
+567,"Instituto Federal deCiências e Técnologia do Estado de São Paulo",2,2,0,0,0,0,0,0,0,0,0
+568,"Pontificia Universidad Catolice de Chile",2,2,0,0,0,0,0,0,0,0,0
+569,"Pontificia Católica de Chile",2,2,0,0,0,0,0,0,0,0,0
+570,IdeaPaís,2,2,0,0,0,0,0,0,0,0,0
+571,Metric,2,2,0,0,0,0,0,0,0,0,0
+572,ComparaOnline,2,2,0,0,0,0,0,0,0,0,0
+573,Totozi,2,2,0,0,0,0,0,0,0,0,0
+574,claro,2,2,0,0,0,0,0,0,0,0,0
+575,Turingu,77,75,0,0,0,0,0,0,0,0,0
+576,Bennett,2,2,0,0,0,0,0,0,0,0,0
+578,"Círculo Público Privado",16,15,0,0,0,0,0,0,0,0,0
+579,"Derecho-Universidad Católica del Norte",186,185,0,0,1,1,0,3,1,0,1
+580,"Catholic university",2,2,0,0,0,0,0,1,0,0,0
+581,PontificiaUniversidadCatólicadeChile,2,2,0,0,0,0,0,0,0,0,0
+582,"Escuela Nacional de Administración Pública - ENA",2,2,0,0,0,0,0,0,0,0,0
+583,"Delaire Capacitación",25,25,0,0,0,0,0,0,0,0,0
+584,"Escuela CMC",2,2,0,0,0,0,0,0,0,0,0
+586,"Salvaunavida Chile",1101,1100,257,0,61,229,135,1,12,17,114
+587,ICHN,2,2,0,0,0,0,0,0,0,0,0
+588,"Universidad sek",2,2,0,0,0,0,0,0,0,0,0
+589,"shkways - notconsulting",2,2,0,0,0,0,0,0,0,0,0
+590,Aprendikids,2,2,0,0,0,0,0,0,0,0,0
+591,"Educatemas Online",2,2,0,0,0,0,0,0,0,0,0
+592,"Universidad Peruana Cayetano heredia",4,4,0,0,0,0,0,0,0,0,0
+594,"Voissnet S.A.",2,2,0,0,0,0,0,0,0,0,0
+595,Benefits,2,2,0,0,0,0,0,0,0,0,0
+596,Cortecom,1,1,0,0,0,0,0,0,0,0,0
+597,"Vargasi Capacitaciones",2,2,0,0,0,0,0,0,0,0,0
+599,hola,2,2,0,0,0,0,0,0,0,0,0
+601,"GIDAHATARI CHILE",2,2,0,0,0,0,0,0,0,0,0
+602,Agrosuper,3,3,0,0,0,0,0,1,0,0,0
+603,Agrosuper,523,523,448,20,0,0,0,34,2,0,2
+604,"MAC - Valdivia ",2,2,0,0,0,0,0,0,0,0,0
+605,"Treid Captadores",2,2,0,0,0,0,1,0,0,0,0
+607,ColbunSSO,2,2,0,0,0,0,0,0,0,0,0
+608,"Viejas Mates",2,2,0,0,0,0,0,0,0,0,0
+611,"Universidad Corporativa",2,2,0,0,0,0,0,0,0,0,0
+612,"Cuatro Tintas",2,2,0,0,0,0,0,0,0,0,0
+613,LIDERCORP,2,2,0,0,0,0,0,0,0,0,0
+614,"Colegio San Ignacio el bosque ",2,2,0,0,0,0,0,0,0,0,0
+617,"Ministerio ",2,2,0,0,0,0,0,0,0,0,0
+621,Ulima,2,2,0,0,0,0,0,0,0,0,0
+622,"Zykret - Neuromarketing Insights & Planning",2,2,0,0,0,0,0,0,0,0,0
+623,"EL CAPITAL HUMANO",2,2,0,0,0,0,0,1,0,0,0
+624,"Universidad de Ciencias y Humanidades",2,2,0,0,0,0,0,0,0,0,0
+625,"Universidad Central de Chile",2,2,0,0,0,0,0,0,0,0,0
+626,"Universidad Católica de Temuco",2,2,0,0,0,0,0,0,0,0,0
+627,"Asociación Talentos y Talentosos",2,2,0,0,0,0,0,0,0,0,0
+628,"INACAP DNC",2,2,0,0,0,0,0,0,0,0,0
+629,"Liceo Catolico Atacama ",2,2,0,0,0,0,0,0,0,0,0
+630,"Academia de humanidades ",2,2,0,0,0,0,0,0,0,0,0
+631,"Pontificia Universidad Católica de Chile 123123",2,2,0,0,0,0,0,0,0,0,0
+632,"cervecerias chile",2,2,0,0,0,0,0,0,0,0,0
+633,"colegio alemán ",2,2,0,0,0,0,0,0,0,0,0
+634,Colun,3,3,0,0,0,0,0,0,0,0,0
+635,EstChile,2,2,0,0,0,0,0,0,0,0,0
+636,unabcl,2,2,0,0,0,0,0,0,0,0,0
+637,ProAMG,2,2,0,0,0,0,0,0,0,0,0
+638,Corona,2,2,0,0,0,0,0,0,0,0,0
+639,Qualitat,2,2,0,0,0,0,0,0,0,0,0
+640,"Nuestra señora de Asunción ",2,2,0,0,0,0,0,0,0,0,0
+641,particularestudiante,2,2,0,0,0,0,0,0,0,0,0
+642,"sercapal ltda.",2,2,0,0,0,0,0,0,0,0,0
+643,"Finis terrae ",2,2,0,0,0,0,0,0,0,0,0
+644,"U mayor",2,2,0,0,0,0,0,0,0,0,0
+646,Ralisboa,2,2,0,0,0,0,0,0,0,0,0
+647,diresa,2,2,0,0,0,0,0,0,0,0,0
+648,"Net Trainers",2,2,0,0,0,0,0,0,0,0,0
+649,"Centro Educacional Rayenco",1,1,0,0,0,0,0,0,0,0,0
+650,"Duoc  uc ",2,2,0,0,0,0,0,0,0,0,0
+651,"HUMAN SERVICE LATAM",3,3,0,0,0,0,0,0,0,0,0
+652,"Tread ",2,2,0,0,0,0,0,0,0,0,0
+653,"Transelec S.A.",765,765,20,13,721,4,0,252,664,88,1
+654,corpaeperu,2,2,0,0,0,0,0,0,0,0,0
+655,Vaissen,2,2,0,0,0,0,0,0,0,0,0
+656,"corporacion educacional tecnologica de chile",2,2,0,0,0,0,0,0,0,0,0
+657,Alter&Go,2,2,0,0,0,0,0,0,0,0,0
+659,Quality,3,3,0,0,0,0,0,0,0,0,0
+660,"Red Academy",2,2,0,0,0,0,0,0,0,0,0
+661,"Centro de Emprendimiento Integral y Desarrollo",2,2,0,0,0,0,0,0,0,0,0
+662,"Universitas Wijaya Putra Surabaya",2,2,0,0,0,0,0,0,0,0,0
+663,"Klubschule Migros Aare",2,2,0,0,0,0,0,0,0,0,0
+664,"treid spa",2,2,0,0,0,0,0,0,0,0,0
+665,"Cial ",2,2,0,0,0,0,0,0,0,0,0
+666,NASE,2,2,0,0,0,0,0,0,0,0,0
+667,prueba,3,3,0,0,0,0,0,0,0,0,0
+668,Insuco,2,2,0,0,0,0,0,0,0,0,0
+669,Emprendetu,2,2,0,0,0,0,0,0,0,0,0
+670,"Stanford Medicine",2,2,0,0,0,0,0,0,0,0,0
+671,Operatio,28,28,0,0,0,0,0,0,0,0,0
+672,If-Inacap,1,1,0,0,0,0,0,0,0,0,0
+673,Strategyka,7,7,0,0,0,0,0,0,0,0,0
+674,VTraders,2,2,0,0,0,0,0,0,0,0,0
+675,Soprole,33,33,0,0,0,0,0,0,0,0,0
+676,"Teleasistencia Chile spa",4,3,0,0,0,0,0,0,0,0,0
+677,Teleton,1658,1658,31,49,89,233,1225,189,1045,1163,1048
+678,Profeduc,3,2,0,0,0,0,0,0,0,0,0
+679,EXE,3,3,0,0,0,0,0,0,0,0,0
+680,Ventisqueros,298,298,0,0,0,0,1,0,0,0,0
+681,"Pontificia Universidad Católica de valparaíso",2,2,0,0,0,0,0,0,0,0,0
+682,rald,2,2,0,0,0,0,0,0,0,0,0
+683,hertz,2,2,0,0,0,0,0,0,0,0,0
+684,"TIC UDP",2,2,0,0,0,0,0,0,0,0,0
+685,Educatese,2,2,0,0,0,0,0,0,0,0,0
+686,Efecto,2,2,0,0,0,0,0,0,0,0,0
+687,PreOnline,78,78,10,0,0,0,0,2,1,1,1
+688,Campero,74,73,0,0,0,0,0,0,0,0,0
+689,ServiEstado,2,2,0,0,0,0,0,0,0,0,0
+690,"Uninove ",2,2,0,0,0,0,0,0,0,0,0
+691,"congelar ",2,2,0,0,0,0,0,0,0,0,0
+693,lanixerp,2,2,0,0,0,0,0,0,0,0,0
+694,"TVN CREAR",10,10,0,0,0,2,0,0,0,2,0
+696,"Campus E-Learning ServiEstado",9,9,0,0,0,0,0,0,0,0,0
+697,"Deutsche Schule",2,2,0,0,0,0,0,0,0,0,0
+699,"Facultad de Ciencias físicas y matemática",2,2,0,0,0,0,0,0,0,0,0
+700,demostracion,2,2,0,0,0,0,0,0,0,0,0
+701,ICEL,2,2,0,0,0,0,0,0,0,0,0
+702,Estudiactivo,2,2,0,0,0,0,0,0,0,0,0
+703,"Águila mayor",2,2,0,0,0,0,0,0,0,0,0
+704,"Colegio Águila mayor",2,2,0,0,0,0,0,0,0,0,0
+705,"Colegio águila mayorr",2,2,0,0,0,0,0,0,0,0,0
+706,"Training Solutions",2,2,0,0,0,0,0,0,0,0,0
+707,"Puma Old",2,2,0,0,0,0,0,0,0,0,0
+708,Sodimac,24768,24768,4074,335,2885,0,3,2121,771,196,55
+709,"Campus Corporativo",28,28,2,22,1,0,0,22,1,0,1
+712,"Iniciactiva Comunicaciones",2,2,0,0,0,0,0,0,0,0,0
+713,"Penta vida",153,152,0,0,0,2,1,1,0,0,0
+714,"Universidad de Talca ",2,2,0,0,0,0,0,0,0,0,0
+715,Brandfit,400,400,95,70,0,0,0,54,4,1,1
+716,"Besalco Construcciones",302,302,1,22,0,3,18,24,3,4,18
+717,"ClassroomTV Otec",404,404,61,114,58,125,44,89,92,59,42
+719,Evoting,363,363,1,0,0,0,0,0,0,0,0
+720,Feel-Lab,3,3,0,0,0,0,0,1,0,0,0
+721,Resiter,2336,2336,6,2122,203,0,1,216,62,2,3
+722,Puma,3,3,0,0,0,0,0,0,0,0,0
+724,EDEChile,3,3,0,0,0,0,0,0,0,0,0
+727,ChilenaConsolidada,4928,4909,230,56,525,453,3343,1623,1697,727,670
+728,"BCI Seguros",1041,1041,137,724,177,1,1,21,163,3,3
+730,-,163,163,96,11,1,1,1,14,1,1,1
+731,Formación,249,249,238,0,1,0,0,4,0,0,0
+733,BiceVida,490,0,397,1,3,3,0,0,0,0,0
+735,Enlace,11,11,0,0,2,0,0,1,0,0,0
+736,Schot,374,374,48,321,1,0,0,274,93,10,8
+737,Affinity,2,2,0,0,0,0,0,1,0,0,1
+738,Aasa,166,166,55,31,2,34,0,12,3,29,1
+739,ACHS,191,191,0,0,0,0,0,1,2,0,1
+740,"Larrain y Salas",2,2,0,0,0,0,0,0,0,0,0
+741,"AFP Habitat",4037,4037,1,633,322,1476,1605,1135,2010,2002,1185
+742,enjoycoquimbo,150,150,0,0,0,0,0,1,0,0,0
+743,"Mas Errázuriz",2302,2302,3,161,15,29,2041,140,19,56,1564
+744,Esachs,138,138,1,0,0,0,0,1,0,0,0
+745,Airnguru,24,24,11,5,0,0,0,2,0,1,0
+746,Forus,16694,3628,113,9058,1218,1287,5018,1758,1996,1673,2403
+747,"ProVida Afp",1891,1891,984,899,2,4,2,625,6,1,1
+748,Comulsa,58,58,55,3,0,0,0,2,1,0,0
+749,Itau,684,684,674,10,0,0,0,88,10,0,1
+752,Chilquinta,1199,1199,84,471,181,175,288,250,254,231,247
+753,"Global Frozen",48,48,48,0,0,0,0,4,2,1,1
+756,"Salazar Israel",560,560,77,482,1,0,0,188,23,0,1
+757,Macal,171,171,19,130,21,0,1,129,6,1,2
+760,"Viña Concha y Toro",38,38,5,0,29,4,0,3,10,24,1
+761,Encuesta,1908,1906,16,300,427,1165,0,5,109,793,100
+762,Pensiones,82,82,25,43,10,2,2,31,7,3,3
+764,Cursos,333,333,0,0,0,0,333,5,1,0,149
+766,++Zepeda,70,70,67,1,0,0,2,7,2,0,2
+767,Conelsur,118,118,64,0,52,2,0,12,16,44,1
+768,"Travel Club",304,304,50,0,254,0,0,59,90,2,1
+769,"Andes Academy",591,591,36,550,1,4,0,463,71,9,2
+770,Faber-Castell,63,63,38,24,1,0,0,21,1,0,0
+772,Coagra,64,64,0,64,0,0,0,60,0,1,0
+773,Cambiaso,40,40,0,39,1,0,0,40,4,1,2
+774,Programadeingles,7,7,0,4,1,2,0,3,2,3,0
+775,av,4,4,0,2,0,2,0,3,3,0,4
+776,Enami,2088,2087,0,4,23,43,2018,3,854,984,1089
+777,redmegacentro,1276,1276,0,64,1212,0,0,142,112,6,1
+778,"Escuela Renca",53,53,0,53,0,0,0,31,9,0,1
+779,Cinepolis,542,542,0,542,0,0,0,250,30,8,5
+781,Humana,127,127,0,1,125,1,0,90,85,2,1
+782,confuturo,4608,4603,0,3,989,1662,1953,16,1713,1765,1201
+783,"Crawford Affinity",178,178,0,157,21,0,0,137,29,4,2
+784,acerosotero,3,3,0,2,1,0,0,1,0,1,0
+785,"Clinica Universidad de los Andes",3205,3205,0,0,333,389,2483,1,583,830,786
+786,AllNutrition,206,206,0,164,39,3,0,115,13,29,2
+788,"Compañías CIC",2796,2796,0,0,322,1983,491,1,397,672,409
+789,"Universidad Católica del Maule",290,290,0,169,118,3,0,0,53,32,0
+790,excon,51,51,0,14,37,0,0,0,30,0,0
+791,opex,2,2,0,2,0,0,0,0,2,0,1
+792,"Energia Casablanca",23,23,0,23,0,0,0,1,0,0,1
+793,Litoral,50,50,0,50,0,0,0,1,1,0,1
+794,"Luz Linares",53,53,0,53,0,0,0,0,2,0,0
+795,"Luz Parral",55,55,0,55,0,0,0,0,1,1,0
+797,"Universidad Finis Terrae",404,404,0,6,51,340,7,1,43,200,71
+798,"Confuturo Continuemos",10047,10047,0,0,3789,2769,3489,0,2603,2551,2178
+799,ISS,14466,14465,0,0,3016,11450,0,0,505,549,1
+800,CementosBSA,13,13,0,0,13,0,0,0,6,0,0
+801,liveit,558,558,0,1,34,523,0,0,264,3,2
+802,"Educacion Inclusiva",2,2,0,0,2,0,0,0,2,0,1
+804,"ISS Cursos",10,10,0,0,10,0,0,0,65,0,0
+805,"Escuela de Bienestar",6,6,0,0,4,2,0,0,1,2,1
+807,"Entrenamiento y Capacitación en Salud ",25379,15,0,0,3192,22178,9,0,10108,10381,129
+809,Help,795,795,0,0,697,98,0,0,144,78,8
+810,"Sociedad de Capacitacion Industrial SPA. OTEC INDUSCAP",883,883,0,0,141,636,106,0,8,291,208
+811,cermaq,189,189,0,0,188,1,0,0,174,17,0
+812,"Concha y Toro",426,426,0,0,426,0,0,0,360,3,0
+813,Hofmann,356,356,0,0,61,57,238,0,37,37,217
+814,"Reclutamiento Confuturo",4,4,0,0,4,0,0,0,2,0,1
+815,CMMSUR,7,7,0,0,7,0,0,0,5,0,0
+816,Watts,167,167,0,0,37,40,90,0,39,1,84
+817,Italmod,142,142,0,0,139,0,3,0,131,1,2
+818,"Metso ",46,46,0,0,26,20,0,0,25,15,0
+819,"PF Alimentos",30,30,0,0,30,0,0,0,26,4,0
+820,"El Volcán",27,27,0,0,6,20,1,0,7,20,1
+821,"Mutual de Seguridad",65,65,0,0,65,0,0,0,53,3,0
+823,AIEP,46,46,0,0,46,0,0,0,43,0,0
+824,"Empresas Otero",436,436,0,0,82,83,271,0,109,100,241
+825,"San Camilo",2031,2031,0,0,20,1443,568,0,73,1143,448
+826,"Plataforma Demostrativa ClassroomTV",232,231,0,0,0,13,219,0,2,37,138
+827,"Universidad Católica Cardenal Raúl Silva Henríquez",9,9,0,0,9,0,0,0,7,0,0
+828,Cencosudscotiabank,12,12,0,0,7,3,2,0,5,4,1
+829,"Fundación las Rosas",3813,3812,0,0,494,656,2663,0,1,985,675
+830,Reutiliza,6,6,0,0,6,0,0,0,1,1,0
+831,"TPA Arica",142,142,0,0,98,44,0,0,0,50,1
+832,newforus,5765,3273,0,0,0,1947,3818,0,0,149,259
+833,Bitumix,6,6,0,0,0,6,0,0,0,3,0
+834,AMCOR,2,2,0,0,0,2,0,0,0,2,0
+835,"Porsche Academy",541,541,0,0,0,22,519,0,0,152,151
+836,"Salinas y Fabres (Salfa)",642,642,0,0,0,406,236,0,0,223,172
+837,Tricot,4791,4791,0,0,0,3263,1528,0,0,1493,1499
+838,"Universidad Santo Tomás",5,5,0,0,0,5,0,0,0,4,0
+839,Softnet,3,3,0,0,0,3,0,0,0,3,1
+840,"Ohio National",29,29,0,0,0,29,0,0,0,27,1
+841,"Postal Chile",7,7,0,0,0,7,0,0,0,6,0
+842,Winko,110,110,0,0,0,95,15,0,0,29,11
+843,"Corporación de Capacitación de la Construcción",2,2,0,0,0,2,0,0,0,2,0
+844,asdasd,1,1,0,0,0,1,0,0,0,0,0
+845,"Inversiones Ultramar limitada",105,105,0,0,0,8,97,0,0,18,49
+846,"Fresenius Kabi (Lab. Sanderson)",19,19,0,0,0,19,0,0,0,17,2
+847,"Constructora Sigdo Koppers - Vial y Vives Limitada",2,2,0,0,0,2,0,0,0,2,0
+848,"BancoEstado Seguros ",27,27,0,0,0,27,0,0,0,23,2
+849,"Mecánica Vogt",111,111,0,0,0,17,94,0,0,48,90
+850,"Compañía de Cervecerías Unidas",13858,13857,0,0,0,78,13780,0,0,2,5967
+851,EBCO,21,21,0,0,0,19,2,0,0,8,5
+852,"Banco Internacional",50,50,0,0,0,48,2,0,0,8,4
+853,Migrante,63,63,0,0,0,63,0,0,0,14,1
+854,Dicarco,138,138,0,0,0,137,1,0,0,2,28
+856,Inchcape,2,2,0,0,0,2,0,0,0,1,0
+857,"Fen Universidad de Chile",7,7,0,0,0,7,0,0,0,0,1
+858,Caffarena,146,146,0,0,0,130,16,0,0,1,50
+859,MSC,38,38,0,0,0,38,0,0,0,0,20
+860,Gildemeister,30,30,0,0,0,30,0,0,0,0,8
+861,"Coca-Cola Andina",1,1,0,0,0,1,0,0,0,0,0
+862,"Uno Salud Dental",49,49,0,0,0,0,49,0,0,0,42
+863,Besalco,1,1,0,0,0,0,1,0,0,0,1
+864,xamansito,0,0,0,0,0,0,0,0,0,0,0
+865,pruebaadmin,9,9,0,0,0,0,9,0,0,0,4
+866,Coaniquem,2,2,0,0,0,0,2,0,0,0,2
+867,Ideal,8,8,0,0,0,0,8,0,0,0,7
+868,"Grupo Sat",2,2,0,0,0,0,2,0,0,0,1
+869,"Metso Chile",43,43,0,0,0,0,43,0,0,0,38
+870,Curifor,96,96,0,0,0,0,96,0,0,0,50
+871,Megafrio,47,47,0,0,0,0,47,0,0,0,38
+872,"Plataforma Demostrativa DEMO ARA",8,8,0,0,1,0,7,0,0,0,0
+873,Luval,2,2,0,0,0,0,2,0,0,0,2
+874,"Plataforma TEST Fabrica ",81,81,0,0,0,33,47,0,0,0,3
+875,CSM,14,14,0,0,0,0,14,0,0,0,3
+876,Eduardo,1,1,0,0,0,0,1,0,0,0,1
+877,"Demo Clientes",49,48,0,0,0,0,49,0,0,0,113
+878,Contenidos,3,3,0,0,0,0,3,0,0,0,3
+879,"Itau respaldo",67,67,63,3,0,0,1,0,0,0,0
+880,Umine,62,60,0,0,0,0,62,0,0,0,25
+881,"Enami Capacita Contratistas",2037,2037,0,0,0,0,2037,0,0,0,426
+882,adidas,100,100,0,0,0,0,100,0,0,0,86
+883,javello,1,1,0,0,0,0,1,0,0,0,0
+884,"Forja - Multi X",2641,2641,0,0,0,0,2641,0,0,0,32
+885,Carozzi,17,17,0,0,0,0,17,0,0,0,16
+886,"Facultad Medicina UChile",2,2,0,0,0,0,2,0,0,0,1
+887,Callsouth,23,23,0,0,0,0,23,0,0,0,21
+888,Vinilit,1,1,0,0,0,0,1,0,0,0,0
+889,"Agricola Sutil",2,2,0,0,0,0,2,0,0,0,2
+890,freemium,11,11,0,0,0,0,11,0,0,0,1
+892,"NTT Data",382,382,0,0,0,0,382,0,0,0,98
+893,"Anglo American",1,1,0,0,0,0,1,0,0,0,1
+894,"Prueba Free Pau",1,1,0,0,0,0,1,0,0,0,1
+895,Disal,3,3,0,0,0,0,3,0,0,0,3
+896,"Fundación Integra",10,10,0,0,0,0,10,0,0,0,8
+897,Aza,25,25,0,0,0,0,25,0,0,0,14
+898,"Constructora CVP",19,19,0,0,0,0,19,0,0,0,14
+899,"Grupo Los Lirios",1,1,0,0,0,0,1,0,0,0,0
+900,Lepanto,41,41,0,0,0,0,41,0,0,0,9
+901,Prosud,12,12,0,0,0,0,12,0,0,0,8
+902,"Gestor Inclusión",68,67,0,0,0,0,68,0,0,0,57
+903,branding,1,1,0,0,0,0,1,0,0,0,1
+904,"Enami capacita a la mineria",34,34,0,0,0,1,33,0,0,0,23
+905,Fleischmann,754,754,0,0,0,0,754,0,0,0,2
+906,Cerp,78,78,0,0,0,0,78,0,0,0,19
+908,Chiletransparente,4,4,0,0,0,0,4,0,0,0,1
+909,"IP Chile",1,1,0,0,0,0,1,0,0,0,0
+910,Metáfora,740,740,0,0,0,0,740,0,0,0,68
+911,"Compañía Minera del Pacifico",60,60,0,0,0,0,60,0,0,0,17
+912,"Fundación ConTrabajo",92,92,0,0,0,0,92,0,0,0,50
+914,Thyssenkrupp,70,70,0,0,0,0,70,0,0,0,56
+915,"Clinica Cumbre Dental",12,12,0,0,0,0,12,0,0,0,2
+916,CasaIdeas,1,1,0,0,0,0,1,0,0,0,1
+917,"Envases de Pacifico S.A (EDELPA)",367,367,0,0,0,0,367,0,0,0,1
+918,Americar,119,119,0,0,0,0,119,0,0,0,4
+920,"Parques de Chile",2,2,0,0,0,0,2,0,0,0,1
+921,starbucks,1,1,0,0,0,0,1,0,0,0,0
+922,QA-Enami,4,4,0,0,0,0,4,0,0,0,1
+923,Intelcia,52,52,0,0,0,0,52,0,0,0,1
+924,"Academia Fundación las Rosas",1,1,0,0,0,0,1,0,0,0,0
+925,dimak,35,35,0,0,0,0,35,0,0,0,0
