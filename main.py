@@ -42,8 +42,3 @@ if __name__ == "__main__":
         st.markdown(hide_bar, unsafe_allow_html=True)
 
 
-
-
-
-
-
