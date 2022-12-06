@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-from utils.functions import to_excel
+from utils.auxiliar_functions import to_excel
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -255,8 +255,8 @@ metrics_values = [
 
 # Dataframe con concentración de métricas
 metrics_data = []
-for i in range(len(metrics_keys)):
-    metrics_data.append([metrics_keys[i], metrics_values[i]])
+for index_metric in range(len(metrics_keys)):
+    metrics_data.append([metrics_keys[index_metric], metrics_values[index_metric]])
 
 metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
 
