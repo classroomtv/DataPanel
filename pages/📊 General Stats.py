@@ -206,7 +206,13 @@ with fourteenth_col:
     st.subheader(f"News Likes Count: {total_likes_count:,}")
 
 
+
 metrics_keys = [
+    "Total Institutions"
+    "Total Users",
+    "Active Users",
+    "Collaborator Users",
+    "Admin Users",
     "Created Programs",
     "Created Contents",
     "Created Courses",
@@ -224,6 +230,11 @@ metrics_keys = [
 ]
 
 metrics_values = [
+    total_institutions,
+    total_users,
+    total_active_users,
+    total_collaborator_users,
+    total_admin_users,
     total_programs_count,
     total_contents,
     total_created_tests_count,
@@ -241,7 +252,6 @@ metrics_values = [
 ]
 
 # Dataframe con concentración de métricas
-
 metrics_data = []
 for i in range(len(metrics_keys)):
     metrics_data.append([metrics_keys[i], metrics_values[i]])

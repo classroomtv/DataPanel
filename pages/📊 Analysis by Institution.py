@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
+from utils.functions import to_excel
 
 
 
@@ -198,6 +199,78 @@ with thirteenth_col:
     st.subheader(f"News Views: {total_new_views_count:,}")
 with fourteenth_col:
     st.subheader(f"News Likes Count: {total_likes_count:,}")
+
+
+metrics_keys = [
+    "Total Users",
+    "Active Users",
+    "Collaborator Users",
+    "Admin Users",
+    "Created Programs",
+    "Created Contents",
+    "Created Courses",
+    "Finished Courses",
+    "Comments Count",
+    "Created Tests",
+    "Created Questions",
+    "Answered Questions",
+    "Correct Answers",
+    "Incorrect Answers",
+    "Attemps Count",
+    "Created News",
+    "News Views",
+    "News Likes Count"
+]
+
+metrics_values = [
+    total_users,
+    total_active_users,
+    total_collaborator_users,
+    total_admin_users,
+    total_programs_count,
+    total_contents,
+    total_created_tests_count,
+    total_created_news_count,
+    total_created_questions,
+    total_courses_count,
+    total_finished_courses,
+    total_answered_questions_count,
+    total_correct_answers_count,
+    total_incorrect_answers_count,
+    total_likes_count,
+    total_new_views_count,
+    total_comments_count,
+    total_attempts_count
+]
+
+# Dataframe con concentración de métricas
+metrics_data = []
+for i in range(len(metrics_keys)):
+    metrics_data.append([metrics_keys[i], metrics_values[i]])
+
+metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
+
+col1, col2 = st.columns(2)
+# Botón de descarga en formato csv
+with col1:
+    st.download_button(
+                    "Download .csv",
+                    data=metrics_df.to_csv(index=False),
+                    file_name=f"metrics.csv",
+                    mime="text/csv",
+                    key='download-csv'
+                    )
+
+# Botón de descarga en formato excel
+with col2:
+    st.download_button(
+                    "Descargar (formato excel)",
+                    data = to_excel(metrics_df),
+                    file_name=f"metrics.xlsx",
+                    mime="application/vnd.ms-excel",
+                    key='download-excel'
+                    )
+
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
