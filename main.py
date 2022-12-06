@@ -30,7 +30,7 @@ usernames = ["pparker", "rmiller","bharath"]
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
     hashed_passwords = pickle.load(file)
-
+""" 
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
     "SIPL_dashboard", "abcdef")
 
@@ -42,32 +42,32 @@ if authentication_status == False:
 
 if authentication_status == None:
     st.warning("Please enter your username and password")
-    st.markdown(hide_bar, unsafe_allow_html=True)
+    st.markdown(hide_bar, unsafe_allow_html=True) """
 
 
-if authentication_status:
-    # # ---- SIDEBAR ----
-    st.title(":bar_chart: Sales Dashboard")
-    st.markdown("##")
+#if authentication_status:
+# # ---- SIDEBAR ----
+st.title(":bar_chart: Sales Dashboard")
+st.markdown("##")
 
-    ###about ....
-    st.subheader("Introduction :")
-    st.text("1. \n2. \n3. \n4. \n5. \n")
+###about ....
+st.subheader("Introduction :")
+st.text("1. \n2. \n3. \n4. \n5. \n")
 
-    st.sidebar.success("Select a page above.")
+st.sidebar.success("Select a page above.")
 
-    ###---- HIDE STREAMLIT STYLE ----
-    hide_st_style = """
-                <style>
-                #MainMenu {visibility: hidden;}
-                footer {visibility: hidden;}
-                header {visibility: hidden;}
-                </style>
-                """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+###---- HIDE STREAMLIT STYLE ----
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
-    authenticator.logout("Logout", "sidebar")
+#authenticator.logout("Logout", "sidebar")
 
 
 

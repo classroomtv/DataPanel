@@ -6,8 +6,7 @@ from pathlib import Path
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-
-
+from utils.functions import to_excel
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -65,7 +64,8 @@ with fourth_col:
 years = [2018, 2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios cargados 2018"].sum(),df_users_selection["Usuarios cargados 2019"].sum(), df_users_selection["Usuarios cargados 2020"].sum(), df_users_selection["Usuarios cargados 2021"].sum(),df_users_selection["Usuarios cargados 2022"].sum()]
 
-fig_users_by_city = px.bar(
+# Plot 1: Amount of users by year
+fig_users_by_year = px.bar(
     users_by_year,
     x=years ,
     y=users_by_year,
@@ -75,16 +75,18 @@ fig_users_by_city = px.bar(
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
 )
-fig_users_by_city.update_layout(
+fig_users_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
+
 
 #Users loggin
 years2 = [2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios con ingreso a plataforma 2019"].sum(),df_users_selection["Usuarios con ingreso a plataforma 2020"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2021"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2022"].sum()]
 
-fig_admin_by_city = px.bar(
+# Plot 2: Amount of admin users by year
+fig_admin_by_year = px.bar(
     users_by_year,
     x=years[1:] ,
     y=users_by_year,
@@ -94,57 +96,60 @@ fig_admin_by_city = px.bar(
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
 )
-fig_admin_by_city.update_layout(
+fig_admin_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
 
 left_column, right_column = st.columns(2)
 
-left_column.plotly_chart(fig_users_by_city, use_container_width=True)
-right_column.plotly_chart(fig_admin_by_city, use_container_width=True)
+left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+right_column.plotly_chart(fig_admin_by_year, use_container_width=True)
 #Collaborators Users by institution
-users_by_city = (
+users_by_institution = (
     df_selection.groupby(by=["name"]).sum()[["collaborator_users"]].sort_values(by="collaborator_users").tail(15)
 )
-fig_users_by_city = px.bar(
-    users_by_city,
+
+# Plot 3: Amount of users by institutions
+fig_users_by_institution = px.bar(
+    users_by_institution,
     x="collaborator_users",
-    y=users_by_city.index,
+    y=users_by_institution.index,
     orientation="h",
     title="<b>Collaborators Users by Institution</b>",
-    color_discrete_sequence=["#0083B8"] * len(users_by_city),
+    color_discrete_sequence=["#0083B8"] * len(users_by_institution),
     template="plotly_white",
 )
-fig_users_by_city.update_layout(
+fig_users_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
 
 #Admin by institution
-admin_by_city = (
+admin_by_institution = (
     df_selection.groupby(by=["name"]).sum()[["admin_users"]].sort_values(by="admin_users").tail(15)
 )
-fig_admin_by_city = px.bar(
-    admin_by_city,
+
+# Plot 4: Amount of admins by institutions
+fig_admin_by_institution = px.bar(
+    admin_by_institution,
     x="admin_users",
-    y=admin_by_city.index,
+    y=admin_by_institution.index,
     orientation="h",
     title="<b>Admin users by Institution</b>",
-    color_discrete_sequence=["#0083B8"] * len(admin_by_city),
+    color_discrete_sequence=["#0083B8"] * len(admin_by_institution),
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
 )
-fig_admin_by_city.update_layout(
+fig_admin_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
 
 left_column, right_column = st.columns(2)
 
-left_column.plotly_chart(fig_users_by_city, use_container_width=True)
-right_column.plotly_chart(fig_admin_by_city, use_container_width=True)
-
+left_column.plotly_chart(fig_users_by_institution, use_container_width=True)
+right_column.plotly_chart(fig_admin_by_institution, use_container_width=True)
 
 
 #Información de cursos
@@ -155,8 +160,8 @@ first_col,second_col, third_col, fourth_col, fifth_col = st.columns(5)
 sixth_col, seventh_col, eighth_col, ninth_col, tenth_col = st.columns(5)
 eleventh_col, twelth_col, thirteenth_col, fourteenth_col, fifteenth_col = st.columns(5)
 
-total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
 total_programs_count = int(df_selection["programs_count"].sum())
+total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
 total_created_tests_count = int(df_selection["created_tests_count"].sum())
 total_created_news_count = int(df_selection["created_news_count"].sum())
 total_created_questions = int(df_selection["created_questions"].sum())
@@ -174,7 +179,7 @@ total_attempts_count = int(df_selection["attempts_count"].sum())
 with first_col:
     st.subheader(f"Created Programs: {total_programs_count:,}")
 with second_col:
-    st.subheader(f"Created Contents: {total_contents:,}")
+    st.subheader(f"Created Programs: {total_contents:,}")
 with third_col:
     st.subheader(f"Created Courses: {total_courses_count:,}")
 with fourth_col:
@@ -201,7 +206,68 @@ with fourteenth_col:
     st.subheader(f"News Likes Count: {total_likes_count:,}")
 
 
+metrics_keys = [
+    "Created Programs",
+    "Created Contents",
+    "Created Courses",
+    "Finished Courses",
+    "Comments Count",
+    "Created Tests",
+    "Created Questions",
+    "Answered Questions",
+    "Correct Answers",
+    "Incorrect Answers",
+    "Attemps Count",
+    "Created News",
+    "News Views",
+    "News Likes Count"
+]
 
+metrics_values = [
+    total_programs_count,
+    total_contents,
+    total_created_tests_count,
+    total_created_news_count,
+    total_created_questions,
+    total_courses_count,
+    total_finished_courses,
+    total_answered_questions_count,
+    total_correct_answers_count,
+    total_incorrect_answers_count,
+    total_likes_count,
+    total_new_views_count,
+    total_comments_count,
+    total_attempts_count
+]
+
+# Dataframe con concentración de métricas
+
+metrics_data = []
+for i in range(len(metrics_keys)):
+    metrics_data.append([metrics_keys[i], metrics_values[i]])
+
+metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
+
+col1, col2 = st.columns(2)
+# Botón de descarga en formato csv
+with col1:
+    st.download_button(
+                    "Download .csv",
+                    data=metrics_df.to_csv(index=False),
+                    file_name=f"metrics.csv",
+                    mime="text/csv",
+                    key='download-csv'
+                    )
+
+# Botón de descarga en formato excel
+with col2:
+    st.download_button(
+                    "Descargar (formato excel)",
+                    data = to_excel(metrics_df),
+                    file_name=f"metrics.xlsx",
+                    mime="application/vnd.ms-excel",
+                    key='download-excel'
+                    )
 
 
 # ---- HIDE STREAMLIT STYLE ----
