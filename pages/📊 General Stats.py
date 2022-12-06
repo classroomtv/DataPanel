@@ -1,8 +1,5 @@
-#Vista de instituciones activas con datos como cant de usuarios a través del tiempo (totales, administradores)
-#Cantidad de noticias
 import pickle
 from pathlib import Path
-
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
@@ -47,7 +44,6 @@ total_users = int(df_users_selection["Usuarios totales"].sum())
 total_active_users = int(df_users_selection["Usuarios activos"].sum()) 
 total_collaborator_users = int(df_selection["collaborator_users"].sum()) 
 total_admin_users = int(df_selection["admin_users"].sum())
-
 
 
 first_col,second_col, third_col, fourth_col = st.columns(4)
