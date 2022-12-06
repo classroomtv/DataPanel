@@ -52,13 +52,14 @@ total_admin_users = int(df_selection["admin_users"].sum())
 first_col,second_col, third_col, fourth_col = st.columns(4)
 
 with first_col:
-    st.subheader(f"Total Users: {total_users:,}")
+    st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
 with second_col:
-    st.subheader(f"Active Users: {total_active_users:,}")
+    st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of users that had any activity during the year')
 with third_col:
-    st.subheader(f"Collaborators Users: {total_collaborator_users:,}")
+    st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
 with fourth_col:
-    st.subheader(f"Admin Users: {total_admin_users:,}")
+    st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admin users')
+
 
 #Users by year
 years = [2018, 2019, 2020, 2021, 2022]
@@ -149,11 +150,6 @@ right_column.plotly_chart(fig_admin_by_city, use_container_width=True)
 #Información de cursos
 st.markdown("""---""")
 
-
-first_col,second_col, third_col, fourth_col, fifth_col = st.columns(5)
-sixth_col, seventh_col, eighth_col, ninth_col, tenth_col = st.columns(5)
-eleventh_col, twelth_col, thirteenth_col, fourteenth_col, fifteenth_col = st.columns(5)
-
 total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
 total_programs_count = int(df_selection["programs_count"].sum())
 total_created_tests_count = int(df_selection["created_tests_count"].sum())
@@ -170,34 +166,46 @@ total_comments_count = int(df_selection["comments_count"].sum())
 total_attempts_count = int(df_selection["attempts_count"].sum())
 
 
-with first_col:
-    st.subheader(f"Created Programs: {total_programs_count:,}")
-with second_col:
-    st.subheader(f"Created Contents: {total_contents:,}")
-with third_col:
-    st.subheader(f"Created Courses: {total_courses_count:,}")
-with fourth_col:
-    st.subheader(f"Finished Courses: {total_finished_courses:,}")
-with fifth_col:
-    st.subheader(f"Comments Count: {total_comments_count:,}")
-with sixth_col:
-    st.subheader(f"Created Tests: {total_created_tests_count:,}")
-with seventh_col:
-    st.subheader(f"Created Questions: {total_created_questions:,}")
-with eighth_col:
-    st.subheader(f"Answered Questions: {total_answered_questions_count:,}")
-with ninth_col:
-    st.subheader(f"Correct Answers: {total_correct_answers_count:,}")
-with tenth_col:
-    st.subheader(f"Incorrect Answers: {total_incorrect_answers_count:,}")
-with eleventh_col:
-    st.subheader(f"Attempts Count: {total_attempts_count:,}")
-with twelth_col:
-    st.subheader(f"Created News: {total_created_news_count:,}")
-with thirteenth_col:
-    st.subheader(f"News Views: {total_new_views_count:,}")
-with fourteenth_col:
-    st.subheader(f"News Likes Count: {total_likes_count:,}")
+# Defining the grid to display the metrics
+rows = 3
+cols = 5
+
+column_list = []
+for row in range(rows):
+    column_list.extend(st.columns(cols))
+
+
+# Adding the metrics to the grid
+with column_list[0]:
+    st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
+with column_list[1]:
+    st.metric(label="Created Contents", value='{:,}'.format(total_contents).replace(',','.'), help='Total number of content items created')
+with column_list[2]:
+    st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
+with column_list[3]:
+    st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
+with column_list[4]:
+    st.metric(label="Comments Count", value='{:,}'.format(total_comments_count).replace(',','.'), help='Total number of content items created')
+with column_list[5]:
+    st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
+with column_list[6]:
+    st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
+with column_list[7]:
+    st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of content items created')
+with column_list[8]:
+    st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of content items created')
+with column_list[9]:
+    st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of content items created')
+with column_list[10]:
+    st.metric(label="Attempts Count", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of content items created')
+with column_list[11]:
+    st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of content items created')
+with column_list[12]:
+    st.metric(label="News Views", value='{:,}'.format(total_new_views_count).replace(',','.'), help='Total number of content items created')
+with column_list[13]:
+    st.metric(label="News Likes Count", value='{:,}'.format(total_likes_count).replace(',','.'), help='Total number of content items created')
+
+
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
