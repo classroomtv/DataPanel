@@ -4,3 +4,4 @@ plotly
 httpx-oauth
 python-dotenv
 typing-extensions
+openpyxl
