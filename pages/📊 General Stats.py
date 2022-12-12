@@ -1,9 +1,12 @@
-import pickle
-from pathlib import Path
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-from utils.auxiliar_functions import to_excel
+from utils.auxiliar_functions import to_excel, plotly_fig2array
+########## libraries for building the pdf reports
+from reportlab.pdfgen.canvas import Canvas
+from pdfrw import PdfReader
+from pdfrw.buildxobj import pagexobj
+from pdfrw.toreportlab import makerl
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -291,3 +294,41 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
+outfile = "reports/result.pdf"
+
+template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
+template_obj = pagexobj(template)
+
+canvas = Canvas(outfile)
+
+xobj_name = makerl(canvas, template_obj)
+canvas.doForm(xobj_name)
+
+#canvas.setFont(psfontname, size, leading = None)
+
+
+ystart = 0
+
+canvas.drawCentredString(297, 770, "All Institutions")
+canvas.drawCentredString(297, 652, '{:,}'.format(total_institutions).replace(',','.'))
+
+canvas.drawString(45, 565, '{:,}'.format(total_users).replace(',','.'))
+canvas.drawString(170, 567, '{:,}'.format(total_active_users).replace(',','.'))
+canvas.drawString(335, 565, '{:,}'.format(total_collaborator_users).replace(',','.'))
+canvas.drawString(490, 567, '{:,}'.format(total_admin_users).replace(',','.'))
+
+# Plots
+plot1 = plotly_fig2array(fig_users_by_year)
+plot2 = plotly_fig2array(fig_admin_by_year)
+plot3 = plotly_fig2array(fig_users_by_institution)
+plot4 = plotly_fig2array(fig_admin_by_institution)
+
+canvas.drawInlineImage(plot1, 45, 300, width=200, height=200)
+canvas.drawInlineImage(plot2, 350, 300, width=200, height=200)
+canvas.drawInlineImage(plot3, 45, 100, width=200, height=200)
+canvas.drawInlineImage(plot4, 350, 100, width=200, height=200)
+
+
+canvas.save()
