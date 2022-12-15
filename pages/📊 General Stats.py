@@ -349,5 +349,13 @@ for metric_index in range(1, len(non_user_metrics)):
     if metric_index%max_metrics_per_row == 0:
         non_user_metrics_height -= 35
 
+st.button(label='PDF', on_click=canvas.save())
 
-canvas.save()
+'''
+st.download_button(
+                "Download pdf",
+                data=canvas,
+                file_name=f"report.pdf",
+                mime="application/pdf",
+                )
+'''
