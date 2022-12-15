@@ -57,7 +57,7 @@ df_users_selection = users_df.query(
     "Cliente == @institution")
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: {} stadistics".format( institution))
+st.title(":bar_chart: {} statistics".format( institution))
 st.markdown("##")
 
 # TOP KPI's
@@ -199,7 +199,7 @@ with right_column:
     
 st.markdown("""---""")
 
-st.header("General stats resume")
+st.header("General stats summary")
 
 #Subjects information
 
