@@ -151,13 +151,22 @@ logs_date_range = (logs_selected_institution["fecha"] >= logs_start_date) & (log
 logged_users_df = logs_selected_institution.loc[logs_date_range]
 left_column, right_column = st.columns(2)
 
-with left_column:
-    date_users_df = logged_users_df[["fecha", "logged_users"]]
-    st.dataframe(date_users_df)
 
-with right_column:
-    fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
-    st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
+if len(logged_users_df.index) == 0:
+    st.markdown("##### There're no created users on this time period")
+
+if len(logged_users_df.index) == 1:
+    st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["created_admins"],logged_users_df.iloc[0]["fecha"]))
+
+
+if len(logged_users_df.index) > 1:
+    with left_column:
+        date_users_df = logged_users_df[["fecha", "logged_users"]]
+        st.dataframe(date_users_df)
+
+    with right_column:
+        fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
+        st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
 
 st.markdown("""---""")
 
@@ -174,11 +183,11 @@ users_created_df = users_created_selected_institution.loc[users_created_date_ran
 left_column, right_column = st.columns(2)
 
 if len(users_created_df.index) == 0:
-    "There're no created users on this time period"
+    st.markdown("##### There're no created users on this time period")
 
 if len(users_created_df.index) == 1:
-    users_created_df.iloc[0]
-    "There were {} users created on {}".format(users_created_df.iloc[0])
+    st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_admins"],users_created_df.iloc[0]["fecha"]))
+
 
 if len(users_created_df.index) > 1:
     with left_column:
@@ -203,11 +212,17 @@ admin_created_date_range = (admin_created_selected_institution["fecha"] >= users
 admin_created_df = admin_created_selected_institution.loc[admin_created_date_range]
 left_column, right_column = st.columns(2)
 
-with left_column:
-    date_users_df = admin_created_df[["fecha", "created_admins"]]
-    st.dataframe(date_users_df)
+if len(admin_created_df.index) == 0:
+    st.markdown("##### There're no created admin users on this time period")
 
-if len(date_users_df.index) > 1:
+if len(admin_created_df.index) == 1:
+    st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["fecha"]))
+
+if len(admin_created_df.index) > 1:
+    with left_column:
+        date_users_df = admin_created_df[["fecha", "created_admins"]]
+        st.dataframe(date_users_df)
+
     with right_column:
         fig_created_users = plt.plot(admin_created_df["fecha"], admin_created_df["created_admins"])
         st.line_chart(data = date_users_df, x="fecha", y="created_admins", use_container_width=True)
