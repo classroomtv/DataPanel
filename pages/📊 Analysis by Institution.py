@@ -165,6 +165,7 @@ if len(logged_users_df.index) > 1:
         st.dataframe(date_users_df)
 
     with right_column:
+        st.markdown("##### Quantity of logged users by date ")
         fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
         st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
 
@@ -181,12 +182,12 @@ users_created_selected_institution = users_created_by_date_df[users_created_by_d
 users_created_date_range = (users_created_selected_institution["fecha"] >= users_created_start_date) & (users_created_selected_institution["fecha"] <= users_created_end_date)
 users_created_df = users_created_selected_institution.loc[users_created_date_range]
 left_column, right_column = st.columns(2)
-
+users_created_df
 if len(users_created_df.index) == 0:
     st.markdown("##### There're no created users on this time period")
 
 if len(users_created_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_admins"],users_created_df.iloc[0]["fecha"]))
+    st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["fecha"]))
 
 
 if len(users_created_df.index) > 1:
@@ -195,6 +196,7 @@ if len(users_created_df.index) > 1:
         st.dataframe(date_users_df)
 
     with right_column:
+        st.markdown("##### Quantity of created users by date ")
         fig_created_users = plt.plot(users_created_df["fecha"], users_created_df["created_users"])
         st.line_chart(data = date_users_df, x="fecha", y="created_users", use_container_width=True)
 
@@ -224,6 +226,7 @@ if len(admin_created_df.index) > 1:
         st.dataframe(date_users_df)
 
     with right_column:
+        st.markdown("##### Quantity of created admin users by date ")
         fig_created_users = plt.plot(admin_created_df["fecha"], admin_created_df["created_admins"])
         st.line_chart(data = date_users_df, x="fecha", y="created_admins", use_container_width=True)
     
@@ -290,7 +293,7 @@ st.markdown("""---""")
 st.header("Course information by date")
 course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == str(df_institutions_selection.iloc[0]["id"])]
 
-course_views_range_dates = st.date_input("Select the date range for the course information", (min_date, max_date))
+course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
 course_views_start_date = np.datetime64(course_views_range_dates[0])
 course_views_end_date = pd.to_datetime("today")
 if len(course_views_range_dates)!=1:
@@ -298,13 +301,21 @@ if len(course_views_range_dates)!=1:
 course_views_date_range = (course_views_selected_institution["create_time"] >= course_views_start_date) & (course_views_selected_institution["create_time"] <= course_views_end_date)
 course_views_df = course_views_selected_institution.loc[course_views_date_range]
 left_column, right_column = st.columns(2)
+created_courses_by_date = course_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
 
-with left_column:
-    st.dataframe(course_views_df[["title","create_time", "update_time", "view_count"]].sort_values(by="create_time"))
 
-created_courses_by_date = df_course_selection.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
-if len(created_courses_by_date.index) > 1:
+if len(course_views_df.index) == 0:
+    st.markdown("##### There're no created courses on this time period")
+
+if len(course_views_df.index) == 1:
+    st.markdown("##### There were {} users created on {}".format(course_views_df.iloc[0]["created_admins"],course_views_df.iloc[0]["fecha"]))
+
+if len(course_views_df.index) > 1:
+    with left_column:
+        st.dataframe(course_views_df[["title","create_time", "update_time", "view_count"]].sort_values(by="create_time"))
+
     with right_column:
+        st.markdown("##### Courses created by date")
         fig_created_users = plt.plot(created_courses_by_date)
         st.line_chart(data = created_courses_by_date, use_container_width=True)
     
@@ -367,7 +378,6 @@ metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
 
 
 #News stats
-st.markdown("""---""")
 st.header("News institution stats")
 
 first_col, second_col, third_col, fourth_col = st.columns(4)
