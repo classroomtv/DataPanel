@@ -156,7 +156,7 @@ if len(logged_users_df.index) == 0:
     st.markdown("##### There're no created users on this time period")
 
 if len(logged_users_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["created_admins"],logged_users_df.iloc[0]["fecha"]))
+    st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["fecha"]))
 
 
 if len(logged_users_df.index) > 1:
