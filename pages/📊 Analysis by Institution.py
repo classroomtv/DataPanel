@@ -182,7 +182,7 @@ users_created_selected_institution = users_created_by_date_df[users_created_by_d
 users_created_date_range = (users_created_selected_institution["fecha"] >= users_created_start_date) & (users_created_selected_institution["fecha"] <= users_created_end_date)
 users_created_df = users_created_selected_institution.loc[users_created_date_range]
 left_column, right_column = st.columns(2)
-users_created_df
+
 if len(users_created_df.index) == 0:
     st.markdown("##### There're no created users on this time period")
 
