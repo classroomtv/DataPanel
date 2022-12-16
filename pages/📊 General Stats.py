@@ -2,12 +2,13 @@ import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 from utils.auxiliar_functions import to_excel, plotly_fig2array
+import os
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
-import os
+
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -296,26 +297,22 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-if not os.path.isdir("reports"):
-    os.makedirs("reports")
-
-outfile = "reports/result.pdf"
-
 template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
 template_obj = pagexobj(template)
 
-canvas = Canvas(outfile)
+canvas = Canvas('report')
 
 xobj_name = makerl(canvas, template_obj)
 canvas.doForm(xobj_name)
 
-#canvas.setFont(psfontname, size, leading = None)
+#canvas.setFont('psfontname', size, leading = None)
 
 
 ystart = 0
 
 # Title and institution count
 canvas.drawCentredString(297, 773, "All Institutions")
+canvas.drawCentredString(297, 676, "Number of Institutions")
 canvas.drawCentredString(297, 652, '{:,}'.format(total_institutions).replace(',','.'))
 
 # Users stats
@@ -352,13 +349,10 @@ for metric_index in range(1, len(non_user_metrics)):
     if metric_index%max_metrics_per_row == 0:
         non_user_metrics_height -= 35
 
-st.button(label='PDF', on_click=canvas.save())
 
-'''
 st.download_button(
-                "Download pdf",
-                data=canvas,
+                "Download Report (pdf)",
+                data=canvas.getpdfdata(),
                 file_name=f"report.pdf",
                 mime="application/pdf",
                 )
-'''

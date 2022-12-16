@@ -4,8 +4,13 @@ import streamlit as st  # pip install streamlit
 import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
-from utils.auxiliar_functions import to_excel
-
+from utils.auxiliar_functions import to_excel, plotly_fig2array
+import os
+########## libraries for building the pdf reports
+from reportlab.pdfgen.canvas import Canvas
+from pdfrw import PdfReader
+from pdfrw.buildxobj import pagexobj
+from pdfrw.toreportlab import makerl
 
 
 #Seleccionamos una institución, datos de la institución vs el tiempo, curvas de movimiento de usuarios, cursos, noticias.
@@ -85,7 +90,7 @@ with fourth_col:
 years = [2018, 2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios cargados 2018"].sum(),df_users_selection["Usuarios cargados 2019"].sum(), df_users_selection["Usuarios cargados 2020"].sum(), df_users_selection["Usuarios cargados 2021"].sum(),df_users_selection["Usuarios cargados 2022"].sum()]
 
-fig_users_by_city = px.bar(
+fig_users_by_year = px.bar(
     users_by_year,
     x=years ,
     y=users_by_year,
@@ -95,7 +100,7 @@ fig_users_by_city = px.bar(
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
 )
-fig_users_by_city.update_layout(
+fig_users_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
@@ -104,7 +109,7 @@ fig_users_by_city.update_layout(
 years2 = [2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios con ingreso a plataforma 2019"].sum(),df_users_selection["Usuarios con ingreso a plataforma 2020"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2021"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2022"].sum()]
 
-fig_admin_by_city = px.bar(
+fig_admins_by_year = px.bar(
     users_by_year,
     x=years[1:] ,
     y=users_by_year,
@@ -114,15 +119,15 @@ fig_admin_by_city = px.bar(
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
 )
-fig_admin_by_city.update_layout(
+fig_admins_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
 
 left_column, right_column = st.columns(2)
 
-left_column.plotly_chart(fig_users_by_city, use_container_width=True)
-right_column.plotly_chart(fig_admin_by_city, use_container_width=True)
+left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+right_column.plotly_chart(fig_admins_by_year, use_container_width=True)
 
 
 #Filter by date
@@ -341,3 +346,58 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
+template_obj = pagexobj(template)
+
+canvas = Canvas('report')
+
+xobj_name = makerl(canvas, template_obj)
+canvas.doForm(xobj_name)
+
+#canvas.setFont('psfontname', size, leading = None)
+
+
+ystart = 0
+
+# Title and institution count
+canvas.drawCentredString(297, 773, f"{institution}")
+
+# Users stats
+canvas.drawString(45, 565, '{:,}'.format(total_users).replace(',','.'))
+canvas.drawString(170, 567, '{:,}'.format(total_active_users).replace(',','.'))
+canvas.drawString(335, 565, '{:,}'.format(total_collaborator_users).replace(',','.'))
+canvas.drawString(490, 567, '{:,}'.format(total_admin_users).replace(',','.'))
+
+# Plots
+plot1 = plotly_fig2array(fig_users_by_year)
+plot2 = plotly_fig2array(fig_admins_by_year)
+
+plot_w = 120
+plot_h = 120
+canvas.drawInlineImage(plot1, 45, 400, width=plot_w, height=plot_h)
+canvas.drawInlineImage(plot2, 45 + plot_w + 10, 400, width=plot_w, height=plot_h)
+
+# Metrics
+non_user_metrics = metrics_values[4:]
+non_user_metrics_keys = metrics_keys[4:]
+
+max_metrics_per_row = 4
+non_user_metrics_width = 120
+non_user_metrics_height = 300
+for metric_index in range(1, len(non_user_metrics)):
+    metric_name = non_user_metrics_keys[metric_index]
+    metric = non_user_metrics[metric_index]
+    canvas.drawString(45 + (non_user_metrics_width*(metric_index%max_metrics_per_row)), non_user_metrics_height + 14, metric_name)
+    canvas.drawString(45 + (non_user_metrics_width*(metric_index%max_metrics_per_row)), non_user_metrics_height, '{:,}'.format(metric).replace(',','.'))
+    if metric_index%max_metrics_per_row == 0:
+        non_user_metrics_height -= 35
+
+
+st.download_button(
+                "Download Report (pdf)",
+                data=canvas.getpdfdata(),
+                file_name=f"report_{institution}.pdf",
+                mime="application/pdf",
+                )
+
