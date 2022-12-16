@@ -63,7 +63,7 @@ df_course_selection = courses_info_df.query(
     "name == @institution")
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: {} stadistics".format( institution))
+st.title(":bar_chart: {} statistics".format( institution))
 st.markdown("##")
 
 # TOP KPI's
@@ -229,7 +229,7 @@ if len(admin_created_df.index) > 1:
     
 st.markdown("""---""")
 
-st.header("Courses stats resume")
+st.header("General stats summary")
 
 #Subjects information
 

@@ -1,9 +1,13 @@
-import pickle
-from pathlib import Path
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-from utils.auxiliar_functions import to_excel
+from utils.auxiliar_functions import to_excel, plotly_fig2array
+########## libraries for building the pdf reports
+from reportlab.pdfgen.canvas import Canvas
+from pdfrw import PdfReader
+from pdfrw.buildxobj import pagexobj
+from pdfrw.toreportlab import makerl
+import os
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -257,7 +261,7 @@ left_column.plotly_chart(fig_created_courses_by_institution, use_container_width
 right_column.plotly_chart(fig_courses_view_by_institution, use_container_width=True)
 
 metrics_keys = [
-    "Total Institutions"
+    "Total Institutions",
     "Total Users",
     "Active Users",
     "Collaborator Users",
@@ -356,3 +360,70 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+if not os.path.isdir("reports"):
+    os.makedirs("reports")
+
+outfile = "reports/result.pdf"
+
+template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
+template_obj = pagexobj(template)
+
+canvas = Canvas(outfile)
+
+xobj_name = makerl(canvas, template_obj)
+canvas.doForm(xobj_name)
+
+#canvas.setFont(psfontname, size, leading = None)
+
+
+ystart = 0
+
+# Title and institution count
+canvas.drawCentredString(297, 773, "All Institutions")
+canvas.drawCentredString(297, 652, '{:,}'.format(total_institutions).replace(',','.'))
+
+# Users stats
+canvas.drawString(45, 565, '{:,}'.format(total_users).replace(',','.'))
+canvas.drawString(170, 567, '{:,}'.format(total_active_users).replace(',','.'))
+canvas.drawString(335, 565, '{:,}'.format(total_collaborator_users).replace(',','.'))
+canvas.drawString(490, 567, '{:,}'.format(total_admin_users).replace(',','.'))
+
+# Plots
+plot1 = plotly_fig2array(fig_users_by_year)
+plot2 = plotly_fig2array(fig_admin_by_year)
+plot3 = plotly_fig2array(fig_users_by_institution)
+plot4 = plotly_fig2array(fig_admin_by_institution)
+
+plot_w = 120
+plot_h = 120
+canvas.drawInlineImage(plot1, 45, 400, width=plot_w, height=plot_h)
+canvas.drawInlineImage(plot2, 45 + plot_w + 10, 400, width=plot_w, height=plot_h)
+canvas.drawInlineImage(plot3, 45 + 2*plot_w + 20, 400, width=plot_w, height=plot_h)
+canvas.drawInlineImage(plot4, 45 + 3*plot_w + 30, 400, width=plot_w, height=plot_h)
+
+# Metrics
+non_user_metrics = metrics_values[4:]
+non_user_metrics_keys = metrics_keys[4:]
+
+max_metrics_per_row = 4
+non_user_metrics_width = 120
+non_user_metrics_height = 300
+for metric_index in range(1, len(non_user_metrics)):
+    metric_name = non_user_metrics_keys[metric_index]
+    metric = non_user_metrics[metric_index]
+    canvas.drawString(45 + (non_user_metrics_width*(metric_index%max_metrics_per_row)), non_user_metrics_height + 14, metric_name)
+    canvas.drawString(45 + (non_user_metrics_width*(metric_index%max_metrics_per_row)), non_user_metrics_height, '{:,}'.format(metric).replace(',','.'))
+    if metric_index%max_metrics_per_row == 0:
+        non_user_metrics_height -= 35
+
+st.button(label='PDF', on_click=canvas.save())
+
+'''
+st.download_button(
+                "Download pdf",
+                data=canvas,
+                file_name=f"report.pdf",
+                mime="application/pdf",
+                )
+'''
