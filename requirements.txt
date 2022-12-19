@@ -7,3 +7,4 @@ typing-extensions
 pdfrw
 reportlab
 openpyxl
+kaleido
