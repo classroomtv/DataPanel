@@ -2,18 +2,21 @@ import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 from utils.auxiliar_functions import to_excel, plotly_fig2array
+import os
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
-import os
+
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
 
-df = pd.read_csv("pages/Database/institutions.csv" )
+institutions_df = pd.read_csv("pages/Database/institutions.csv" )
 users_df = pd.read_csv("pages/Database/users_by_date.csv" )
+courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
+ 
 
 # ---- SIDEBAR ----
 # authenticator.logout("Logout", "sidebar")
@@ -24,16 +27,18 @@ st.sidebar.header("Please Filter Here:")
 
 institution = st.sidebar.multiselect(
     "Select the institutions:",
-    options=df[df["collaborator_users"]>=3]["name"].unique(),
-    default=df[df["collaborator_users"]>=3]["name"].unique(),
+    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
+    default=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
 )
 
 
-df_selection = df.query(
+df_selection = institutions_df.query(
     "name == @institution")
 df_users_selection = users_df.query(
     "Cliente == @institution")
 
+df_course_selection = courses_info_df.query(
+    "name == @institution")
 # ---- MAINPAGE ----
 total_institutions = int(df_selection.shape[0])
 
@@ -43,6 +48,8 @@ st.markdown("""---""")
 st.markdown("##")
 
 # TOP KPI's
+st.header("Users general stats")
+
 total_users = int(df_users_selection["Usuarios totales"].sum()) 
 total_active_users = int(df_users_selection["Usuarios activos"].sum()) 
 total_collaborator_users = int(df_selection["collaborator_users"].sum()) 
@@ -108,6 +115,7 @@ left_column, right_column = st.columns(2)
 
 left_column.plotly_chart(fig_users_by_year, use_container_width=True)
 right_column.plotly_chart(fig_admin_by_year, use_container_width=True)
+
 #Collaborators Users by institution
 users_by_institution = (
     df_selection.groupby(by=["name"]).sum()[["collaborator_users"]].sort_values(by="collaborator_users").tail(15)
@@ -155,8 +163,10 @@ left_column.plotly_chart(fig_users_by_institution, use_container_width=True)
 right_column.plotly_chart(fig_admin_by_institution, use_container_width=True)
 
 
-#Información de cursos
+#Courses information
 st.markdown("""---""")
+st.header("Courses general stats")
+
 
 total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
 total_programs_count = int(df_selection["programs_count"].sum())
@@ -172,8 +182,10 @@ total_likes_count = int(df_selection["likes_count"].sum())
 total_new_views_count = int(df_selection["new_views_count"].sum())
 total_comments_count = int(df_selection["comments_count"].sum())
 total_attempts_count = int(df_selection["attempts_count"].sum())
+total_courses_views_count = int(df_course_selection["view_count"].sum())
 
 # Defining the grid to display the metrics
+
 rows = 3
 cols = 5
 
@@ -191,7 +203,7 @@ with column_list[2]:
 with column_list[3]:
     st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
 with column_list[4]:
-    st.metric(label="Comments Count", value='{:,}'.format(total_comments_count).replace(',','.'), help='Total number of content items created')
+    st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
 with column_list[5]:
     st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
 with column_list[6]:
@@ -204,14 +216,50 @@ with column_list[9]:
     st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of content items created')
 with column_list[10]:
     st.metric(label="Attempts Count", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of content items created')
-with column_list[11]:
-    st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of content items created')
-with column_list[12]:
-    st.metric(label="News Views", value='{:,}'.format(total_new_views_count).replace(',','.'), help='Total number of content items created')
-with column_list[13]:
-    st.metric(label="News Likes Count", value='{:,}'.format(total_likes_count).replace(',','.'), help='Total number of content items created')
 
 
+created_courses_by_date = (
+    df_course_selection.groupby(by=["name"]).agg("count")[["id"]].sort_values(by="id").tail(15)
+)
+
+fig_created_courses_by_institution = px.bar(
+    created_courses_by_date,
+    x="id",
+    y=created_courses_by_date.index,
+    orientation="h",
+    title="<b>Created courses by Institution</b>",
+    color_discrete_sequence=["#0083B8"] * len(created_courses_by_date),
+    template="plotly_white",
+)
+fig_created_courses_by_institution.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False)),
+)
+
+
+
+courses_views_by_institution = (
+    df_course_selection.groupby(by=["name"]).sum()[["view_count"]].sort_values(by="view_count").tail(15)
+)
+
+fig_courses_view_by_institution = px.bar(
+    courses_views_by_institution,
+    x="view_count",
+    y=courses_views_by_institution.index,
+    orientation="h",
+    title="<b>Courses views count by Institution</b>",
+    color_discrete_sequence=["#0083B8"] * len(courses_views_by_institution),
+    template="plotly_white",
+)
+fig_courses_view_by_institution.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False)),
+)
+
+left_column, right_column = st.columns(2)
+
+left_column.plotly_chart(fig_created_courses_by_institution, use_container_width=True)
+right_column.plotly_chart(fig_courses_view_by_institution, use_container_width=True)
 
 metrics_keys = [
     "Total Institutions",
@@ -222,6 +270,7 @@ metrics_keys = [
     "Created Programs",
     "Created Contents",
     "Created Courses",
+    "Courses views",
     "Finished Courses",
     "Comments Count",
     "Created Tests",
@@ -247,6 +296,7 @@ metrics_values = [
     total_created_news_count,
     total_created_questions,
     total_courses_count,
+    total_courses_views_count,
     total_finished_courses,
     total_answered_questions_count,
     total_correct_answers_count,
@@ -256,6 +306,22 @@ metrics_values = [
     total_comments_count,
     total_attempts_count
 ]
+
+#News stats
+st.markdown("""---""")
+st.header("News general stats")
+
+first_col, second_col, third_col, fourth_col = st.columns(4)
+
+with first_col:
+    st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of content items created')
+with second_col:
+    st.metric(label="News Views", value='{:,}'.format(total_new_views_count).replace(',','.'), help='Total number of content items created')
+with third_col:
+    st.metric(label="News Likes Count", value='{:,}'.format(total_likes_count).replace(',','.'), help='Total number of content items created')
+with fourth_col:
+    st.metric(label="Comments Count", value='{:,}'.format(total_comments_count).replace(',','.'), help='Total number of content items created')
+
 
 # Dataframe con concentración de métricas
 metrics_data = []
@@ -296,26 +362,22 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-if not os.path.isdir("reports"):
-    os.makedirs("reports")
-
-outfile = "reports/result.pdf"
-
 template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
 template_obj = pagexobj(template)
 
-canvas = Canvas(outfile)
+canvas = Canvas('report')
 
 xobj_name = makerl(canvas, template_obj)
 canvas.doForm(xobj_name)
 
-#canvas.setFont(psfontname, size, leading = None)
+#canvas.setFont('psfontname', size, leading = None)
 
 
 ystart = 0
 
 # Title and institution count
 canvas.drawCentredString(297, 773, "All Institutions")
+canvas.drawCentredString(297, 676, "Number of Institutions")
 canvas.drawCentredString(297, 652, '{:,}'.format(total_institutions).replace(',','.'))
 
 # Users stats
@@ -352,13 +414,10 @@ for metric_index in range(1, len(non_user_metrics)):
     if metric_index%max_metrics_per_row == 0:
         non_user_metrics_height -= 35
 
-st.button(label='PDF', on_click=canvas.save())
 
-'''
 st.download_button(
-                "Download pdf",
-                data=canvas,
+                "Download Report (pdf)",
+                data=canvas.getpdfdata(),
                 file_name=f"report.pdf",
                 mime="application/pdf",
                 )
-'''
