@@ -1,6 +1,7 @@
 import pandas as pd
 from io import BytesIO
 from PIL import Image
+import datetime
 
 def to_excel(df):
     output = BytesIO()
@@ -16,3 +17,6 @@ def plotly_fig2array(fig):
     buf = BytesIO(fig_bytes)
     img = Image.open(buf)
     return img
+
+def get_year_range(start_year, end_year=datetime.date.today().year):
+    return [year for year in range(start_year, end_year+1)]
