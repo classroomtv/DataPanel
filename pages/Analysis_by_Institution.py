@@ -4,8 +4,8 @@ import streamlit as st  # pip install streamlit
 import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
-from utils.auxiliar_functions import to_excel, plotly_fig2array
-import os
+from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, hide_page
+from streamlit_google_oauth import logout_button
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
@@ -49,7 +49,14 @@ courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], 
 
 
 # ---- SIDEBAR ----
-# authenticator.logout("Logout", "sidebar")
+if "client" in st.session_state:
+    hide_page('main')
+    with st.sidebar:
+        logout_button('Logout')
+else:
+    st.experimental_rerun()
+    nav_page('')
+
 name='bharath'
 st.sidebar.title(f"Welcome {name}")
 

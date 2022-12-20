@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import asyncio
 from httpx_oauth.clients.google import GoogleOAuth2
+from utils.auxiliar_functions import nav_page
 
 __version__ = '0.1'
 
@@ -28,17 +29,21 @@ async def revoke_token(client, token):
     return await client.revoke_token(token)
 
 
-def login_button(authorization_url, button_text):
-    st.write(
-        f"""
-    <div align="right"> <a target="_self" href="{authorization_url}">
-        <button>
-            {button_text}
-        </button>
-    </a></div>
-    """,
-        unsafe_allow_html=True,
-    )
+def login_button(authorization_url, app_name, app_desc):
+    st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">''',
+    unsafe_allow_html=True)
+
+    container = f'''
+    <div class="container-fluid border py-4 px-4 border-primary">
+        <h5><strong>{app_name}</strong></h5>
+        <p>{app_desc}</p>
+        <a target="_self" href="{authorization_url}">
+            <img class="img-fluid" src="https://i.imgur.com/YTxsnUl.png" alt="streamlit">
+        </a>
+    </div>
+    '''
+    st.markdown(container, unsafe_allow_html=True)
 
 
 def logout_button(button_text="Logout"):
@@ -53,6 +58,7 @@ def logout_button(button_text="Logout"):
         st.session_state.user_id = None
         st.session_state.token = None
         st.experimental_rerun()
+        nav_page('')
 
 
 def login(
@@ -75,7 +81,7 @@ def login(
         try:
             code = st.experimental_get_query_params()["code"]
         except:
-            login_button(authorization_url, login_button_text)
+            login_button(authorization_url, login_button_text, '')
         else:
             # Verify token is correct:
             try:
@@ -87,7 +93,7 @@ def login(
                     )
                 )
             except:
-                login_button(authorization_url, login_button_text)
+                login_button(authorization_url, login_button_text, '')
             else:
                 # Check if token has expired:
                 if token.is_expired():
@@ -99,8 +105,10 @@ def login(
                             client=st.session_state.client, token=token["access_token"]
                         )
                     )
-                    logout_button(button_text=logout_button_text)
+                    with st.sidebar:
+                        logout_button(button_text=logout_button_text)
                     return (st.session_state.user_id, st.session_state.user_email)
     else:
-        logout_button(button_text=logout_button_text)
+        with st.sidebar:
+            logout_button(button_text=logout_button_text)
         return (st.session_state.user_id, st.session_state.user_email)

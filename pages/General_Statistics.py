@@ -1,17 +1,13 @@
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-from utils.auxiliar_functions import to_excel, plotly_fig2array, get_year_range
-import os
+from utils.auxiliar_functions import to_excel, plotly_fig2array, get_year_range, hide_page, nav_page
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
-
-
-# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
+from streamlit_google_oauth import logout_button
 
 ### Data loading
 institutions_df = pd.read_csv("pages/Database/institutions.csv" )
@@ -19,15 +15,23 @@ users_df = pd.read_csv("pages/Database/users_by_date.csv" )
 courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
 
 
+# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
+
 # ---- SIDEBAR ----
-# authenticator.logout("Logout", "sidebar")
+if "client" in st.session_state:
+    hide_page('main')
+    with st.sidebar:
+        logout_button('Logout')
+else:
+    nav_page('')
+
 name = 'bharath'
 st.sidebar.title(f"Welcome {name}")
-st.sidebar.header("Please Filter Here:")
 
 # Selecting institution
 institution = st.sidebar.multiselect(
-    "Select the institutions:",
+    "Select the institutions to show:",
     options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
     default=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
 )
@@ -39,6 +43,9 @@ df_users_selection = users_df.query(
     "Cliente == @institution")
 df_course_selection = courses_info_df.query(
     "name == @institution")
+
+# Total number of institutions
+total_institutions = int(df_selection.shape[0])
 
 year_list = get_year_range(2018)
 # Users by year
@@ -78,8 +85,6 @@ courses_views_by_institution = (
 
 
 # ---- MAINPAGE ----
-total_institutions = int(df_selection.shape[0])
-
 st.title(":bar_chart: General Institutions Stats")
 st.metric(label="Total Institutions", value='{:,}'.format(total_institutions).replace(',','.'), help='Total number of institutions with at least 3 users')
 st.markdown("""---""")
@@ -376,7 +381,6 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
 
 ### PDF report generation
 template = PdfReader("assets/template_report.pdf", decompress=False).pages[0]
