@@ -49,13 +49,15 @@ courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], 
 
 
 # ---- SIDEBAR ----
-if "client" in st.session_state:
-    hide_page('main')
-    with st.sidebar:
-        logout_button('Logout')
+if "user_email" in st.session_state:
+    if st.session_state.user_email is not None:
+        #hide_page('main')
+        with st.sidebar:
+            logout_button('Logout')
+    else:
+        nav_page('')
 else:
-    # nav_page('main')
-    pass
+    nav_page('')
 
 name='bharath'
 st.sidebar.title(f"Welcome {name}")
