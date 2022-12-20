@@ -41,7 +41,7 @@ def hide_page(name: str):
 
     for key, val in current_pages.items():
         if val["page_name"] == name:
-            del current_pages[key]
+            current_pages[key]["page_name"] = ''
             _on_pages_changed.send()
             break
 
