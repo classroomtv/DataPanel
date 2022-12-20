@@ -9,16 +9,9 @@ from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
 from streamlit_google_oauth import logout_button
 
-### Data loading
-institutions_df = pd.read_csv("pages/Database/institutions.csv" )
-users_df = pd.read_csv("pages/Database/users_by_date.csv" )
-courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
 
-print(f'session state:\n\n {st.session_state}')
-# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
-
-# ---- SIDEBAR ----
+# Load page only if logged in
 if "user_email" in st.session_state:
     if st.session_state.user_email is not None:
         hide_page('main')
@@ -28,6 +21,15 @@ if "user_email" in st.session_state:
         nav_page('')
 else:
     nav_page('')
+
+### Data loading
+institutions_df = pd.read_csv("pages/Database/institutions.csv" )
+users_df = pd.read_csv("pages/Database/users_by_date.csv" )
+courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
+
+# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+
+# ---- SIDEBAR ----
 
 name = 'bharath'
 st.sidebar.title(f"Welcome {name}")

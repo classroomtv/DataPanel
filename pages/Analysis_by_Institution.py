@@ -13,9 +13,20 @@ from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
 
 
-#Seleccionamos una institución, datos de la institución vs el tiempo, curvas de movimiento de usuarios, cursos, noticias.
 st.set_page_config(page_title="Stats by Institution", page_icon=":bar_chart:", layout="wide")
 
+# Load page only if logged in
+if "user_email" in st.session_state:
+    if st.session_state.user_email is not None:
+        #hide_page('main')
+        with st.sidebar:
+            logout_button('Logout')
+    else:
+        nav_page('')
+else:
+    nav_page('')
+
+#Seleccionamos una institución, datos de la institución vs el tiempo, curvas de movimiento de usuarios, cursos, noticias.
 st.markdown(
     """
     <style>
@@ -49,16 +60,6 @@ courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], 
 
 
 # ---- SIDEBAR ----
-if "user_email" in st.session_state:
-    if st.session_state.user_email is not None:
-        #hide_page('main')
-        with st.sidebar:
-            logout_button('Logout')
-    else:
-        nav_page('')
-else:
-    nav_page('')
-
 name='bharath'
 st.sidebar.title(f"Welcome {name}")
 
@@ -88,20 +89,21 @@ total_collaborator_users = int(df_institutions_selection["collaborator_users"].s
 total_admin_users = int(df_institutions_selection["admin_users"].sum())
 
 
+# Defining the grid to display the users metrics
+users_metric_grid = []
+for row in range(1):
+    users_metric_grid.extend(st.columns(4))
 
-first_col,second_col, third_col, fourth_col = st.columns(4)
-
-with first_col:
+with users_metric_grid[0]:
     st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
-with second_col:
-    st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of users that had any activity during the last year')
-with third_col:
+with users_metric_grid[1]:
+    st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
+with users_metric_grid[2]:
     st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
-with fourth_col:
-    st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admin users')
+with users_metric_grid[3]:
+    st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
 
-
-#Users by year
+# Users by year
 years = [2018, 2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios cargados 2018"].sum(),df_users_selection["Usuarios cargados 2019"].sum(), df_users_selection["Usuarios cargados 2020"].sum(), df_users_selection["Usuarios cargados 2021"].sum(),df_users_selection["Usuarios cargados 2022"].sum()]
 
