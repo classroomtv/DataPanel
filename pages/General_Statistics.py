@@ -14,7 +14,7 @@ institutions_df = pd.read_csv("pages/Database/institutions.csv" )
 users_df = pd.read_csv("pages/Database/users_by_date.csv" )
 courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
 
-
+print(f'session state:\n\n {st.session_state}')
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
 
@@ -24,7 +24,8 @@ if "client" in st.session_state:
     with st.sidebar:
         logout_button('Logout')
 else:
-    nav_page('')
+    # nav_page('')
+    pass
 
 name = 'bharath'
 st.sidebar.title(f"Welcome {name}")
@@ -87,8 +88,6 @@ courses_views_by_institution = (
 # ---- MAINPAGE ----
 st.title(":bar_chart: General Institutions Stats")
 st.metric(label="Total Institutions", value='{:,}'.format(total_institutions).replace(',','.'), help='Total number of institutions with at least 3 users')
-st.markdown("""---""")
-st.markdown("##")
 
 ### Top Metrics
 # Metrics for users

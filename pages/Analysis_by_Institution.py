@@ -54,8 +54,8 @@ if "client" in st.session_state:
     with st.sidebar:
         logout_button('Logout')
 else:
-    st.experimental_rerun()
-    nav_page('')
+    # nav_page('main')
+    pass
 
 name='bharath'
 st.sidebar.title(f"Welcome {name}")
