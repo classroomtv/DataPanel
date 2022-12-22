@@ -8,3 +8,7 @@ pdfrw
 reportlab
 openpyxl
 kaleido
+boto3
+dotenv
+mysql.connector
+os

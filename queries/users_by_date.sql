@@ -4,20 +4,20 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubia
+            prod_classroomtv.ctv_user_belongs_institution ubia
         WHERE
             ubia.institution_id = ci.id) AS 'Usuarios totales',
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubib
+            prod_classroomtv.ctv_user_belongs_institution ubib
         WHERE
             ubib.institution_id = ci.id
                 AND ubib.active = 1) AS 'Usuarios activos',
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubic
+            prod_classroomtv.ctv_user_belongs_institution ubic
         WHERE
             ubic.institution_id = ci.id
                 AND ubic.create_time >= 1514775599
@@ -25,7 +25,7 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubic
+            prod_classroomtv.ctv_user_belongs_institution ubic
         WHERE
             ubic.institution_id = ci.id
                 AND ubic.create_time >= 1546311599
@@ -33,7 +33,7 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubic
+            prod_classroomtv.ctv_user_belongs_institution ubic
         WHERE
             ubic.institution_id = ci.id
                 AND ubic.create_time >= 1577847599
@@ -41,7 +41,7 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubic
+            prod_classroomtv.ctv_user_belongs_institution ubic
         WHERE
             ubic.institution_id = ci.id
                 AND ubic.create_time >= 1609469999
@@ -49,7 +49,7 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            ctv_user_belongs_institution ubic
+            prod_classroomtv.ctv_user_belongs_institution ubic
         WHERE
             ubic.institution_id = ci.id
                 AND ubic.create_time >= 1641006000) AS 'Usuarios cargados 2022',
@@ -427,4 +427,4 @@ SELECT
         WHERE
             institution_id = ci.id) AS 'Usuarios con ingreso a plataforma 2022'
 FROM
-    ctv_institutions ci
+    prod_classroomtv.ctv_institutions ci
