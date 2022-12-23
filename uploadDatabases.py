@@ -1,4 +1,5 @@
 import boto3
+import os
 from dotenv import load_dotenv
 from os import walk
 

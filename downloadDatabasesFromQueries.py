@@ -15,7 +15,7 @@ port_num = os.environ.get('DB_PORT')
 
 def extract_data_to_csv(path_to_queries, path_to_save_files):    
     try:
-        connection = mysql.connector.connect(host=host,port= port_num, user=user_name,ssl_disabled= True,password=password)
+        connection = mysql.connector.connect(host=host,port= port_num, user=user_name,password=password)
         if connection.is_connected():
             db_Info = connection.get_server_info()
             print("Connected to MySQL database... MySQL Server version on ", db_Info)
