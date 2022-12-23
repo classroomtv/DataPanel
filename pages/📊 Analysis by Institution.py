@@ -55,7 +55,8 @@ st.sidebar.title(f"Welcome {name}")
 
 institution = st.sidebar.selectbox(
     "Select an institution:",
-    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),)
+    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
+    default=institutions_df[institutions_df["name"]=="Forus"])
 
 
 df_institutions_selection = institutions_df.query(
@@ -297,7 +298,7 @@ st.markdown("""---""")
 
 st.header("Course information by date")
 course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == str(df_institutions_selection.iloc[0]["id"])]
-
+course_views_selected_institution
 course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
 course_views_start_date = np.datetime64(course_views_range_dates[0])
 course_views_end_date = pd.to_datetime("today")
@@ -313,7 +314,7 @@ if len(course_views_df.index) == 0:
     st.markdown("##### There're no created courses on this time period")
 
 if len(course_views_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(course_views_df.iloc[0]["created_admins"],course_views_df.iloc[0]["fecha"]))
+    st.markdown("##### There were {} created courses on {}".format(course_views_df.iloc[0]["created_admins"],course_views_df.iloc[0]["fecha"]))
 
 if len(course_views_df.index) > 1:
     with left_column:

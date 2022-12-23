@@ -119,7 +119,7 @@ LEFT JOIN ( SELECT institution_id, sum(attempts) as attempts_count FROM (
 			group by ctv_user_test_attempts.user_id) a
 		   group by institution_id) attemps 
 ON attemps.institution_id = inst.id
-
+WHERE inst.custom_settings LIKE '%"blockedInstitution":"0"%';
 
 
 
