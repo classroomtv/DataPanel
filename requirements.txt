@@ -9,6 +9,6 @@ reportlab
 openpyxl
 kaleido
 boto3
-dotenv
-mysql.connector
+python-dotenv
+mysql-connector-python
 os
