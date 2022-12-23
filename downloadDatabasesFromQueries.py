@@ -1,8 +1,10 @@
 import mysql.connector
+import pandas as pd
+import os
 from mysql.connector import Error
 from dotenv import load_dotenv
-import pandas as pd
 from os import walk
+
 
 load_dotenv() 
 host = os.environ.get('DB_HOST')

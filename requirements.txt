@@ -10,5 +10,5 @@ openpyxl
 kaleido
 boto3
 python-dotenv
-mysql-connector
+mysql-connector-python-rf
 os
