@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 import streamlit_google_oauth as oauth
-from utils.auxiliar_functions import nav_page
+from utils.auxiliar_functions import nav_page, set_code
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 # streamlit run app.py --server.port 8080
@@ -34,6 +34,9 @@ if __name__ == "__main__":
     )
     if login_info:
         user_id, user_email = login_info
+        #token = st.session_state.token.access_token
+        #set_code(code=token)
+        set_code(code="/logged_in")
         nav_page('General_Statistics')
     else:
         st.markdown(hide_bar, unsafe_allow_html=True)

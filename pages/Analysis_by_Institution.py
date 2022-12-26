@@ -16,13 +16,11 @@ from pdfrw.toreportlab import makerl
 st.set_page_config(page_title="Stats by Institution", page_icon=":bar_chart:", layout="wide")
 
 # Load page only if logged in
-if "user_email" in st.session_state:
-    if st.session_state.user_email is not None:
-        #hide_page('main')
-        with st.sidebar:
-            logout_button('Logout')
-    else:
-        nav_page('')
+code = st.experimental_get_query_params()['code'][0]
+if code == '/logged_in':
+    #hide_page('main')
+    with st.sidebar:
+        logout_button('Logout')
 else:
     nav_page('')
 

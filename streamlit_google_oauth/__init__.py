@@ -1,8 +1,7 @@
 import streamlit as st
-import os
 import asyncio
 from httpx_oauth.clients.google import GoogleOAuth2
-from utils.auxiliar_functions import nav_page
+from utils.auxiliar_functions import set_code
 
 __version__ = '0.1'
 
@@ -48,17 +47,18 @@ def login_button(authorization_url, app_name, app_desc):
 
 def logout_button(button_text="Logout"):
     if st.button(button_text):
-        asyncio.run(
-            revoke_token(
-                client=st.session_state.client,
-                token=st.session_state.token["access_token"],
+        set_code(code="/logout")
+        if 'client' in st.session_state:
+            asyncio.run(
+                revoke_token(
+                    client=st.session_state.client,
+                    token=st.session_state.token["access_token"],
+                )
             )
-        )
-        st.session_state.user_email = None
-        st.session_state.user_id = None
-        st.session_state.token = None
+            st.session_state.user_email = None
+            st.session_state.user_id = None
+            st.session_state.token = None
         st.experimental_rerun()
-        nav_page('')
 
 
 def login(
@@ -77,6 +77,7 @@ def login(
     if "token" not in st.session_state:
         st.session_state.token = None
 
+    print('login!')
     if st.session_state.token is None:
         try:
             code = st.experimental_get_query_params()["code"]
