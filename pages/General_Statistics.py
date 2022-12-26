@@ -161,7 +161,7 @@ fig_users_by_institution = px.bar(
     title="<b>Collaborators users by institution</b>",
     color_discrete_sequence=["#0083B8"] * len(collaborators_by_institution),
     template="plotly_white",
-    labels={'x': 'Collaborator users', 'y':'Institution'}
+    labels={'collaborator_users': 'Users', 'name':'Institution'}
 )
 fig_users_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -177,7 +177,7 @@ fig_admin_by_institution = px.bar(
     title="<b>Admin users by institution</b>",
     color_discrete_sequence=["#0083B8"] * len(admin_by_institution),
     template="plotly_white",
-    labels={'x': 'Year', 'y':'Users'}
+    labels={'admin_users': 'Users', 'name':'Institution'}
 )
 fig_admin_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -246,6 +246,7 @@ fig_created_courses_by_institution = px.bar(
     title="<b>Created courses by Institution</b>",
     color_discrete_sequence=["#0083B8"] * len(created_courses_by_date),
     template="plotly_white",
+    labels={'id': 'Courses created', 'name':'Institution'}
 )
 fig_created_courses_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -262,7 +263,7 @@ fig_courses_view_by_institution = px.bar(
     title="<b>Courses views count by Institution</b>",
     color_discrete_sequence=["#0083B8"] * len(courses_views_by_institution),
     template="plotly_white",
-    labels={'x': 'Year', 'y':'Users'}
+    labels={'view_count': 'Views', 'name':'Institution'}
 )
 fig_courses_view_by_institution.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
