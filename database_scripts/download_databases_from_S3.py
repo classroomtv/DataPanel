@@ -10,6 +10,7 @@ secret_key = os.environ.get('S3_SECRET_KEY')
 
 
 def download_files_from_s3(pathToSaveFiles):
+    print("--------------------------------------------------------------------")
     print(f"{datetime.datetime.now()}: Log")
     session = boto3.Session(aws_access_key_id=access_key,aws_secret_access_key=secret_key)
     s3_session = session.resource('s3')
@@ -18,7 +19,7 @@ def download_files_from_s3(pathToSaveFiles):
         content_name = content["Key"]
         if content_name[-4:] == ".csv":
             s3_session.meta.client.download_file(bucket_name,content_name, pathToSaveFiles + content_name)
-            
+
     print("Databases were correctly downloaded from S3 bucket")
     print("--------------------------------------------------------------------")
 
