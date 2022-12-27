@@ -38,4 +38,4 @@ def extract_data(path_to_queries, path_to_save_files, connection):
             connection).to_csv(path_to_save_files + str(filename)[:-4] + ".csv", mode="w")
 
 
-extract_data_to_csv(path_to_queries="queries/", path_to_save_files="pages/Database/")
+extract_data_to_csv(path_to_queries="/home/ubuntu/DataPanel/queries/", path_to_save_files="/home/ubuntu/DataPanel/pages/Database/")

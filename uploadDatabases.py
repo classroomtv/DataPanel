@@ -23,4 +23,4 @@ def upload_files_to_s3(pathToFiles):
             s3_session.meta.client.upload_file(Filename=pathToFiles+filename, Bucket=bucket_name, Key=filename)
 
 
-upload_files_to_s3(pathToFiles="pages/Database/")
+upload_files_to_s3(pathToFiles="/home/ubuntu/DataPanel/pages/Database/")

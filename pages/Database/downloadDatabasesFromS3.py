@@ -16,6 +16,6 @@ def download_files_from_s3(pathToSaveFiles):
         content_name = content["Key"]
         if content_name[-4:] == ".csv":
             s3_session.meta.client.download_file(bucket_name,content_name, pathToSaveFiles + content_name)
+            print(content_name)
+download_files_from_s3(pathToSaveFiles = "/home/ubuntu/DataPanel/pages/Database/")
 
-
-download_files_from_s3(pathToSaveFiles = "pages/Database/")
