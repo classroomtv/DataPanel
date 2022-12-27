@@ -1,3 +1,4 @@
+import datetime
 import boto3
 import os
 from dotenv import load_dotenv
@@ -16,5 +17,6 @@ def download_files_from_s3(pathToSaveFiles):
         content_name = content["Key"]
         if content_name[-4:] == ".csv":
             s3_session.meta.client.download_file(bucket_name,content_name, pathToSaveFiles + content_name)
-            print(content_name)
+    print("{}: Databases were correctly downloaded from S3 bucket".format(datetime.datetime.now()))
+
 download_files_from_s3(pathToSaveFiles = "/home/ubuntu/DataPanel/pages/Database/")

@@ -1,5 +1,6 @@
 import boto3
 import os
+import datetime
 from dotenv import load_dotenv
 from os import walk
 
@@ -22,5 +23,6 @@ def upload_files_to_s3(pathToFiles):
         if filename[-4:] == ".csv":
             s3_session.meta.client.upload_file(Filename=pathToFiles+filename, Bucket=bucket_name, Key=filename)
 
+    print("{}: Database were correctly uploaded to the S3 bucket".format(datetime.datetime.now()))
 
 upload_files_to_s3(pathToFiles="/home/ubuntu/DataPanel/pages/Database/")

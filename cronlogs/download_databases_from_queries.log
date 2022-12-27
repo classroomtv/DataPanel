@@ -1,0 +1,20 @@
+  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
+    connection.close()
+                     ^
+TabError: inconsistent use of tabs and spaces in indentation
+  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
+    connection.close()
+                     ^
+TabError: inconsistent use of tabs and spaces in indentation
+  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
+    connection.close()
+                     ^
+TabError: inconsistent use of tabs and spaces in indentation
+  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
+    connection.close()
+                     ^
+TabError: inconsistent use of tabs and spaces in indentation
+  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
+    connection.close()
+                     ^
+TabError: inconsistent use of tabs and spaces in indentation
