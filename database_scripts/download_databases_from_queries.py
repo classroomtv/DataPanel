@@ -15,6 +15,7 @@ port_num = os.environ.get('DB_PORT')
 
 
 def extract_data_to_csv(path_to_queries, path_to_save_files):
+    print(f"{datetime.datetime.now()}: Log")
     try:
         connection = mysql.connector.connect(host=host,port= port_num, user=user_name,password=password)
         if connection.is_connected():
@@ -27,9 +28,10 @@ def extract_data_to_csv(path_to_queries, path_to_save_files):
 
     finally:
         if connection.is_connected():
-	    connection.close()
+            connection.close()
             print("MySQL connection is closed")
-            print("{}: Databases were correctly downloaded from the queries execution".format(datetime.datetime.now()))
+            print("Databases were correctly downloaded from the queries execution")
+    print("--------------------------------------------------------------------")
 
 def extract_data(path_to_queries, path_to_save_files, connection):
     filenames = next(walk(path_to_queries), (None, None, []))[2]

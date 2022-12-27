@@ -13,6 +13,7 @@ secret_key = os.environ.get('S3_SECRET_KEY')
 
 
 def upload_files_to_s3(pathToFiles):
+    print(f"{datetime.datetime.now()}: Log")
     filenames = next(walk(pathToFiles), (None, None, []))[2]
     session = boto3.Session(
     aws_access_key_id=access_key,
