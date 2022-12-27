@@ -1,20 +1,90 @@
-  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
-    connection.close()
-                     ^
-TabError: inconsistent use of tabs and spaces in indentation
-  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
-    connection.close()
-                     ^
-TabError: inconsistent use of tabs and spaces in indentation
-  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
-    connection.close()
-                     ^
-TabError: inconsistent use of tabs and spaces in indentation
-  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
-    connection.close()
-                     ^
-TabError: inconsistent use of tabs and spaces in indentation
-  File "/home/ubuntu/DataPanel/database_scripts/download_databases_from_queries.py", line 30
-    connection.close()
-                     ^
-TabError: inconsistent use of tabs and spaces in indentation
+2022-12-27 16:39:03.168271: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:40:03.055407: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:41:03.197392: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:42:03.520991: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:43:02.337850: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:44:03.348591: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:45:02.842550: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:46:02.593090: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:47:02.784569: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:48:03.174970: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:49:02.997369: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:50:03.011811: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:51:02.272371: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:52:03.555802: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:53:02.095263: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:54:02.482325: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:55:02.581104: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-27 16:56:02.645120: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
