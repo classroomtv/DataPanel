@@ -63,8 +63,7 @@ st.sidebar.title(f"Welcome {name}")
 
 institution = st.sidebar.selectbox(
     "Select an institution:",
-    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
-    default=institutions_df[institutions_df["name"]=="Forus"])
+    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique())
 
 
 df_institutions_selection = institutions_df.query(
@@ -306,8 +305,7 @@ with column_list[10]:
 st.markdown("""---""")
 
 st.header("Course information by date")
-course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == str(df_institutions_selection.iloc[0]["id"])]
-course_views_selected_institution
+course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
 course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
 course_views_start_date = np.datetime64(course_views_range_dates[0])
 course_views_end_date = pd.to_datetime("today")
