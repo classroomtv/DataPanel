@@ -12,6 +12,7 @@ load_dotenv()
 client_id = os.environ["GOOGLE_CLIENT_ID"]
 client_secret = os.environ["GOOGLE_CLIENT_SECRET"]
 redirect_uri = os.environ["GOOGLE_REDIRECT_URI"]
+print(redirect_uri)
 
 
 if __name__ == "__main__":
