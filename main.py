@@ -2,9 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 import streamlit_google_oauth as oauth
-from httpx_oauth.clients.google import GoogleOAuth2
-
-
+from utils.auxiliar_functions import nav_page, set_code
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 # streamlit run app.py --server.port 8080
@@ -19,7 +17,7 @@ redirect_uri = os.environ["GOOGLE_REDIRECT_URI"]
 if __name__ == "__main__":
     st.set_page_config(page_title="streamlit Dashboard", page_icon=":bar_chart:", layout="wide")
 
-    hide_bar= """
+    hide_bar = """
         <style>
         [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
             visibility:hidden;
@@ -36,9 +34,9 @@ if __name__ == "__main__":
     )
     if login_info:
         user_id, user_email = login_info
-        st.write(f"Welcome {user_email}")
+        #token = st.session_state.token.access_token
+        #set_code(code=token)
+        set_code(code="/logged_in")
+        nav_page('General_Statistics')
     else:
-        st.write("Please login")
         st.markdown(hide_bar, unsafe_allow_html=True)
-
-
