@@ -427,4 +427,4 @@ SELECT
         WHERE
             institution_id = ci.id) AS 'Usuarios con ingreso a plataforma 2022'
 FROM
-    prod_classroomtv.ctv_institutions ci
+    prod_classroomtv.ctv_institutions ci;
