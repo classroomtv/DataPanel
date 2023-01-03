@@ -10,7 +10,7 @@ openpyxl
 kaleido
 boto3
 dotenv
-mysql.connector
+mysql-connector-python-rf
 os
-
+streamlit-nested-layout
 streamlit-modal
