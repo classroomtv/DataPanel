@@ -93,3 +93,38 @@ Connected to MySQL database... MySQL Server version on  5.6.10
 MySQL connection is closed
 Databases were correctly downloaded from the queries execution
 --------------------------------------------------------------------
+2022-12-28 18:00:02.866623: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-29 18:00:02.616614: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-30 18:00:02.313829: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2022-12-31 18:00:02.726965: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2023-01-01 18:00:04.834626: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2023-01-02 18:00:05.104373: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------
+2023-01-03 18:00:03.137885: Log
+Connected to MySQL database... MySQL Server version on  5.6.10
+MySQL connection is closed
+Databases were correctly downloaded from the queries execution
+--------------------------------------------------------------------

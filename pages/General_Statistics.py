@@ -51,7 +51,7 @@ df_course_selection = courses_info_df.query(
 # Total number of institutions
 total_institutions = int(df_selection.shape[0])
 
-year_list = get_year_range(2018)
+year_list = [2018, 2019, 2020, 2021, 2022] #get_year_range(2018)
 # Users by year
 users_by_year = [
     df_users_selection["Usuarios cargados 2018"].sum(),
