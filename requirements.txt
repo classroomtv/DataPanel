@@ -9,8 +9,8 @@ reportlab
 openpyxl
 kaleido
 boto3
-dotenv
-mysql-connector-python-rf
-os
 streamlit-nested-layout
 streamlit-modal
+python-dotenv
+mysql-connector-python-rf
+os
