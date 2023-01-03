@@ -77,7 +77,6 @@ def login(
     if "token" not in st.session_state:
         st.session_state.token = None
 
-    print('login!')
     if st.session_state.token is None:
         try:
             code = st.experimental_get_query_params()["code"]
