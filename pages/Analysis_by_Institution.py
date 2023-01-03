@@ -57,6 +57,26 @@ admin_created_by_date_df["fecha"] = pd.to_datetime(admin_created_by_date_df["fec
 
 courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
 courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], infer_datetime_format=True)
+courses_info_df["view_count"] = courses_info_df["view_count"].astype('Int64')
+courses_info_df["signed_users"] = courses_info_df["signed_users"].astype('Int64')
+courses_info_df["user_finished_courses"] = courses_info_df["user_finished_courses"].astype('Int64')
+courses_info_df["user_failed_courses"] = courses_info_df["user_failed_courses"].astype('Int64')
+
+classes_info_df = pd.read_csv("pages/Database/classes_info.csv", on_bad_lines='skip')
+classes_info_df["create_time"] = pd.to_datetime(classes_info_df["create_time"], infer_datetime_format=True)
+
+scorms_info_df = pd.read_csv("pages/Database/scorms_info.csv", on_bad_lines='skip')
+scorms_info_df["create_time"] = pd.to_datetime(scorms_info_df["create_time"], infer_datetime_format=True)
+
+tests_info_df = pd.read_csv("pages/Database/tests_info.csv", on_bad_lines='skip')
+tests_info_df.convert_dtypes()
+tests_info_df["create_time"] = pd.to_datetime(tests_info_df["create_time"], infer_datetime_format=True)
+
+texts_info_df = pd.read_csv("pages/Database/texts_info.csv", on_bad_lines='skip')
+texts_info_df["create_time"] = pd.to_datetime(texts_info_df["create_time"], infer_datetime_format=True)
+
+satisfaction_surveys_df = pd.read_csv("pages/Database/satisfaction_surveys.csv", on_bad_lines='skip')
+satisfaction_surveys_df["item_create_time"] = pd.to_datetime(satisfaction_surveys_df["item_create_time"], infer_datetime_format=True)
 
 # ---- SIDEBAR ----
 name = 'bharath'
@@ -331,36 +351,32 @@ with st.expander("**Metrics**", expanded=True):
 
     # Created Courses plots
     st.header("Course information by date")
-    course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == str(df_institutions_selection.iloc[0]["id"])]
-
+    course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
     course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
     course_views_start_date = np.datetime64(course_views_range_dates[0])
     course_views_end_date = pd.to_datetime("today")
-
     if len(course_views_range_dates)!=1:
         course_views_end_date = np.datetime64(course_views_range_dates[1])
-
     course_views_date_range = (course_views_selected_institution["create_time"] >= course_views_start_date) & (course_views_selected_institution["create_time"] <= course_views_end_date)
     course_views_df = course_views_selected_institution.loc[course_views_date_range]
-
     left_column, right_column = st.columns(2)
     created_courses_by_date = course_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
 
     if len(course_views_df.index) == 0:
         st.markdown("##### There're no created courses on this time period")
 
     if len(course_views_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(course_views_df.iloc[0]["created_admins"],course_views_df.iloc[0]["fecha"]))
+        st.markdown("##### There was one created course on {}".format(course_views_df.iloc[0]["create_time"]))
 
     if len(course_views_df.index) > 1:
         with left_column:
-            st.dataframe(course_views_df[["title","create_time", "update_time", "view_count"]].sort_values(by="create_time"))
+            st.dataframe(course_views_df[["title","create_time", "view_count", "author_id", "signed_users","user_finished_courses", "user_failed_courses"]].sort_values(by="create_time"))
 
         with right_column:
             st.markdown("##### Courses created by date")
             fig_created_users = plt.plot(created_courses_by_date)
             st.line_chart(data = created_courses_by_date, use_container_width=True)
-
 
 # Questions metrics
 st.header("Test Questions")
@@ -368,7 +384,6 @@ with st.expander("**Metrics**"):
     questions_metrics_grid = []
     for row in range(2):
         questions_metrics_grid.extend(st.columns(4))
-
     with questions_metrics_grid[0]:
         st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
     with questions_metrics_grid[1]:
@@ -381,13 +396,68 @@ with st.expander("**Metrics**"):
         st.metric(label="Total Tries", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of times a ___ has been tried to be answered')
 
 
+# Defining the grid to display the metrics
+rows = 3
+cols = 5
+
+column_list = []
+for row in range(rows):
+    column_list.extend(st.columns(cols))
+
+
+# Adding the metrics to the grid
+with column_list[0]:
+    st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
+with column_list[1]:
+    st.metric(label="Created Contents", value='{:,}'.format(total_contents).replace(',','.'), help='Total number of content items created')
+with column_list[2]:
+    st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
+with column_list[3]:
+    st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
+with column_list[4]:
+    st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
+with column_list[5]:
+    st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
+with column_list[6]:
+    st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
+with column_list[7]:
+    st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of content items created')
+with column_list[8]:
+    st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of content items created')
+with column_list[9]:
+    st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of content items created')
+with column_list[10]:
+    st.metric(label="Attempts Count", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of content items created')
+
+
+st.markdown("""---""")
+
+
+    
+st.markdown("""---""")
+
+
+st.header("Classes information by date")
+classes_views_selected_institution = classes_info_df[classes_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+classes_views_range_dates = st.date_input("Select the date range to deploy the classes information", (min_date, max_date))
+classes_views_start_date = np.datetime64(classes_views_range_dates[0])
+classes_views_end_date = pd.to_datetime("today")
+if len(classes_views_range_dates)!=1:
+    classes_views_end_date = np.datetime64(course_views_range_dates[1])
+classes_views_date_range = (classes_views_selected_institution["create_time"] >= classes_views_start_date) & (classes_views_selected_institution["create_time"] <= classes_views_end_date)
+classes_views_df = classes_views_selected_institution.loc[classes_views_date_range]
+left_column, right_column = st.columns(2)
+created_classes_by_date = classes_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+
+
+
 # News metrics
 st.header("News")
 with st.expander("**Metrics**"):
     news_metrics_grid = []
     for row in range(1):
         news_metrics_grid.extend(st.columns(4))
-
     with news_metrics_grid[0]:
         st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of news items created')
     with news_metrics_grid[1]:
@@ -396,6 +466,141 @@ with st.expander("**Metrics**"):
         st.metric(label="Total Likes", value='{:,}'.format(total_news_likes_count).replace(',','.'), help='Total number of likes')
     with news_metrics_grid[3]:
         st.metric(label="Total Comments", value='{:,}'.format(total_news_comments_count).replace(',','.'), help='Total number of comments')
+
+if len(classes_views_df.index) == 0:
+    st.markdown("##### There're no created classes on this time period")
+
+if len(classes_views_df.index) == 1:
+    st.markdown("##### There was one created classes on {}".format(classes_views_df.iloc[0]["create_time"]))
+
+if len(classes_views_df.index) > 1:
+    with left_column:
+        st.dataframe(classes_views_df[["title","create_time", "view_count"]].sort_values(by="create_time"))
+
+    with right_column:
+        st.markdown("##### Classes created by date")
+        fig_created_classes = plt.plot(created_classes_by_date)
+        st.line_chart(data = created_classes_by_date, use_container_width=True)
+    
+st.markdown("""---""")
+
+st.header("Scorms information by date")
+scorms_views_selected_institution = scorms_info_df[scorms_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+scorms_views_range_dates = st.date_input("Select the date range to deploy the scorms information", (min_date, max_date))
+scorms_views_start_date = np.datetime64(scorms_views_range_dates[0])
+scorms_views_end_date = pd.to_datetime("today")
+if len(scorms_views_range_dates)!=1:
+    scorms_views_end_date = np.datetime64(scorms_views_range_dates[1])
+scorms_views_date_range = (scorms_views_selected_institution["create_time"] >= scorms_views_start_date) & (scorms_views_selected_institution["create_time"] <= scorms_views_end_date)
+scorms_views_df = scorms_views_selected_institution.loc[scorms_views_date_range]
+left_column, right_column = st.columns(2)
+created_scorms_by_date = scorms_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+
+if len(scorms_views_df.index) == 0:
+    st.markdown("##### There're no created scorms on this time period")
+
+if len(scorms_views_df.index) == 1:
+    st.markdown("##### There was one created scorm on {}".format(scorms_views_df.iloc[0]["create_time"]))
+
+if len(scorms_views_df.index) > 1:
+    with left_column:
+        st.dataframe(scorms_views_df[["title","create_time", "view_count"]].sort_values(by="create_time"))
+
+    with right_column:
+        st.markdown("##### Scorms created by date")
+        fig_created_scorms = plt.plot(created_scorms_by_date)
+        st.line_chart(data = created_scorms_by_date, use_container_width=True)
+    
+st.markdown("""---""")
+
+st.header("Texts information by date")
+texts_views_selected_institution = texts_info_df[texts_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+texts_views_range_dates = st.date_input("Select the date range to deploy the texts information", (min_date, max_date))
+texts_views_start_date = np.datetime64(texts_views_range_dates[0])
+texts_views_end_date = pd.to_datetime("today")
+if len(texts_views_range_dates)!=1:
+    texts_views_end_date = np.datetime64(texts_views_range_dates[1])
+texts_views_date_range = (texts_views_selected_institution["create_time"] >= texts_views_start_date) & (texts_views_selected_institution["create_time"] <= texts_views_end_date)
+texts_views_df = texts_views_selected_institution.loc[texts_views_date_range]
+left_column, right_column = st.columns(2)
+created_texts_by_date = texts_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+
+if len(texts_views_df.index) == 0:
+    st.markdown("##### There're no created texts on this time period")
+
+if len(texts_views_df.index) == 1:
+    st.markdown("##### There was one created text on {}".format(texts_views_df.iloc[0]["create_time"]))
+
+if len(texts_views_df.index) > 1:
+    with left_column:
+        st.dataframe(texts_views_df[["title","create_time", "author_id"]].sort_values(by="create_time"))
+
+    with right_column:
+        st.markdown("##### Texts created by date")
+        fig_created_texts = plt.plot(created_texts_by_date)
+        st.line_chart(data = created_texts_by_date, use_container_width=True)
+
+st.header("Tests information by date")
+tests_views_selected_institution = tests_info_df[tests_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+tests_views_range_dates = st.date_input("Select the date range to deploy the tests information", (min_date, max_date))
+tests_views_start_date = np.datetime64(tests_views_range_dates[0])
+tests_views_end_date = pd.to_datetime("today")
+if len(tests_views_range_dates)!=1:
+    tests_views_end_date = np.datetime64(tests_views_range_dates[1])
+tests_views_date_range = (tests_views_selected_institution["create_time"] >= tests_views_start_date) & (tests_views_selected_institution["create_time"] <= tests_views_end_date)
+tests_views_df = tests_views_selected_institution.loc[tests_views_date_range]
+left_column, right_column = st.columns(2)
+created_tests_by_date = tests_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+
+if len(tests_views_df.index) == 0:
+    st.markdown("##### There're no created tests on this time period")
+
+if len(tests_views_df.index) == 1:
+    st.markdown("##### There was one created test on {}".format(tests_views_df.iloc[0]["create_time"]))
+
+if len(tests_views_df.index) > 1:
+    with left_column:
+        st.dataframe(tests_views_df[["title","create_time", "author_id"]].sort_values(by="create_time"))
+
+    with right_column:
+        st.markdown("##### Tests created by date")
+        fig_created_tests = plt.plot(created_tests_by_date)
+        st.line_chart(data = created_tests_by_date, use_container_width=True)
+        
+st.markdown("""---""")
+
+st.header("Satisfaction surverys information by date")
+satisfaction_surveys_selected_institution = satisfaction_surveys_df[texts_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+satisfaction_surveys_range_dates = st.date_input("Select the date range to deploy the satisfaction surveys information", (min_date, max_date))
+satisfaction_surveys_start_date = np.datetime64(satisfaction_surveys_range_dates[0])
+satisfaction_surveys_end_date = pd.to_datetime("today")
+if len(satisfaction_surveys_range_dates)!=1:
+    satisfaction_surveys_end_date = np.datetime64(satisfaction_surveys_range_dates[1])
+satisfaction_surveys_date_range = (satisfaction_surveys_selected_institution["item_create_time"] >= satisfaction_surveys_start_date) & (satisfaction_surveys_selected_institution["item_create_time"] <= texts_views_end_date)
+satisfaction_surveys_df = satisfaction_surveys_selected_institution.loc[satisfaction_surveys_date_range]
+left_column, right_column = st.columns(2)
+satisfaction_surveys_by_date = satisfaction_surveys_df.groupby(by=["item_create_time"]).agg("count")[["test_title"]].sort_values(by="item_create_time")
+
+
+if len(satisfaction_surveys_df.index) == 0:
+    st.markdown("##### There're no created satisfaction surveys on this time period")
+
+if len(satisfaction_surveys_df.index) == 1:
+    st.markdown("##### There was one created satisfaction_surveys on {}".format(satisfaction_surveys_df.iloc[0]["item_create_time"]))
+
+if len(satisfaction_surveys_df.index) > 1:
+    with left_column:
+        st.dataframe(satisfaction_surveys_df[["test_title","course_title","reactivo","item_create_time","respuesta","max_ptje", "min_ptje", "author_id"]].sort_values(by="item_create_time"))
+
+    with right_column:
+        st.markdown("##### Satisfaction surveys created by date")
+        fig_satisfaction_surveys = plt.plot(satisfaction_surveys_by_date)
+        st.line_chart(data = satisfaction_surveys_by_date, use_container_width=True)
+    
+st.markdown("""---""")
 
 
 metrics_keys = [
