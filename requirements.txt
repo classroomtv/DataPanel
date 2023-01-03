@@ -12,3 +12,5 @@ boto3
 dotenv
 mysql.connector
 os
+
+streamlit-modal
