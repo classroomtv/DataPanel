@@ -2,12 +2,13 @@ import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 from utils.auxiliar_functions import to_excel, plotly_fig2array, get_year_range, hide_page, nav_page
+from streamlit_google_oauth import logout_button
+
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
-from streamlit_google_oauth import logout_button
 
 
 st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="wide")
@@ -51,7 +52,13 @@ df_course_selection = courses_info_df.query(
 # Total number of institutions
 total_institutions = int(df_selection.shape[0])
 
+<<<<<<< HEAD
 year_list = [2018, 2019, 2020, 2021, 2022] #get_year_range(2018)
+=======
+year_list = [2018, 2019, 2020, 2021, 2022]
+#year_list = get_year_range(2018)
+
+>>>>>>> develop
 # Users by year
 users_by_year = [
     df_users_selection["Usuarios cargados 2018"].sum(),
@@ -89,31 +96,17 @@ courses_views_by_institution = (
 
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: General Institutions Stats")
+st.title(":bar_chart: Metrics for **All Institutions**")
 st.metric(label="Total Institutions", value='{:,}'.format(total_institutions).replace(',','.'), help='Total number of institutions with at least 3 users')
 
 ### Top Metrics
 # Metrics for users
-st.header("Users Metrics")
+st.header("Users")
 
 total_users = int(df_users_selection["Usuarios totales"].sum()) 
 total_active_users = int(df_users_selection["Usuarios activos"].sum()) 
 total_collaborator_users = int(df_selection["collaborator_users"].sum()) 
 total_admin_users = int(df_selection["admin_users"].sum())
-
-# Defining the grid to display the users metrics
-users_metric_grid = []
-for row in range(1):
-    users_metric_grid.extend(st.columns(4))
-
-with users_metric_grid[0]:
-    st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
-with users_metric_grid[1]:
-    st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
-with users_metric_grid[2]:
-    st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
-with users_metric_grid[3]:
-    st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
 
 # Plot 1: Amount of users by year
 fig_users_by_year = px.bar(
@@ -147,11 +140,6 @@ fig_logs_by_year.update_layout(
     xaxis=(dict(showgrid=False)),
 )
 
-left_column, right_column = st.columns(2)
-
-left_column.plotly_chart(fig_users_by_year, use_container_width=True)
-right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
-
 # Plot 3: Amount of users by institutions
 fig_users_by_institution = px.bar(
     collaborators_by_institution,
@@ -184,15 +172,32 @@ fig_admin_by_institution.update_layout(
     xaxis=(dict(showgrid=False)),
 )
 
-left_column, right_column = st.columns(2)
+with st.expander("**Metrics**", expanded=True):
+    # Defining the grid to display the users metrics
+    users_metric_grid = []
+    for row in range(1):
+        users_metric_grid.extend(st.columns(4))
 
-left_column.plotly_chart(fig_users_by_institution, use_container_width=True)
-right_column.plotly_chart(fig_admin_by_institution, use_container_width=True)
+    with users_metric_grid[0]:
+        st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
+    with users_metric_grid[1]:
+        st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
+    with users_metric_grid[2]:
+        st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
+    with users_metric_grid[3]:
+        st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
 
+    left_column, right_column = st.columns(2)
+    left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+    right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
+
+    left_column, right_column = st.columns(2)
+    left_column.plotly_chart(fig_users_by_institution, use_container_width=True)
+    right_column.plotly_chart(fig_admin_by_institution, use_container_width=True)
 
 #Courses information
 st.markdown("""---""")
-st.header("Courses metrics")
+st.header("Courses")
 
 total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
 total_programs_count = int(df_selection["programs_count"].sum())
@@ -206,97 +211,99 @@ total_incorrect_answers_count = int(df_selection["incorrect_answers_count"].sum(
 total_attempts_count = int(df_selection["attempts_count"].sum())
 total_courses_views_count = int(df_course_selection["view_count"].sum())
 
+with st.expander("**Metrics**", expanded=True):
 
-# Defining the grid to display the courses metrics
+    # Defining the grid to display the courses metrics
 
-courses_metric_grid = []
-for row in range(3):
-    courses_metric_grid.extend(st.columns(5))
+    courses_metric_grid = []
+    for row in range(3):
+        courses_metric_grid.extend(st.columns(5))
 
-# Adding the courses' metrics to the grid
-with courses_metric_grid[0]:
-    st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
-with courses_metric_grid[1]:
-    st.metric(label="Created Contents", value='{:,}'.format(total_contents).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[2]:
-    st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[3]:
-    st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[4]:
-    st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[5]:
-    st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[6]:
-    st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[7]:
-    st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[8]:
-    st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[9]:
-    st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of content items created')
-with courses_metric_grid[10]:
-    st.metric(label="Attempts Count", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of content items created')
+    # Adding the courses' metrics to the grid
+    with courses_metric_grid[0]:
+        st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
+    with courses_metric_grid[1]:
+        st.metric(label="Created Contents", value='{:,}'.format(total_contents).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[2]:
+        st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[3]:
+        st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[4]:
+        st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[5]:
+        st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[6]:
+        st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[7]:
+        st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[8]:
+        st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[9]:
+        st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of content items created')
+    with courses_metric_grid[10]:
+        st.metric(label="Attempts Count", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of content items created')
 
-# Plot 5
-fig_created_courses_by_institution = px.bar(
-    created_courses_by_date,
-    x="id",
-    y=created_courses_by_date.index,
-    orientation="h",
-    title="<b>Created courses by Institution</b>",
-    color_discrete_sequence=["#0083B8"] * len(created_courses_by_date),
-    template="plotly_white",
-    labels={'id': 'Courses created', 'name':'Institution'}
-)
-fig_created_courses_by_institution.update_layout(
-    plot_bgcolor="rgba(0,0,0,0)",
-    xaxis=(dict(showgrid=False)),
-)
+    # Plot 5
+    fig_created_courses_by_institution = px.bar(
+        created_courses_by_date,
+        x="id",
+        y=created_courses_by_date.index,
+        orientation="h",
+        title="<b>Created courses by Institution</b>",
+        color_discrete_sequence=["#0083B8"] * len(created_courses_by_date),
+        template="plotly_white",
+        labels={'id': 'Courses created', 'name':'Institution'}
+    )
+    fig_created_courses_by_institution.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False)),
+    )
 
 
-# Plot 6
-fig_courses_view_by_institution = px.bar(
-    courses_views_by_institution,
-    x="view_count",
-    y=courses_views_by_institution.index,
-    orientation="h",
-    title="<b>Courses views count by Institution</b>",
-    color_discrete_sequence=["#0083B8"] * len(courses_views_by_institution),
-    template="plotly_white",
-    labels={'view_count': 'Views', 'name':'Institution'}
-)
-fig_courses_view_by_institution.update_layout(
-    plot_bgcolor="rgba(0,0,0,0)",
-    xaxis=(dict(showgrid=False)),
-)
+    # Plot 6
+    fig_courses_view_by_institution = px.bar(
+        courses_views_by_institution,
+        x="view_count",
+        y=courses_views_by_institution.index,
+        orientation="h",
+        title="<b>Courses views count by Institution</b>",
+        color_discrete_sequence=["#0083B8"] * len(courses_views_by_institution),
+        template="plotly_white",
+        labels={'view_count': 'Views', 'name':'Institution'}
+    )
+    fig_courses_view_by_institution.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False)),
+    )
 
-left_column, right_column = st.columns(2)
+    left_column, right_column = st.columns(2)
 
-left_column.plotly_chart(fig_created_courses_by_institution, use_container_width=True)
-right_column.plotly_chart(fig_courses_view_by_institution, use_container_width=True)
+    left_column.plotly_chart(fig_created_courses_by_institution, use_container_width=True)
+    right_column.plotly_chart(fig_courses_view_by_institution, use_container_width=True)
 
 
 # News stats
 st.markdown("""---""")
-st.header("News general stats")
+st.header("News")
 
 total_created_news_count = int(df_selection["created_news_count"].sum())
 total_news_likes_count = int(df_selection["likes_count"].sum())
 total_news_views_count = int(df_selection["new_views_count"].sum())
 total_news_comments_count = int(df_selection["comments_count"].sum())
 
-news_metrics_grid = []
-for row in range(1):
-    news_metrics_grid.extend(st.columns(4))
+with st.expander("**Metrics**", expanded=True):
+    news_metrics_grid = []
+    for row in range(1):
+        news_metrics_grid.extend(st.columns(4))
 
-with news_metrics_grid[0]:
-    st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of news items created')
-with news_metrics_grid[1]:
-    st.metric(label="News Views", value='{:,}'.format(total_news_views_count).replace(',','.'), help='Total number of views')
-with news_metrics_grid[2]:
-    st.metric(label="News Likes Count", value='{:,}'.format(total_news_likes_count).replace(',','.'), help='Total number of likes')
-with news_metrics_grid[3]:
-    st.metric(label="Comments Count", value='{:,}'.format(total_news_comments_count).replace(',','.'), help='Total number of comments')
+    with news_metrics_grid[0]:
+        st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of news items created')
+    with news_metrics_grid[1]:
+        st.metric(label="News Views", value='{:,}'.format(total_news_views_count).replace(',','.'), help='Total number of views')
+    with news_metrics_grid[2]:
+        st.metric(label="News Likes Count", value='{:,}'.format(total_news_likes_count).replace(',','.'), help='Total number of likes')
+    with news_metrics_grid[3]:
+        st.metric(label="Comments Count", value='{:,}'.format(total_news_comments_count).replace(',','.'), help='Total number of comments')
 
 
 metrics_keys = [
@@ -367,7 +374,7 @@ with col1:
 # Download button for excel file
 with col2:
     st.download_button(
-                    "Descargar (formato excel)",
+                    "Descargar (excel)",
                     data = to_excel(metrics_df),
                     file_name=f"metrics.xlsx",
                     mime="application/vnd.ms-excel",
@@ -437,7 +444,6 @@ for metric_index in range(1, len(non_user_metrics)):
     canvas.drawString(45 + (non_user_metrics_width*(metric_index%max_metrics_per_row)), non_user_metrics_height, '{:,}'.format(metric).replace(',','.'))
     if metric_index%max_metrics_per_row == 0:
         non_user_metrics_height -= 35
-
 
 st.download_button(
                 "Download Report (pdf)",
