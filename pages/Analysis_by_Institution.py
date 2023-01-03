@@ -4,8 +4,9 @@ import streamlit as st  # pip install streamlit
 import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
-from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, hide_page
+from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, get_year_range
 from streamlit_google_oauth import logout_button
+import streamlit_nested_layout
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
@@ -41,9 +42,9 @@ st.markdown(
     """,unsafe_allow_html=True
 )
 
-institutions_df = pd.read_csv("pages/Database/institutions.csv")
 
-users_df = pd.read_csv("pages/Database/users_by_date.csv")
+institutions_df = pd.read_csv("pages/Database/institutions.csv" )
+users_df = pd.read_csv("pages/Database/users_by_date.csv" )
 
 logs_by_date_df = pd.read_csv("pages/Database/logs_by_date.csv")
 logs_by_date_df["fecha"] = pd.to_datetime(logs_by_date_df["fecha"], infer_datetime_format=True)
@@ -78,13 +79,14 @@ satisfaction_surveys_df = pd.read_csv("pages/Database/satisfaction_surveys.csv",
 satisfaction_surveys_df["item_create_time"] = pd.to_datetime(satisfaction_surveys_df["item_create_time"], infer_datetime_format=True)
 
 # ---- SIDEBAR ----
-name='bharath'
+name = 'bharath'
 st.sidebar.title(f"Welcome {name}")
 
+available_institutions = institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique()
+forus_id = np.where(available_institutions == "Forus")[0][0]
 institution = st.sidebar.selectbox(
     "Select an institution:",
-    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique())
-
+    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(), index=int(forus_id))
 
 df_institutions_selection = institutions_df.query(
     "name == @institution")
@@ -95,42 +97,35 @@ df_users_selection = users_df.query(
 df_course_selection = courses_info_df.query(
     "name == @institution")
 
-# ---- MAINPAGE ----
-st.title(":bar_chart: {} statistics".format( institution))
-st.markdown("##")
-
-# TOP KPI's
-# TOP KPI's
+# Users metrics
 total_users = int(df_users_selection["Usuarios totales"].sum()) 
 total_active_users = int(df_users_selection["Usuarios activos"].sum()) 
 total_collaborator_users = int(df_institutions_selection["collaborator_users"].sum()) 
 total_admin_users = int(df_institutions_selection["admin_users"].sum())
 
+# News metrics
+total_created_news_count = int(df_institutions_selection["created_news_count"].sum())
+total_news_likes_count = int(df_institutions_selection["likes_count"].sum())
+total_news_views_count = int(df_institutions_selection["new_views_count"].sum())
+total_news_comments_count = int(df_institutions_selection["comments_count"].sum())
 
-# Defining the grid to display the users metrics
-users_metric_grid = []
-for row in range(1):
-    users_metric_grid.extend(st.columns(4))
 
-with users_metric_grid[0]:
-    st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
-with users_metric_grid[1]:
-    st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
-with users_metric_grid[2]:
-    st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
-with users_metric_grid[3]:
-    st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
+# ---- MAINPAGE ----
+st.title(":bar_chart: Metrics for **{}** ".format(institution))
+st.markdown("##")
 
-# Users by year
-years = [2018, 2019, 2020, 2021, 2022]
+
+# Plot 1: Amount of users by year
+#year_list = get_year_range(2018)
+year_list = [2018, 2019, 2020, 2021, 2022]
 users_by_year = [df_users_selection["Usuarios cargados 2018"].sum(),df_users_selection["Usuarios cargados 2019"].sum(), df_users_selection["Usuarios cargados 2020"].sum(), df_users_selection["Usuarios cargados 2021"].sum(),df_users_selection["Usuarios cargados 2022"].sum()]
 
 fig_users_by_year = px.bar(
     users_by_year,
-    x=years ,
+    x=year_list ,
     y=users_by_year,
     orientation="v",
-    title="<b>Users by Year</b>",
+    title="<b>Users Created by Year</b>",
     color_discrete_sequence=["#0083B8"] * len(users_by_year),
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
@@ -140,16 +135,15 @@ fig_users_by_year.update_layout(
     xaxis=(dict(showgrid=False)),
 )
 
-#Users loggin
-years2 = [2019, 2020, 2021, 2022]
+# Plot 2: Amount of logged users by year
 users_by_year = [df_users_selection["Usuarios con ingreso a plataforma 2019"].sum(),df_users_selection["Usuarios con ingreso a plataforma 2020"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2021"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2022"].sum()]
 
 fig_admins_by_year = px.bar(
     users_by_year,
-    x=years[1:] ,
+    x=year_list[1:] ,
     y=users_by_year,
     orientation="v",
-    title="<b>Logged in users by year</b>",
+    title="<b>Logged Users by Year</b>",
     color_discrete_sequence=["#0083B8"] * len(users_by_year),
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
@@ -159,133 +153,247 @@ fig_admins_by_year.update_layout(
     xaxis=(dict(showgrid=False)),
 )
 
-left_column, right_column = st.columns(2)
+st.title("Users")
 
-left_column.plotly_chart(fig_users_by_year, use_container_width=True)
-right_column.plotly_chart(fig_admins_by_year, use_container_width=True)
+with st.expander("**Metrics**", expanded=True):
+    # Defining the grid to display the users metrics
+    users_metric_grid = []
+    for row in range(1):
+        users_metric_grid.extend(st.columns(4))
 
+    with users_metric_grid[0]:
+        st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
+    with users_metric_grid[1]:
+        st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
+    with users_metric_grid[2]:
+        st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
+    with users_metric_grid[3]:
+        st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
 
-#Filter by date
-st.markdown("""---""")
+    tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
+    with tab1:
+        st.header("All users")
+    with tab2:
+        st.header("Collaborators")
+    with tab3:
+        st.header("Admins")
 
-st.title("Stats by date")
+    left_column, right_column = st.columns(2)
 
-min_date = pd.to_datetime("today") - dt.timedelta(days=365)
-max_date = pd.to_datetime("today")
-
-#logs by date
-st.header("Logged users by date")
-logs_range_dates = st.date_input("Select the date range for the logged users", (min_date, max_date))
-logs_start_date = np.datetime64(logs_range_dates[0])
-logs_end_date = pd.to_datetime("today")
-if len(logs_range_dates)!=1:
-    logs_end_date = np.datetime64(logs_range_dates[1])
-logs_selected_institution = logs_by_date_df[logs_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-logs_date_range = (logs_selected_institution["fecha"] >= logs_start_date) & (logs_selected_institution["fecha"] <= logs_end_date)
-logged_users_df = logs_selected_institution.loc[logs_date_range]
-left_column, right_column = st.columns(2)
-
-
-if len(logged_users_df.index) == 0:
-    st.markdown("##### There're no created users on this time period")
-
-if len(logged_users_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["fecha"]))
+    left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+    right_column.plotly_chart(fig_admins_by_year, use_container_width=True)
 
 
-if len(logged_users_df.index) > 1:
-    with left_column:
-        date_users_df = logged_users_df[["fecha", "logged_users"]]
-        st.dataframe(date_users_df)
+    #Filter by date
+    min_date = pd.to_datetime("today") - dt.timedelta(days=365)
+    max_date = pd.to_datetime("today")
 
-    with right_column:
-        st.markdown("##### Quantity of logged users by date ")
-        fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
-        st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
+    #logs by date
+    st.header("Logged users by date")
+    logs_range_dates = st.date_input("Select the date range for the logged users", (min_date, max_date))
+    logs_start_date = np.datetime64(logs_range_dates[0])
+    logs_end_date = pd.to_datetime("today")
+    if len(logs_range_dates)!=1:
+        logs_end_date = np.datetime64(logs_range_dates[1])
 
-st.markdown("""---""")
+    logs_selected_institution = logs_by_date_df[logs_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+    logs_date_range = (logs_selected_institution["fecha"] >= logs_start_date) & (logs_selected_institution["fecha"] <= logs_end_date)
+    logged_users_df = logs_selected_institution.loc[logs_date_range]
+    left_column, right_column = st.columns(2)
 
-#Created users by date
-st.header("Created users by date")
-users_created_range_dates = st.date_input("Select the date range for the created users", (min_date, max_date))
-users_created_start_date = np.datetime64(users_created_range_dates[0])
-users_created_end_date = pd.to_datetime("today")
-if len(users_created_range_dates)!=1:
-    users_created_end_date = np.datetime64(users_created_range_dates[1])
-users_created_selected_institution = users_created_by_date_df[users_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-users_created_date_range = (users_created_selected_institution["fecha"] >= users_created_start_date) & (users_created_selected_institution["fecha"] <= users_created_end_date)
-users_created_df = users_created_selected_institution.loc[users_created_date_range]
-left_column, right_column = st.columns(2)
+    if len(logged_users_df.index) == 0:
+        st.markdown("##### There were no created users on this time period")
 
-if len(users_created_df.index) == 0:
-    st.markdown("##### There're no created users on this time period")
+    if len(logged_users_df.index) == 1:
+        st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["fecha"]))
 
-if len(users_created_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["fecha"]))
+    if len(logged_users_df.index) > 1:
+        with left_column:
+            date_users_df = logged_users_df[["fecha", "logged_users"]]
+            st.dataframe(date_users_df)
+
+        with right_column:
+            st.markdown("##### Quantity of logged users by date ")
+            fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
+            st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
+
+    st.markdown("""---""")
+
+    #Created users by date
+    st.header("Created users by date")
+    users_created_range_dates = st.date_input("Select the date range for the created users", (min_date, max_date))
+    users_created_start_date = np.datetime64(users_created_range_dates[0])
+    users_created_end_date = pd.to_datetime("today")
+    if len(users_created_range_dates)!=1:
+        users_created_end_date = np.datetime64(users_created_range_dates[1])
+    users_created_selected_institution = users_created_by_date_df[users_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+    users_created_date_range = (users_created_selected_institution["fecha"] >= users_created_start_date) & (users_created_selected_institution["fecha"] <= users_created_end_date)
+    users_created_df = users_created_selected_institution.loc[users_created_date_range]
+    left_column, right_column = st.columns(2)
+
+    if len(users_created_df.index) == 0:
+        st.markdown("##### There were no created users on this time period")
+
+    if len(users_created_df.index) == 1:
+        st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["fecha"]))
+
+    if len(users_created_df.index) > 1:
+        with left_column:
+            date_users_df = users_created_df[["fecha", "created_users"]]
+            st.dataframe(date_users_df)
+
+        with right_column:
+            st.markdown("##### Quantity of created users by date ")
+            fig_created_users = plt.plot(users_created_df["fecha"], users_created_df["created_users"])
+            st.line_chart(data = date_users_df, x="fecha", y="created_users", use_container_width=True)
+
+    st.markdown("""---""")
+
+    #Admin users created by date
+    st.header("Created admin users by date")
+    admin_created_range_dates = st.date_input("Select the date range for the admin created users", (min_date, max_date))
+    admin_created_start_date = np.datetime64(admin_created_range_dates[0])
+    admin_created_end_date = pd.to_datetime("today")
+    if len(admin_created_range_dates)!=1:
+        admin_created_end_date = np.datetime64(admin_created_range_dates[1])
+
+    admin_created_selected_institution = admin_created_by_date_df[admin_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+    admin_created_date_range = (admin_created_selected_institution["fecha"] >= users_created_start_date) & (admin_created_selected_institution["fecha"] <= admin_created_end_date)
+    admin_created_df = admin_created_selected_institution.loc[admin_created_date_range]
+    left_column, right_column = st.columns(2)
+
+    if len(admin_created_df.index) == 0:
+        st.markdown("##### There're no created admin users on this time period")
+
+    if len(admin_created_df.index) == 1:
+        st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["fecha"]))
+
+    if len(admin_created_df.index) > 1:
+        with left_column:
+            date_users_df = admin_created_df[["fecha", "created_admins"]]
+            st.dataframe(date_users_df)
+
+        with right_column:
+            st.markdown("##### Quantity of created admin users by date ")
+            fig_created_users = plt.plot(admin_created_df["fecha"], admin_created_df["created_admins"])
+            st.line_chart(data = date_users_df, x="fecha", y="created_admins", use_container_width=True)
+        
+st.header("Learning Contents")
+with st.expander("**Metrics**", expanded=True):
+    # Subjects information
+    total_contents = int(df_institutions_selection["classes_count"].sum()) + int(df_institutions_selection["text_count"].sum()) + int(df_institutions_selection["scorm_count"].sum())
+    total_programs_count = int(df_institutions_selection["programs_count"].sum())
+    total_created_tests_count = int(df_institutions_selection["created_tests_count"].sum())
+    total_created_questions = int(df_institutions_selection["created_questions"].sum())
+    total_courses_count = int(df_institutions_selection["courses_count"].sum())
+    total_finished_courses = int(df_institutions_selection["finished_courses"].sum())
+    total_answered_questions_count = int(df_institutions_selection["answered_questions_count"].sum())
+    total_correct_answers_count = int(df_institutions_selection["correct_answers_count"].sum())
+    total_incorrect_answers_count = int(df_institutions_selection["incorrect_answers_count"].sum())
+    total_attempts_count = int(df_institutions_selection["attempts_count"].sum())
+    total_courses_views_count = int(df_course_selection["view_count"].sum())
 
 
-if len(users_created_df.index) > 1:
-    with left_column:
-        date_users_df = users_created_df[["fecha", "created_users"]]
-        st.dataframe(date_users_df)
+    # Defining the grid to display the metrics
+    rows = 3
+    cols = 4
 
-    with right_column:
-        st.markdown("##### Quantity of created users by date ")
-        fig_created_users = plt.plot(users_created_df["fecha"], users_created_df["created_users"])
-        st.line_chart(data = date_users_df, x="fecha", y="created_users", use_container_width=True)
+    learning_metrics_grid = []
+    for row in range(rows):
+        learning_metrics_grid.extend(st.columns(cols))
 
-st.markdown("""---""")
+    st.markdown("""
+        <style>
+        [data-testid=column] [data-testid=stVerticalBlock]{
+            gap: 0rem;
+        }
+        </style>
+        """,unsafe_allow_html=True)
 
-#Admin users created by date
-st.header("Created admin users by date")
-admin_created_range_dates = st.date_input("Select the date range for the admin created users", (min_date, max_date))
-admin_created_start_date = np.datetime64(admin_created_range_dates[0])
-admin_created_end_date = pd.to_datetime("today")
-if len(admin_created_range_dates)!=1:
-    admin_created_end_date = np.datetime64(admin_created_range_dates[1])
-admin_created_selected_institution = admin_created_by_date_df[admin_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-admin_created_date_range = (admin_created_selected_institution["fecha"] >= users_created_start_date) & (admin_created_selected_institution["fecha"] <= admin_created_end_date)
-admin_created_df = admin_created_selected_institution.loc[admin_created_date_range]
-left_column, right_column = st.columns(2)
-
-if len(admin_created_df.index) == 0:
-    st.markdown("##### There're no created admin users on this time period")
-
-if len(admin_created_df.index) == 1:
-    st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["fecha"]))
-
-if len(admin_created_df.index) > 1:
-    with left_column:
-        date_users_df = admin_created_df[["fecha", "created_admins"]]
-        st.dataframe(date_users_df)
-
-    with right_column:
-        st.markdown("##### Quantity of created admin users by date ")
-        fig_created_users = plt.plot(admin_created_df["fecha"], admin_created_df["created_admins"])
-        st.line_chart(data = date_users_df, x="fecha", y="created_admins", use_container_width=True)
+    learning_checkboxes = {}
     
-st.markdown("""---""")
+    # Adding the metrics to the grid
+    with learning_metrics_grid[0]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Created Programs"] = st.checkbox('', key="Created Programs", label_visibility="collapsed")
+        st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
+    with learning_metrics_grid[1]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Created Contents"] = st.checkbox('', key="Created Contents", label_visibility="collapsed")
+        st.metric(label="Created Contents", value='{:,}'.format(total_contents).replace(',','.'), help='Total number of content items created')
+    with learning_metrics_grid[2]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Created Courses"] = st.checkbox('', key="Created Courses", label_visibility="collapsed")
+        st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
+    with learning_metrics_grid[3]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Finished Courses"] = st.checkbox('', key="Finished Courses", label_visibility="collapsed")
+        st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
+    with learning_metrics_grid[4]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Courses Views"] = st.checkbox('', key="Courses Views", label_visibility="collapsed")
+        st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
+    with learning_metrics_grid[5]:
+        left, center, right = st.columns([1, 3, 3])
+        with center:
+            learning_checkboxes["Created Tests"] = st.checkbox('', key="Created Tests", label_visibility="collapsed")
+        st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
 
-st.header("General stats summary")
+    for key, value in learning_checkboxes.items():
+        if value == True:
+            st.header(f"{key} by date")
+            # Include plot and other details here
 
-#Subjects information
+    # Created Courses plots
+    st.header("Course information by date")
+    course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+    course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
+    course_views_start_date = np.datetime64(course_views_range_dates[0])
+    course_views_end_date = pd.to_datetime("today")
+    if len(course_views_range_dates)!=1:
+        course_views_end_date = np.datetime64(course_views_range_dates[1])
+    course_views_date_range = (course_views_selected_institution["create_time"] >= course_views_start_date) & (course_views_selected_institution["create_time"] <= course_views_end_date)
+    course_views_df = course_views_selected_institution.loc[course_views_date_range]
+    left_column, right_column = st.columns(2)
+    created_courses_by_date = course_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
 
-total_contents = int(df_institutions_selection["classes_count"].sum()) + int(df_institutions_selection["text_count"].sum()) + int(df_institutions_selection["scorm_count"].sum())
-total_programs_count = int(df_institutions_selection["programs_count"].sum())
-total_created_tests_count = int(df_institutions_selection["created_tests_count"].sum())
-total_created_news_count = int(df_institutions_selection["created_news_count"].sum())
-total_created_questions = int(df_institutions_selection["created_questions"].sum())
-total_courses_count = int(df_institutions_selection["courses_count"].sum())
-total_finished_courses = int(df_institutions_selection["finished_courses"].sum())
-total_answered_questions_count = int(df_institutions_selection["answered_questions_count"].sum())
-total_correct_answers_count = int(df_institutions_selection["correct_answers_count"].sum())
-total_incorrect_answers_count = int(df_institutions_selection["incorrect_answers_count"].sum())
-total_likes_count = int(df_institutions_selection["likes_count"].sum())
-total_new_views_count = int(df_institutions_selection["new_views_count"].sum())
-total_comments_count = int(df_institutions_selection["comments_count"].sum())
-total_attempts_count = int(df_institutions_selection["attempts_count"].sum())
-total_courses_views_count = int(df_course_selection["view_count"].sum())
 
+    if len(course_views_df.index) == 0:
+        st.markdown("##### There're no created courses on this time period")
+
+    if len(course_views_df.index) == 1:
+        st.markdown("##### There was one created course on {}".format(course_views_df.iloc[0]["create_time"]))
+
+    if len(course_views_df.index) > 1:
+        with left_column:
+            st.dataframe(course_views_df[["title","create_time", "view_count", "author_id", "signed_users","user_finished_courses", "user_failed_courses"]].sort_values(by="create_time"))
+
+        with right_column:
+            st.markdown("##### Courses created by date")
+            fig_created_users = plt.plot(created_courses_by_date)
+            st.line_chart(data = created_courses_by_date, use_container_width=True)
+
+# Questions metrics
+st.header("Test Questions")
+with st.expander("**Metrics**"):
+    questions_metrics_grid = []
+    for row in range(2):
+        questions_metrics_grid.extend(st.columns(4))
+    with questions_metrics_grid[0]:
+        st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
+    with questions_metrics_grid[1]:
+        st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of answers for all questions')
+    with questions_metrics_grid[2]:
+        st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of correct answers for all questions')
+    with questions_metrics_grid[3]:
+        st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of incorrect answers for all questions')
+    with questions_metrics_grid[4]:
+        st.metric(label="Total Tries", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of times a ___ has been tried to be answered')
 
 
 # Defining the grid to display the metrics
@@ -324,33 +432,7 @@ with column_list[10]:
 
 st.markdown("""---""")
 
-st.header("Course information by date")
-course_views_selected_institution = courses_info_df[courses_info_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-course_views_range_dates = st.date_input("Select the date range to deploy the course information", (min_date, max_date))
-course_views_start_date = np.datetime64(course_views_range_dates[0])
-course_views_end_date = pd.to_datetime("today")
-if len(course_views_range_dates)!=1:
-    course_views_end_date = np.datetime64(course_views_range_dates[1])
-course_views_date_range = (course_views_selected_institution["create_time"] >= course_views_start_date) & (course_views_selected_institution["create_time"] <= course_views_end_date)
-course_views_df = course_views_selected_institution.loc[course_views_date_range]
-left_column, right_column = st.columns(2)
-created_courses_by_date = course_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
 
-
-if len(course_views_df.index) == 0:
-    st.markdown("##### There're no created courses on this time period")
-
-if len(course_views_df.index) == 1:
-    st.markdown("##### There was one created course on {}".format(course_views_df.iloc[0]["create_time"]))
-
-if len(course_views_df.index) > 1:
-    with left_column:
-        st.dataframe(course_views_df[["title","create_time", "view_count", "author_id", "signed_users","user_finished_courses", "user_failed_courses"]].sort_values(by="create_time"))
-
-    with right_column:
-        st.markdown("##### Courses created by date")
-        fig_created_users = plt.plot(created_courses_by_date)
-        st.line_chart(data = created_courses_by_date, use_container_width=True)
     
 st.markdown("""---""")
 
@@ -367,6 +449,23 @@ classes_views_df = classes_views_selected_institution.loc[classes_views_date_ran
 left_column, right_column = st.columns(2)
 created_classes_by_date = classes_views_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
 
+
+
+
+# News metrics
+st.header("News")
+with st.expander("**Metrics**"):
+    news_metrics_grid = []
+    for row in range(1):
+        news_metrics_grid.extend(st.columns(4))
+    with news_metrics_grid[0]:
+        st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of news items created')
+    with news_metrics_grid[1]:
+        st.metric(label="Total Views", value='{:,}'.format(total_news_views_count).replace(',','.'), help='Total number of views')
+    with news_metrics_grid[2]:
+        st.metric(label="Total Likes", value='{:,}'.format(total_news_likes_count).replace(',','.'), help='Total number of likes')
+    with news_metrics_grid[3]:
+        st.metric(label="Total Comments", value='{:,}'.format(total_news_comments_count).replace(',','.'), help='Total number of comments')
 
 if len(classes_views_df.index) == 0:
     st.markdown("##### There're no created classes on this time period")
@@ -542,9 +641,9 @@ metrics_values = [
     total_answered_questions_count,
     total_correct_answers_count,
     total_incorrect_answers_count,
-    total_likes_count,
-    total_new_views_count,
-    total_comments_count,
+    total_news_likes_count,
+    total_news_views_count,
+    total_news_comments_count,
     total_attempts_count
 ]
 
@@ -554,22 +653,6 @@ for index_metric in range(len(metrics_keys)):
     metrics_data.append([metrics_keys[index_metric], metrics_values[index_metric]])
 
 metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
-
-
-#News stats
-st.header("News institution stats")
-
-first_col, second_col, third_col, fourth_col = st.columns(4)
-
-with first_col:
-    st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of content items created')
-with second_col:
-    st.metric(label="News Views", value='{:,}'.format(total_new_views_count).replace(',','.'), help='Total number of content items created')
-with third_col:
-    st.metric(label="News Likes Count", value='{:,}'.format(total_likes_count).replace(',','.'), help='Total number of content items created')
-with fourth_col:
-    st.metric(label="Comments Count", value='{:,}'.format(total_comments_count).replace(',','.'), help='Total number of content items created')
-
 
 col1, col2 = st.columns(2)
 # Botón de descarga en formato csv
