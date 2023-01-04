@@ -140,4 +140,4 @@ SELECT FROM_UNIXTIME(create_time,  '%Y-%m-%d') AS 'fecha',count(user_id) as logg
 UNION ALL
 SELECT FROM_UNIXTIME(create_time,  '%Y-%m-%d') AS 'fecha',count(user_id) as logged_users, institution_id FROM logs_classroomtv.ctv_user_session_log202201 where institution_id is not null or institution_id != '' GROUP BY institution_id
 ) as V
-ORDER by fecha
+ORDER by fecha;
