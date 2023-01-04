@@ -394,7 +394,6 @@ with st.expander("**Metrics**"):
         st.metric(label="Total Tries", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of times a ___ has been tried to be answered')
 
 
-
 # News metrics
 st.header("News")
 with st.expander("**Metrics**"):
