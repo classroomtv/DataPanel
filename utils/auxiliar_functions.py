@@ -5,6 +5,9 @@ import datetime
 from streamlit.components.v1 import html
 from streamlit.source_util import _on_pages_changed, get_pages
 import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+import datetime as dt
 
 
 DEFAULT_PAGE = "main.py"
@@ -70,3 +73,35 @@ def plotly_fig2array(fig):
 
 def get_year_range(start_year, end_year=datetime.date.today().year):
     return [year for year in range(start_year, end_year+1)]
+
+def show_data_by_date(title, data, df_institutions_selection):
+    st.markdown("""---""")
+    min_date = pd.to_datetime("today") - dt.timedelta(days=365)
+    max_date = pd.to_datetime("today")
+
+    data_selected_institution = data[data["institution_id"] == df_institutions_selection.iloc[0]["id"]]
+    data_range_dates = st.date_input("Select the date range to deploy the information", (min_date, max_date), key=f'{title}_date_input')
+    data_start_date = np.datetime64(data_range_dates[0])
+    data_end_date = pd.to_datetime("today")
+    
+    if len(data_range_dates)!=1:
+        data_end_date = np.datetime64(data_range_dates[1])
+        
+    data_date_range = (data_selected_institution["create_time"] >= data_start_date) & (data_selected_institution["create_time"] <= data_end_date)
+    data_df = data_selected_institution.loc[data_date_range]
+    left_column, right_column = st.columns(2)
+    created_elements_by_date = data_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+    if len(data_df.index) == 0:
+        st.markdown("##### There're no created items on this time period")
+    if len(data_df.index) == 1:
+        st.markdown("##### There was one item created on {}".format(data_df.iloc[0]["create_time"]))
+    if len(data_df.index) > 1:
+        with left_column:
+            st.dataframe(data_df.sort_values(by="create_time"))
+            #st.dataframe(data_df[["title","create_time", "view_count", "author_id", "signed_users","user_finished_courses", "user_failed_courses"]].sort_values(by="create_time"))
+        with right_column:
+            st.markdown(f"##### {title} by date")
+            fig_created_users = plt.plot(created_elements_by_date)
+            st.line_chart(data=created_elements_by_date, use_container_width=True)
+    return
