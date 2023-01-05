@@ -12,12 +12,11 @@ SELECT
     c.sence_code as 'sencecod',
 	FROM_UNIXTIME(c.start_date) as 'start_course_date',
 	FROM_UNIXTIME(c.end_date) as 'end_course_date',
-	i.content as 'reactivo',
-	ia.content as 'respuesta',
+	i.content as 'reactive',
+	ia.content as 'answer',
     max_ptje,
     min_ptje,
-    FROM_UNIXTIME(t.create_time,  '%Y-%m-%d') as test_create_time, FROM_UNIXTIME(t.update_time,  '%Y-%m-%d') as test_update_time,
-	FROM_UNIXTIME(i.create_time,  '%Y-%m-%d') as item_create_time, FROM_UNIXTIME(i.update_time,  '%Y-%m-%d') as item_update_time
+	FROM_UNIXTIME(i.create_time,  '%Y-%m-%d') as item_create_time
 from prod_classroomtv.ctv_courses as c
 inner join prod_classroomtv.ctv_institutions as ins on c.institution_id = ins.id
 inner join prod_classroomtv.ctv_tests as t on c.id = t.course_id

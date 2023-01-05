@@ -47,13 +47,13 @@ institutions_df = pd.read_csv("pages/Database/institutions.csv" )
 users_df = pd.read_csv("pages/Database/users_by_date.csv" )
 
 logs_by_date_df = pd.read_csv("pages/Database/logs_by_date.csv")
-logs_by_date_df["fecha"] = pd.to_datetime(logs_by_date_df["fecha"], infer_datetime_format=True)
+logs_by_date_df["create_time"] = pd.to_datetime(logs_by_date_df["create_time"], infer_datetime_format=True)
 
 users_created_by_date_df = pd.read_csv("pages/Database/users_created_by_date.csv")
-users_created_by_date_df["fecha"] = pd.to_datetime(users_created_by_date_df["fecha"], infer_datetime_format=True)
+users_created_by_date_df["create_time"] = pd.to_datetime(users_created_by_date_df["create_time"], infer_datetime_format=True)
 
 admin_created_by_date_df = pd.read_csv("pages/Database/admin_created_by_date.csv")
-admin_created_by_date_df["fecha"] = pd.to_datetime(admin_created_by_date_df["fecha"], infer_datetime_format=True)
+admin_created_by_date_df["create_time"] = pd.to_datetime(admin_created_by_date_df["create_time"], infer_datetime_format=True)
 
 courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
 courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], infer_datetime_format=True)
@@ -206,7 +206,7 @@ with st.expander("**Metrics**", expanded=False):
         logs_end_date = np.datetime64(logs_range_dates[1])
 
     logs_selected_institution = logs_by_date_df[logs_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    logs_date_range = (logs_selected_institution["fecha"] >= logs_start_date) & (logs_selected_institution["fecha"] <= logs_end_date)
+    logs_date_range = (logs_selected_institution["create_time"] >= logs_start_date) & (logs_selected_institution["create_time"] <= logs_end_date)
     logged_users_df = logs_selected_institution.loc[logs_date_range]
     left_column, right_column = st.columns(2)
 
@@ -214,17 +214,17 @@ with st.expander("**Metrics**", expanded=False):
         st.markdown("##### There were no created users on this time period")
 
     if len(logged_users_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["fecha"]))
+        st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["create_time"]))
 
     if len(logged_users_df.index) > 1:
         with left_column:
-            date_users_df = logged_users_df[["fecha", "logged_users"]]
+            date_users_df = logged_users_df[["create_time", "logged_users"]]
             st.dataframe(date_users_df)
 
         with right_column:
             st.markdown("##### Quantity of logged users by date ")
-            fig_logged_users = plt.plot(logged_users_df["fecha"], logged_users_df["logged_users"])
-            st.line_chart(data = date_users_df, x="fecha", y="logged_users", use_container_width=True)
+            fig_logged_users = plt.plot(logged_users_df["create_time"], logged_users_df["logged_users"])
+            st.line_chart(data = date_users_df, x="create_time", y="logged_users", use_container_width=True)
 
     st.markdown("""---""")
 
@@ -236,7 +236,7 @@ with st.expander("**Metrics**", expanded=False):
     if len(users_created_range_dates)!=1:
         users_created_end_date = np.datetime64(users_created_range_dates[1])
     users_created_selected_institution = users_created_by_date_df[users_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    users_created_date_range = (users_created_selected_institution["fecha"] >= users_created_start_date) & (users_created_selected_institution["fecha"] <= users_created_end_date)
+    users_created_date_range = (users_created_selected_institution["create_time"] >= users_created_start_date) & (users_created_selected_institution["create_time"] <= users_created_end_date)
     users_created_df = users_created_selected_institution.loc[users_created_date_range]
     left_column, right_column = st.columns(2)
 
@@ -244,17 +244,17 @@ with st.expander("**Metrics**", expanded=False):
         st.markdown("##### There were no created users on this time period")
 
     if len(users_created_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["fecha"]))
+        st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["create_time"]))
 
     if len(users_created_df.index) > 1:
         with left_column:
-            date_users_df = users_created_df[["fecha", "created_users"]]
+            date_users_df = users_created_df[["create_time", "created_users"]]
             st.dataframe(date_users_df)
 
         with right_column:
             st.markdown("##### Quantity of created users by date ")
-            fig_created_users = plt.plot(users_created_df["fecha"], users_created_df["created_users"])
-            st.line_chart(data = date_users_df, x="fecha", y="created_users", use_container_width=True)
+            fig_created_users = plt.plot(users_created_df["create_time"], users_created_df["created_users"])
+            st.line_chart(data = date_users_df, x="create_time", y="created_users", use_container_width=True)
 
     st.markdown("""---""")
 
@@ -267,7 +267,7 @@ with st.expander("**Metrics**", expanded=False):
         admin_created_end_date = np.datetime64(admin_created_range_dates[1])
 
     admin_created_selected_institution = admin_created_by_date_df[admin_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    admin_created_date_range = (admin_created_selected_institution["fecha"] >= users_created_start_date) & (admin_created_selected_institution["fecha"] <= admin_created_end_date)
+    admin_created_date_range = (admin_created_selected_institution["create_time"] >= users_created_start_date) & (admin_created_selected_institution["create_time"] <= admin_created_end_date)
     admin_created_df = admin_created_selected_institution.loc[admin_created_date_range]
     left_column, right_column = st.columns(2)
 
@@ -275,17 +275,17 @@ with st.expander("**Metrics**", expanded=False):
         st.markdown("##### There're no created admin users on this time period")
 
     if len(admin_created_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["fecha"]))
+        st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["create_time"]))
 
     if len(admin_created_df.index) > 1:
         with left_column:
-            date_users_df = admin_created_df[["fecha", "created_admins"]]
+            date_users_df = admin_created_df[["create_time", "created_admins"]]
             st.dataframe(date_users_df)
 
         with right_column:
             st.markdown("##### Quantity of created admin users by date ")
-            fig_created_users = plt.plot(admin_created_df["fecha"], admin_created_df["created_admins"])
-            st.line_chart(data = date_users_df, x="fecha", y="created_admins", use_container_width=True)
+            fig_created_users = plt.plot(admin_created_df["create_time"], admin_created_df["created_admins"])
+            st.line_chart(data = date_users_df, x="create_time", y="created_admins", use_container_width=True)
         
 st.header("Learning Contents")
 with st.expander("**Metrics**", expanded=False):
