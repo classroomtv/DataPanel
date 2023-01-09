@@ -363,12 +363,12 @@ for index_metric in range(len(metrics_keys)):
 
 metrics_df = pd.DataFrame(metrics_data, columns=["Metric", "Value"], index=None)
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 # Download button for csv file
 with col1:
     st.download_button(
-                    "{} .csv".format(_("Download")),
+                    "{} csv".format(_("Download as")),
                     data=metrics_df.to_csv(index=False),
                     file_name=f"metrics.csv",
                     mime="text/csv",
@@ -378,7 +378,7 @@ with col1:
 # Download button for excel file
 with col2:
     st.download_button(
-                    "{} (excel)".format(_("Descargar")),
+                    "{} (excel)".format(_("Download as")),
                     data = to_excel(metrics_df),
                     file_name=f"metrics.xlsx",
                     mime="application/vnd.ms-excel",
@@ -449,9 +449,10 @@ for metric_index in range(1, len(non_user_metrics)):
     if metric_index%max_metrics_per_row == 0:
         non_user_metrics_height -= 35
 
-st.download_button(
-                "{} (pdf)".format(_("Download Report")),
-                data=canvas.getpdfdata(),
-                file_name=f"report.pdf",
-                mime="application/pdf",
-                )
+with col3:
+    st.download_button(
+                    "Download pdf report",
+                    data=canvas.getpdfdata(),
+                    file_name=f"report.pdf",
+                    mime="application/pdf",
+                    )

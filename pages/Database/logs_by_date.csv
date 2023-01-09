@@ -1,4 +1,4 @@
-,fecha,institution_id,logged_users
+,create_time,institution_id,logged_users
 0,2017-06-30,115,1
 1,2017-06-30,583,7
 2,2017-06-30,43,11
