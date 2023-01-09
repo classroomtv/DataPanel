@@ -1,0 +1,414 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-01-09 16:40-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: 2_Analysis_by_Institution.py:19
+msgid "Stats by Institution"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:36
+msgid "Logout"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:95
+msgid "Welcome"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:100
+msgid "Select an institution"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:126
+msgid "Metrics for"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:140
+msgid "Users Created by Year"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:158
+msgid "Logged Users by Year"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:161
+msgid "Users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:161
+msgid "Year"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:170 2_Analysis_by_Institution.py:294
+#: 2_Analysis_by_Institution.py:395 2_Analysis_by_Institution.py:469
+msgid "Metrics"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:177
+msgid "Total Users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:177
+msgid "Total number of users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:179
+msgid "Active Users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:179
+msgid "Total number of active users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:181
+msgid "Collaborators Users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:181
+msgid "Total number of collaborators"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:183
+msgid "Admin Users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:183
+msgid "Total number of admins"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:187
+msgid "All users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:189
+msgid "Collaborators"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:191
+msgid "Admins"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:204
+msgid "Logged users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:205
+msgid "Select the date range for the logged users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:217 2_Analysis_by_Institution.py:247
+msgid "There were no created users on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:220 2_Analysis_by_Institution.py:250
+#: 2_Analysis_by_Institution.py:281
+msgid "There were"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:220 2_Analysis_by_Institution.py:250
+#: 2_Analysis_by_Institution.py:281
+msgid "users created on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:228
+msgid "Quantity of logged users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:235
+msgid "Created users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:236
+msgid "Select the date range for the created users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:258
+msgid "Quantity of created users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:265
+msgid "Created admin users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:266
+msgid "Select the date range for the admin created users"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:278
+msgid "There're no created admin users on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:289
+msgid "Quantity of created admin users by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:293
+msgid "Learning Contents"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:332 2_Analysis_by_Institution.py:422
+msgid "Created Programs"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:332 2_Analysis_by_Institution.py:422
+msgid "Total number of programs created"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:337 2_Analysis_by_Institution.py:342
+#: 2_Analysis_by_Institution.py:347 2_Analysis_by_Institution.py:352
+#: 2_Analysis_by_Institution.py:357 2_Analysis_by_Institution.py:400
+#: 2_Analysis_by_Institution.py:424 2_Analysis_by_Institution.py:426
+#: 2_Analysis_by_Institution.py:428 2_Analysis_by_Institution.py:430
+#: 2_Analysis_by_Institution.py:432 2_Analysis_by_Institution.py:434
+#: 2_Analysis_by_Institution.py:436 2_Analysis_by_Institution.py:438
+#: 2_Analysis_by_Institution.py:440 2_Analysis_by_Institution.py:442
+msgid "Total number of content items created"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:337 2_Analysis_by_Institution.py:424
+msgid "Created Contents"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:342 2_Analysis_by_Institution.py:426
+msgid "Created Courses"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:347 2_Analysis_by_Institution.py:428
+msgid "Finished Courses"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:352 2_Analysis_by_Institution.py:430
+msgid "Courses Views"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:357 2_Analysis_by_Institution.py:432
+msgid "Created Tests"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:361
+msgid "by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:365
+msgid "Course information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:367
+msgid "Select the date range to deploy the course information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:379
+msgid "There're no created courses on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:382
+msgid "There was one created course on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:389
+msgid "Courses created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:394
+msgid "Test Questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:400 2_Analysis_by_Institution.py:434
+msgid "Created Questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:402
+msgid "Total number of answers for all questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:402 2_Analysis_by_Institution.py:436
+msgid "Answered Questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:404
+msgid "Total number of correct answers for all questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:404 2_Analysis_by_Institution.py:438
+msgid "Correct Answers"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:406
+msgid "Total number of incorrect answers for all questions"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:406 2_Analysis_by_Institution.py:440
+msgid "Incorrect Answers"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:408
+msgid "Total Tries"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:408
+msgid "Total number of times a ___ has been tried to be answered"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:442
+msgid "Attempts Count"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:452
+msgid "Classes information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:454
+msgid "Select the date range to deploy the classes information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:468
+msgid "News"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:474
+msgid "Created News"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:474
+msgid "Total number of news items created"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:476
+msgid "Total Views"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:476
+msgid "Total number of views"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:478
+msgid "Total Likes"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:478
+msgid "Total number of likes"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:480
+msgid "Total Comments"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:480
+msgid "Total number of comments"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:483
+msgid "There're no created classes on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:486
+msgid "There was one created classes on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:493
+msgid "Classes created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:499
+msgid "Scorms information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:501
+msgid "Select the date range to deploy the scorms information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:513
+msgid "There're no created scorms on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:516
+msgid "There was one created scorm on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:523
+msgid "Scorms created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:529
+msgid "Texts information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:531
+msgid "Select the date range to deploy the texts information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:543
+msgid "There're no created texts on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:546
+msgid "There was one created text on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:553
+msgid "Texts created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:557
+msgid "Tests information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:559
+msgid "Select the date range to deploy the tests information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:571
+msgid "There're no created tests on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:574
+msgid "There was one created test on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:581
+msgid "Tests created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:587
+msgid "Satisfaction surverys information by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:589
+msgid "Select the date range to deploy the satisfaction surveys information"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:601
+msgid "There're no created satisfaction surveys on this time period"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:604
+msgid "There was one created satisfaction_surveys on"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:611
+msgid "Satisfaction surveys created by date"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:673
+msgid "Download .csv"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:683
+msgid "Download (excel format)"
+msgstr ""
+
+#: 2_Analysis_by_Institution.py:749
+msgid "Download Report (pdf)"
+msgstr ""
+

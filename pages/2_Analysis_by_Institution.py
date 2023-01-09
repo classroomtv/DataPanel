@@ -4,24 +4,36 @@ import streamlit as st  # pip install streamlit
 import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
+import gettext
+import streamlit_nested_layout
 from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, get_year_range, show_data_by_date
 from streamlit_google_oauth import logout_button
-import streamlit_nested_layout
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
 
+_ = gettext.gettext
 
-st.set_page_config(page_title="Stats by Institution", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title=_("Stats by Institution"), page_icon=":bar_chart:", layout="wide")
+
+language = st.sidebar.selectbox('', ['en', 'es'])
+try:
+    localizator = gettext.translation('Analysis_by_Institution', localedir='pages/locales', languages=[language])
+    localizator.install()
+    _ = localizator.gettext 
+except:
+    pass
+
 
 # Load page only if logged in
 code = st.experimental_get_query_params()['code'][0]
 if code == '/logged_in':
     #hide_page('main')
     with st.sidebar:
-        logout_button('Logout')
+        
+        logout_button(_('Logout'))
 else:
     nav_page('')
 
@@ -89,12 +101,12 @@ dataframes_dict = {
 }
 # ---- SIDEBAR ----
 name = 'bharath'
-st.sidebar.title(f"Welcome {name}")
+st.sidebar.title("{} {}".format(_("Welcome"), name))
 
 available_institutions = institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique()
 forus_id = np.where(available_institutions == "Forus")[0][0]
 institution = st.sidebar.selectbox(
-    "Select an institution:",
+    _("Select an institution")+":",
     options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(), index=int(forus_id))
 
 df_institutions_selection = institutions_df.query(
@@ -120,7 +132,7 @@ total_news_comments_count = int(df_institutions_selection["comments_count"].sum(
 
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: Metrics for **{}** ".format(institution))
+st.title(":bar_chart: {} **{}** ".format(_("Metrics for"),institution))
 st.markdown("##")
 
 
@@ -134,7 +146,7 @@ fig_users_by_year = px.bar(
     x=year_list ,
     y=users_by_year,
     orientation="v",
-    title="<b>Users Created by Year</b>",
+    title="<b>{}</b>".format(_("Users Created by Year")),
     color_discrete_sequence=["#0083B8"] * len(users_by_year),
     template="plotly_white",
     labels={'x': 'Year', 'y':'Users'}
@@ -152,10 +164,10 @@ fig_admins_by_year = px.bar(
     x=year_list[1:] ,
     y=users_by_year,
     orientation="v",
-    title="<b>Logged Users by Year</b>",
+    title="<b>{}</b>".format(_("Logged Users by Year")),
     color_discrete_sequence=["#0083B8"] * len(users_by_year),
     template="plotly_white",
-    labels={'x': 'Year', 'y':'Users'}
+    labels={"x": _("Year"), "y":_('Users')}
 )
 fig_admins_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -164,28 +176,28 @@ fig_admins_by_year.update_layout(
 
 st.title("Users")
 
-with st.expander("**Metrics**", expanded=False):
+with st.expander("**"+ _("Metrics")+"**", expanded=False):
     # Defining the grid to display the users metrics
     users_metric_grid = []
     for row in range(1):
         users_metric_grid.extend(st.columns(4))
 
     with users_metric_grid[0]:
-        st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help='Total number of users')
+        st.metric(label=_("Total Users"), value='{:,}'.format(total_users).replace(',','.'), help=_("Total number of users"))
     with users_metric_grid[1]:
-        st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help='Total number of active users')
+        st.metric(label=_("Active Users"), value='{:,}'.format(total_active_users).replace(',','.'), help=_("Total number of active users"))
     with users_metric_grid[2]:
-        st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help='Total number of collaborators')
+        st.metric(label=_("Collaborators Users"), value='{:,}'.format(total_collaborator_users).replace(',','.'), help=_("Total number of collaborators"))
     with users_metric_grid[3]:
-        st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help='Total number of admins')
+        st.metric(label=_("Admin Users"), value='{:,}'.format(total_admin_users).replace(',','.'), help=_("Total number of admins"))
 
     tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
     with tab1:
-        st.header("All users")
+        st.header(_("All users"))
     with tab2:
-        st.header("Collaborators")
+        st.header(_("Collaborators"))
     with tab3:
-        st.header("Admins")
+        st.header(_("Admins"))
 
     left_column, right_column = st.columns(2)
 
@@ -198,8 +210,8 @@ with st.expander("**Metrics**", expanded=False):
     max_date = pd.to_datetime("today")
 
     #logs by date
-    st.header("Logged users by date")
-    logs_range_dates = st.date_input("Select the date range for the logged users", (min_date, max_date))
+    st.header(_("Logged users by date"))
+    logs_range_dates = st.date_input(_("Select the date range for the logged users"), (min_date, max_date))
     logs_start_date = np.datetime64(logs_range_dates[0])
     logs_end_date = pd.to_datetime("today")
     if len(logs_range_dates)!=1:
@@ -211,10 +223,10 @@ with st.expander("**Metrics**", expanded=False):
     left_column, right_column = st.columns(2)
 
     if len(logged_users_df.index) == 0:
-        st.markdown("##### There were no created users on this time period")
+        st.markdown("##### {}".format(_("There were no created users on this time period")))
 
     if len(logged_users_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["create_time"]))
+        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["create_time"]))
 
     if len(logged_users_df.index) > 1:
         with left_column:
@@ -222,15 +234,15 @@ with st.expander("**Metrics**", expanded=False):
             st.dataframe(date_users_df)
 
         with right_column:
-            st.markdown("##### Quantity of logged users by date ")
+            st.markdown("##### {} ".format(_("Quantity of logged users by date")))
             fig_logged_users = plt.plot(logged_users_df["create_time"], logged_users_df["logged_users"])
             st.line_chart(data = date_users_df, x="create_time", y="logged_users", use_container_width=True)
 
     st.markdown("""---""")
 
     #Created users by date
-    st.header("Created users by date")
-    users_created_range_dates = st.date_input("Select the date range for the created users", (min_date, max_date))
+    st.header(_("Created users by date"))
+    users_created_range_dates = st.date_input(_("Select the date range for the created users"), (min_date, max_date))
     users_created_start_date = np.datetime64(users_created_range_dates[0])
     users_created_end_date = pd.to_datetime("today")
     if len(users_created_range_dates)!=1:
@@ -241,10 +253,10 @@ with st.expander("**Metrics**", expanded=False):
     left_column, right_column = st.columns(2)
 
     if len(users_created_df.index) == 0:
-        st.markdown("##### There were no created users on this time period")
+        st.markdown("##### {}".format(_("There were no created users on this time period")))
 
     if len(users_created_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["create_time"]))
+        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["create_time"]))
 
     if len(users_created_df.index) > 1:
         with left_column:
@@ -252,15 +264,15 @@ with st.expander("**Metrics**", expanded=False):
             st.dataframe(date_users_df)
 
         with right_column:
-            st.markdown("##### Quantity of created users by date ")
+            st.markdown("##### {} ".format(_("Quantity of created users by date")))
             fig_created_users = plt.plot(users_created_df["create_time"], users_created_df["created_users"])
             st.line_chart(data = date_users_df, x="create_time", y="created_users", use_container_width=True)
 
     st.markdown("""---""")
 
     #Admin users created by date
-    st.header("Created admin users by date")
-    admin_created_range_dates = st.date_input("Select the date range for the admin created users", (min_date, max_date))
+    st.header(_("Created admin users by date"))
+    admin_created_range_dates = st.date_input(_("Select the date range for the admin created users"), (min_date, max_date))
     admin_created_start_date = np.datetime64(admin_created_range_dates[0])
     admin_created_end_date = pd.to_datetime("today")
     if len(admin_created_range_dates)!=1:
@@ -272,10 +284,10 @@ with st.expander("**Metrics**", expanded=False):
     left_column, right_column = st.columns(2)
 
     if len(admin_created_df.index) == 0:
-        st.markdown("##### There're no created admin users on this time period")
+        st.markdown("##### {}".format(_("There're no created admin users on this time period")))
 
     if len(admin_created_df.index) == 1:
-        st.markdown("##### There were {} users created on {}".format(admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["create_time"]))
+        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["create_time"]))
 
     if len(admin_created_df.index) > 1:
         with left_column:
@@ -283,12 +295,12 @@ with st.expander("**Metrics**", expanded=False):
             st.dataframe(date_users_df)
 
         with right_column:
-            st.markdown("##### Quantity of created admin users by date ")
+            st.markdown("##### {} ".format(_("Quantity of created admin users by date")))
             fig_created_users = plt.plot(admin_created_df["create_time"], admin_created_df["created_admins"])
             st.line_chart(data = date_users_df, x="create_time", y="created_admins", use_container_width=True)
         
-st.header("Learning Contents")
-with st.expander("**Metrics**", expanded=False):
+st.header(_("Learning Contents"))
+with st.expander("**"+ _("Metrics")+"**", expanded=False):
     # Subjects information
     total_programs_count = int(df_institutions_selection["programs_count"].sum())
     total_texts_count = int(df_institutions_selection["text_count"].sum())
@@ -328,7 +340,7 @@ with st.expander("**Metrics**", expanded=False):
     with learning_metrics_grid[0]:
         left, right = st.columns([1, 12])
         with right:
-            st.metric(label="Created Programs", value='{:,}'.format(total_programs_count).replace(',','.'), help='Total number of programs created')
+            st.metric(label=_("Created Programs"), value='{:,}'.format(total_programs_count).replace(',','.'), help=_('Total number of programs created'))
     with learning_metrics_grid[1]:
         left, right = st.columns([1, 12])
         with left:
@@ -338,17 +350,17 @@ with st.expander("**Metrics**", expanded=False):
     with learning_metrics_grid[2]:
         left, right = st.columns([1, 12])
         with right:
-            st.metric(label="Finished Courses", value='{:,}'.format(total_finished_courses).replace(',','.'), help='Total number of content items created')
+            st.metric(label=_("Finished Courses"), value='{:,}'.format(total_finished_courses).replace(',','.'), help=_('Total number of content items created'))
     with learning_metrics_grid[3]:
         left, right = st.columns([1, 12])
         with right:
-            st.metric(label="Courses Views", value='{:,}'.format(total_courses_views_count).replace(',','.'), help='Total number of content items created')
+            st.metric(label=_("Courses Views"), value='{:,}'.format(total_courses_views_count).replace(',','.'), help=_('Total number of content items created'))
     with learning_metrics_grid[4]:
         left, right = st.columns([1, 12])
         with left:
             learning_checkboxes["Created Classes"] = st.checkbox(' ', key="Created Classes", label_visibility="collapsed")
         with right:
-            st.metric(label="Created Classes", value='{:,}'.format(total_classes_count).replace(',','.'), help='Total number of classes items created')
+            st.metric(label=_("Created Classes"), value='{:,}'.format(total_classes_count).replace(',','.'), help=_('Total number of classes items created'))
     with learning_metrics_grid[5]:
         left, right = st.columns([1, 12])
         with left:
@@ -366,7 +378,7 @@ with st.expander("**Metrics**", expanded=False):
         with left:
             learning_checkboxes["Created Tests"] = st.checkbox(' ', key="Created Tests", label_visibility="collapsed")
         with right:
-            st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
+            st.metric(label=_("Created Tests"), value='{:,}'.format(total_created_tests_count).replace(',','.'), help=_('Total number of content items created'))
 
     for key, value in learning_checkboxes.items():
         if value == True:
@@ -377,37 +389,37 @@ with st.expander("**Metrics**", expanded=False):
 
     
 # Questions metrics
-st.header("Test Questions")
-with st.expander("**Metrics**"):
+st.header(_("Test Questions"))
+with st.expander("**"+ _("Metrics")+"**"):
     questions_metrics_grid = []
     for row in range(2):
         questions_metrics_grid.extend(st.columns(4))
     with questions_metrics_grid[0]:
-        st.metric(label="Created Questions", value='{:,}'.format(total_created_questions).replace(',','.'), help='Total number of content items created')
+        st.metric(label=_("Created Questions"), value='{:,}'.format(total_created_questions).replace(',','.'), help=_('Total number of content items created'))
     with questions_metrics_grid[1]:
-        st.metric(label="Answered Questions", value='{:,}'.format(total_answered_questions_count).replace(',','.'), help='Total number of answers for all questions')
+        st.metric(label=_("Answered Questions"), value='{:,}'.format(total_answered_questions_count).replace(',','.'), help=_('Total number of answers for all questions'))
     with questions_metrics_grid[2]:
-        st.metric(label="Correct Answers", value='{:,}'.format(total_correct_answers_count).replace(',','.'), help='Total number of correct answers for all questions')
+        st.metric(label=_("Correct Answers"), value='{:,}'.format(total_correct_answers_count).replace(',','.'), help=_('Total number of correct answers for all questions'))
     with questions_metrics_grid[3]:
-        st.metric(label="Incorrect Answers", value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help='Total number of incorrect answers for all questions')
+        st.metric(label=_("Incorrect Answers"), value='{:,}'.format(total_incorrect_answers_count).replace(',','.'), help=_('Total number of incorrect answers for all questions'))
     with questions_metrics_grid[4]:
-        st.metric(label="Total Tries", value='{:,}'.format(total_attempts_count).replace(',','.'), help='Total number of times a ___ has been tried to be answered')
+        st.metric(label=_("Total Tries"), value='{:,}'.format(total_attempts_count).replace(',','.'), help=_('Total number of times a ___ has been tried to be answered'))
 
 
 # News metrics
-st.header("News")
-with st.expander("**Metrics**"):
+st.header(_("News"))
+with st.expander("**"+ _("Metrics")+"**"):
     news_metrics_grid = []
     for row in range(1):
         news_metrics_grid.extend(st.columns(4))
     with news_metrics_grid[0]:
-        st.metric(label="Created News", value='{:,}'.format(total_created_news_count).replace(',','.'), help='Total number of news items created')
+        st.metric(label=_("Created News"), value='{:,}'.format(total_created_news_count).replace(',','.'), help=_('Total number of news items created'))
     with news_metrics_grid[1]:
-        st.metric(label="Total Views", value='{:,}'.format(total_news_views_count).replace(',','.'), help='Total number of views')
+        st.metric(label=_("Total Views"), value='{:,}'.format(total_news_views_count).replace(',','.'), help=_('Total number of views'))
     with news_metrics_grid[2]:
-        st.metric(label="Total Likes", value='{:,}'.format(total_news_likes_count).replace(',','.'), help='Total number of likes')
+        st.metric(label=_("Total Likes"), value='{:,}'.format(total_news_likes_count).replace(',','.'), help=_('Total number of likes'))
     with news_metrics_grid[3]:
-        st.metric(label="Total Comments", value='{:,}'.format(total_news_comments_count).replace(',','.'), help='Total number of comments')
+        st.metric(label=_("Total Comments"), value='{:,}'.format(total_news_comments_count).replace(',','.'), help=_('Total number of comments'))
 
 
 st.markdown("""---""")
@@ -468,7 +480,7 @@ col1, col2, col3 = st.columns(3)
 # Botón de descarga en formato csv
 with col1:
     st.download_button(
-                    label="Download as csv",
+                    label=_("Download as csv"),
                     data=metrics_df.to_csv(index=False),
                     file_name=f"metrics.csv",
                     mime="text/csv",
@@ -478,7 +490,7 @@ with col1:
 # Botón de descarga en formato excel
 with col2:
     st.download_button(
-                    label="Download as excel",
+                    "Descargar (formato excel)",
                     data = to_excel(metrics_df),
                     file_name=f"metrics.xlsx",
                     mime="application/vnd.ms-excel",
@@ -544,7 +556,7 @@ for metric_index in range(1, len(non_user_metrics)):
 
 with col3:
     st.download_button(
-                    "Download pdf report",
+                    _("Download pdf report"),
                     data=canvas.getpdfdata(),
                     file_name=f"report_{institution}.pdf",
                     mime="application/pdf",
