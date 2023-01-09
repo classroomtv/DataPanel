@@ -1,7 +1,7 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
 import streamlit_google_oauth as oauth
+from dotenv import load_dotenv
 from utils.auxiliar_functions import nav_page, set_code
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
