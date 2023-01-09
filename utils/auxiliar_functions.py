@@ -74,10 +74,20 @@ def plotly_fig2array(fig):
 def get_year_range(start_year, end_year=datetime.date.today().year):
     return [year for year in range(start_year, end_year+1)]
 
+columns_for_metric = {
+    "Created Courses": ["title", "create_time", "view_count", "author_id", "signed_users", "user_finished_courses", "user_failed_courses"],
+    "Created Classes": ["title", "create_time", "view_count", "author_id"],
+    "Created Scroms": ["title", "create_time", "view_count", "author_id"],
+    "Created Tests": ["title", "create_time", "author_id"],
+    "Created Texts": ["title", "create_time", "author_id"],
+    "Created Surveys": ["title", "create_time", "view_count", "author_id"]
+}
+
 def show_data_by_date(title, data, df_institutions_selection):
     st.markdown("""---""")
     min_date = pd.to_datetime("today") - dt.timedelta(days=365)
     max_date = pd.to_datetime("today")
+    columns_to_show = columns_for_metric[title]
 
     data_selected_institution = data[data["institution_id"] == df_institutions_selection.iloc[0]["id"]]
     data_range_dates = st.date_input("Select the date range to deploy the information", (min_date, max_date), key=f'{title}_date_input')
@@ -98,10 +108,8 @@ def show_data_by_date(title, data, df_institutions_selection):
         st.markdown("##### There was one item created on {}".format(data_df.iloc[0]["create_time"]))
     if len(data_df.index) > 1:
         with left_column:
-            st.dataframe(data_df.sort_values(by="create_time"))
-            #st.dataframe(data_df[["title","create_time", "view_count", "author_id", "signed_users","user_finished_courses", "user_failed_courses"]].sort_values(by="create_time"))
+            st.dataframe(data_df[columns_to_show].sort_values(by="create_time"))
         with right_column:
             st.markdown(f"##### {title} by date")
-            fig_created_users = plt.plot(created_elements_by_date)
             st.line_chart(data=created_elements_by_date, use_container_width=True)
     return
