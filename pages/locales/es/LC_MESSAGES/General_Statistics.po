@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-01-09 16:40-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: 1_General_Statistics.py:31
+msgid "Logout"
+msgstr ""
+
+#: 1_General_Statistics.py:45
+msgid "Welcome"
+msgstr ""
+
+#: 1_General_Statistics.py:49
+msgid "Select the institutions to show"
+msgstr ""
+
+#: 1_General_Statistics.py:103
+msgid "Metrics for"
+msgstr ""
+
+#: 1_General_Statistics.py:103 1_General_Statistics.py:414
+msgid "All Institutions"
+msgstr ""
+
+#: 1_General_Statistics.py:104
+msgid "Total Institutions"
+msgstr ""
+
+#: 1_General_Statistics.py:104
+msgid "Total number of enabled institutions with at least 3 users"
+msgstr ""
+
+#: 1_General_Statistics.py:108 1_General_Statistics.py:140
+#: 1_General_Statistics.py:156 1_General_Statistics.py:172
+msgid "Users"
+msgstr ""
+
+#: 1_General_Statistics.py:121
+msgid "Total users by year"
+msgstr ""
+
+#: 1_General_Statistics.py:137
+msgid "Logged users by year"
+msgstr ""
+
+#: 1_General_Statistics.py:140
+msgid "Year"
+msgstr ""
+
+#: 1_General_Statistics.py:153
+msgid "Collaborators users by institution"
+msgstr ""
+
+#: 1_General_Statistics.py:156 1_General_Statistics.py:172
+#: 1_General_Statistics.py:259 1_General_Statistics.py:276
+msgid "Institution"
+msgstr ""
+
+#: 1_General_Statistics.py:169
+msgid "Admin users by institution"
+msgstr ""
+
+#: 1_General_Statistics.py:179 1_General_Statistics.py:218
+msgid "Metrics"
+msgstr ""
+
+#: 1_General_Statistics.py:186
+msgid "Total Users"
+msgstr ""
+
+#: 1_General_Statistics.py:186
+msgid "Total number of users"
+msgstr ""
+
+#: 1_General_Statistics.py:188
+msgid "Active Users"
+msgstr ""
+
+#: 1_General_Statistics.py:188
+msgid "Total number of active users"
+msgstr ""
+
+#: 1_General_Statistics.py:190
+msgid "Collaborators Users"
+msgstr ""
+
+#: 1_General_Statistics.py:190
+msgid "Total number of collaborators"
+msgstr ""
+
+#: 1_General_Statistics.py:192
+msgid "Admin Users"
+msgstr ""
+
+#: 1_General_Statistics.py:192
+msgid "Total number of admins"
+msgstr ""
+
+#: 1_General_Statistics.py:204
+msgid "Courses"
+msgstr ""
+
+#: 1_General_Statistics.py:228
+msgid "Created Programs"
+msgstr ""
+
+#: 1_General_Statistics.py:228
+msgid "Total number of programs created"
+msgstr ""
+
+#: 1_General_Statistics.py:230
+msgid "Created Contents"
+msgstr ""
+
+#: 1_General_Statistics.py:230 1_General_Statistics.py:232
+#: 1_General_Statistics.py:234 1_General_Statistics.py:236
+#: 1_General_Statistics.py:238 1_General_Statistics.py:240
+#: 1_General_Statistics.py:242 1_General_Statistics.py:244
+#: 1_General_Statistics.py:246 1_General_Statistics.py:248
+msgid "Total number of content items created"
+msgstr ""
+
+#: 1_General_Statistics.py:232
+msgid "Created Courses"
+msgstr ""
+
+#: 1_General_Statistics.py:234
+msgid "Finished Courses"
+msgstr ""
+
+#: 1_General_Statistics.py:236
+msgid "Courses Views"
+msgstr ""
+
+#: 1_General_Statistics.py:238
+msgid "Created Tests"
+msgstr ""
+
+#: 1_General_Statistics.py:240
+msgid "Created Questions"
+msgstr ""
+
+#: 1_General_Statistics.py:242
+msgid "Answered Questions"
+msgstr ""
+
+#: 1_General_Statistics.py:244
+msgid "Correct Answers"
+msgstr ""
+
+#: 1_General_Statistics.py:246
+msgid "Incorrect Answers"
+msgstr ""
+
+#: 1_General_Statistics.py:248
+msgid "Attempts Count"
+msgstr ""
+
+#: 1_General_Statistics.py:256
+msgid "Created courses by Institution"
+msgstr ""
+
+#: 1_General_Statistics.py:259
+msgid "Courses created"
+msgstr ""
+
+#: 1_General_Statistics.py:273
+msgid "Courses views count by Institution"
+msgstr ""
+
+#: 1_General_Statistics.py:276
+msgid "Views"
+msgstr ""
+
+#: 1_General_Statistics.py:291
+msgid "News"
+msgstr ""
+
+#: 1_General_Statistics.py:298
+msgid "Metric"
+msgstr ""
+
+#: 1_General_Statistics.py:304
+msgid "Created News"
+msgstr ""
+
+#: 1_General_Statistics.py:304
+msgid "Total number of news items created"
+msgstr ""
+
+#: 1_General_Statistics.py:306
+msgid "News Views"
+msgstr ""
+
+#: 1_General_Statistics.py:306
+msgid "Total number of views"
+msgstr ""
+
+#: 1_General_Statistics.py:308
+msgid "News Likes Count"
+msgstr ""
+
+#: 1_General_Statistics.py:308
+msgid "Total number of likes"
+msgstr ""
+
+#: 1_General_Statistics.py:310
+msgid "Comments Count"
+msgstr ""
+
+#: 1_General_Statistics.py:310
+msgid "Total number of comments"
+msgstr ""
+
+#: 1_General_Statistics.py:371
+msgid "Download"
+msgstr ""
+
+#: 1_General_Statistics.py:381
+msgid "Descargar"
+msgstr ""
+
+#: 1_General_Statistics.py:415
+msgid "Number of Institutions"
+msgstr ""
+
+#: 1_General_Statistics.py:453
+msgid "Download Report"
+msgstr ""
+

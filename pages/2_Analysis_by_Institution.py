@@ -18,19 +18,21 @@ _ = gettext.gettext
 
 st.set_page_config(page_title=_("Stats by Institution"), page_icon=":bar_chart:", layout="wide")
 
+language = st.sidebar.selectbox('', ['en', 'es'])
+try:
+    localizator = gettext.translation('Analysis_by_Institution', localedir='pages/locales', languages=[language])
+    localizator.install()
+    _ = localizator.gettext 
+except:
+    pass
+
 
 # Load page only if logged in
 code = st.experimental_get_query_params()['code'][0]
 if code == '/logged_in':
     #hide_page('main')
     with st.sidebar:
-        language = st.sidebar.selectbox('', ['en', 'es'])
-        try:
-            localizator = gettext.translation('base', localedir='locales', languages=[language])
-            localizator.install()
-            _ = localizator.gettext 
-        except:
-            pass
+        
         logout_button(_('Logout'))
 else:
     nav_page('')
@@ -91,7 +93,6 @@ satisfaction_surveys_df["item_create_time"] = pd.to_datetime(satisfaction_survey
 # ---- SIDEBAR ----
 name = 'bharath'
 st.sidebar.title("{} {}".format(_("Welcome"), name))
-a = _("Esto es un test")
 
 available_institutions = institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique()
 forus_id = np.where(available_institutions == "Forus")[0][0]
@@ -173,13 +174,13 @@ with st.expander("**"+ _("Metrics")+"**", expanded=True):
         users_metric_grid.extend(st.columns(4))
 
     with users_metric_grid[0]:
-        st.metric(label="Total Users", value='{:,}'.format(total_users).replace(',','.'), help=_("Total number of users"))
+        st.metric(label=_("Total Users"), value='{:,}'.format(total_users).replace(',','.'), help=_("Total number of users"))
     with users_metric_grid[1]:
-        st.metric(label="Active Users", value='{:,}'.format(total_active_users).replace(',','.'), help=_("Total number of active users"))
+        st.metric(label=_("Active Users"), value='{:,}'.format(total_active_users).replace(',','.'), help=_("Total number of active users"))
     with users_metric_grid[2]:
-        st.metric(label="Collaborators Users", value='{:,}'.format(total_collaborator_users).replace(',','.'), help=_("Total number of collaborators"))
+        st.metric(label=_("Collaborators Users"), value='{:,}'.format(total_collaborator_users).replace(',','.'), help=_("Total number of collaborators"))
     with users_metric_grid[3]:
-        st.metric(label="Admin Users", value='{:,}'.format(total_admin_users).replace(',','.'), help=_("Total number of admins"))
+        st.metric(label=_("Admin Users"), value='{:,}'.format(total_admin_users).replace(',','.'), help=_("Total number of admins"))
 
     tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
     with tab1:
