@@ -332,7 +332,7 @@ with st.expander("**Metrics**", expanded=False):
     with learning_metrics_grid[1]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Courses"] = st.checkbox('', key="Created Courses", label_visibility="collapsed")
+            learning_checkboxes["Created Courses"] = st.checkbox(' ', key="Created Courses", label_visibility="collapsed")
         with right:
             st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
     with learning_metrics_grid[2]:
@@ -346,25 +346,25 @@ with st.expander("**Metrics**", expanded=False):
     with learning_metrics_grid[4]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Classes"] = st.checkbox('', key="Created Classes", label_visibility="collapsed")
+            learning_checkboxes["Created Classes"] = st.checkbox(' ', key="Created Classes", label_visibility="collapsed")
         with right:
             st.metric(label="Created Classes", value='{:,}'.format(total_classes_count).replace(',','.'), help='Total number of classes items created')
     with learning_metrics_grid[5]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Texts"] = st.checkbox('', key="Created Texts", label_visibility="collapsed")
+            learning_checkboxes["Created Texts"] = st.checkbox(' ', key="Created Texts", label_visibility="collapsed")
         with right:
             st.metric(label="Created Texts", value='{:,}'.format(total_texts_count).replace(',','.'), help='Total number of texts items created')
     with learning_metrics_grid[6]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Scroms"] = st.checkbox('', key="Created Scroms", label_visibility="collapsed")
+            learning_checkboxes["Created Scroms"] = st.checkbox(' ', key="Created Scroms", label_visibility="collapsed")
         with right:
             st.metric(label="Created Scroms", value='{:,}'.format(total_scroms_count).replace(',','.'), help='Total number of scroms items created')
     with learning_metrics_grid[7]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Tests"] = st.checkbox('', key="Created Tests", label_visibility="collapsed")
+            learning_checkboxes["Created Tests"] = st.checkbox(' ', key="Created Tests", label_visibility="collapsed")
         with right:
             st.metric(label="Created Tests", value='{:,}'.format(total_created_tests_count).replace(',','.'), help='Total number of content items created')
 
@@ -468,7 +468,7 @@ col1, col2, col3 = st.columns(3)
 # Botón de descarga en formato csv
 with col1:
     st.download_button(
-                    "Download as csv",
+                    label="Download as csv",
                     data=metrics_df.to_csv(index=False),
                     file_name=f"metrics.csv",
                     mime="text/csv",
@@ -478,7 +478,7 @@ with col1:
 # Botón de descarga en formato excel
 with col2:
     st.download_button(
-                    "Download as excel",
+                    label="Download as excel",
                     data = to_excel(metrics_df),
                     file_name=f"metrics.xlsx",
                     mime="application/vnd.ms-excel",
