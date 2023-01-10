@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import gettext
 import streamlit_nested_layout
-from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, get_year_range, show_data_by_date
+from utils.auxiliar_functions import to_excel, plotly_fig2array, nav_page, get_year_range, show_data_by_date, load_database
 from streamlit_google_oauth import logout_button
 ########## libraries for building the pdf reports
 from reportlab.pdfgen.canvas import Canvas
@@ -55,46 +55,33 @@ st.markdown(
 )
 
 
-institutions_df = pd.read_csv("pages/Database/institutions.csv" )
-users_df = pd.read_csv("pages/Database/users_by_date.csv" )
+institutions_df = load_database("pages/Database/institutions.csv" )
 
-logs_by_date_df = pd.read_csv("pages/Database/logs_by_date.csv")
-logs_by_date_df["create_time"] = pd.to_datetime(logs_by_date_df["create_time"], infer_datetime_format=True)
+users_df = load_database("pages/Database/users_by_date.csv" )
 
-users_created_by_date_df = pd.read_csv("pages/Database/users_created_by_date.csv")
-users_created_by_date_df["create_time"] = pd.to_datetime(users_created_by_date_df["create_time"], infer_datetime_format=True)
+logs_by_date_df = load_database("pages/Database/logs_by_date.csv")
 
-admin_created_by_date_df = pd.read_csv("pages/Database/admin_created_by_date.csv")
-admin_created_by_date_df["create_time"] = pd.to_datetime(admin_created_by_date_df["create_time"], infer_datetime_format=True)
+users_created_by_date_df = load_database("pages/Database/users_created_by_date.csv")
 
-courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
-courses_info_df["create_time"] = pd.to_datetime(courses_info_df["create_time"], infer_datetime_format=True)
-courses_info_df["view_count"] = courses_info_df["view_count"].astype('Int64')
-courses_info_df["signed_users"] = courses_info_df["signed_users"].astype('Int64')
-courses_info_df["user_finished_courses"] = courses_info_df["user_finished_courses"].astype('Int64')
-courses_info_df["user_failed_courses"] = courses_info_df["user_failed_courses"].astype('Int64')
+admin_created_by_date_df = load_database("pages/Database/admin_created_by_date.csv")
 
-classes_info_df = pd.read_csv("pages/Database/classes_info.csv", on_bad_lines='skip')
-classes_info_df["create_time"] = pd.to_datetime(classes_info_df["create_time"], infer_datetime_format=True)
+courses_info_df = load_database("pages/Database/courses_info.csv")
 
-scorms_info_df = pd.read_csv("pages/Database/scorms_info.csv", on_bad_lines='skip')
-scorms_info_df["create_time"] = pd.to_datetime(scorms_info_df["create_time"], infer_datetime_format=True)
+classes_info_df = load_database("pages/Database/classes_info.csv")
 
-tests_info_df = pd.read_csv("pages/Database/tests_info.csv", on_bad_lines='skip')
-tests_info_df.convert_dtypes()
-tests_info_df["create_time"] = pd.to_datetime(tests_info_df["create_time"], infer_datetime_format=True)
+scorms_info_df = load_database("pages/Database/scorms_info.csv")
 
-texts_info_df = pd.read_csv("pages/Database/texts_info.csv", on_bad_lines='skip')
-texts_info_df["create_time"] = pd.to_datetime(texts_info_df["create_time"], infer_datetime_format=True)
+tests_info_df = load_database("pages/Database/tests_info.csv")
 
-satisfaction_surveys_df = pd.read_csv("pages/Database/satisfaction_surveys.csv", on_bad_lines='skip')
-satisfaction_surveys_df["item_create_time"] = pd.to_datetime(satisfaction_surveys_df["item_create_time"], infer_datetime_format=True)
+texts_info_df = load_database("pages/Database/texts_info.csv")
+
+satisfaction_surveys_df = load_database("pages/Database/satisfaction_surveys.csv")
 
 dataframes_dict = {
     "Created Programs": None,
     "Created Courses": courses_info_df,
     "Created Classes": classes_info_df,
-    "Created Scroms": scorms_info_df,
+    "Created Scorms": scorms_info_df,
     "Created Tests": tests_info_df,
     "Created Texts": texts_info_df,
     "Created Surveys": satisfaction_surveys_df
@@ -305,8 +292,8 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
     total_programs_count = int(df_institutions_selection["programs_count"].sum())
     total_texts_count = int(df_institutions_selection["text_count"].sum())
     total_classes_count = int(df_institutions_selection["classes_count"].sum())
-    total_scroms_count = int(df_institutions_selection["scorm_count"].sum())
-    total_contents = total_classes_count + total_texts_count + total_scroms_count
+    total_scorms_count = int(df_institutions_selection["scorm_count"].sum())
+    total_contents = total_classes_count + total_texts_count + total_scorms_count
     total_created_tests_count = int(df_institutions_selection["created_tests_count"].sum())
     total_created_questions = int(df_institutions_selection["created_questions"].sum())
     total_courses_count = int(df_institutions_selection["courses_count"].sum())
@@ -346,7 +333,7 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
         with left:
             learning_checkboxes["Created Courses"] = st.checkbox(' ', key="Created Courses", label_visibility="collapsed")
         with right:
-            st.metric(label="Created Courses", value='{:,}'.format(total_courses_count).replace(',','.'), help='Total number of content items created')
+            st.metric(label=_("Created Courses"), value='{:,}'.format(total_courses_count).replace(',','.'), help=_('Total number of content items created'))
     with learning_metrics_grid[2]:
         left, right = st.columns([1, 12])
         with right:
@@ -366,13 +353,13 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
         with left:
             learning_checkboxes["Created Texts"] = st.checkbox(' ', key="Created Texts", label_visibility="collapsed")
         with right:
-            st.metric(label="Created Texts", value='{:,}'.format(total_texts_count).replace(',','.'), help='Total number of texts items created')
+            st.metric(label=_("Created Texts"), value='{:,}'.format(total_texts_count).replace(',','.'), help=_('Total number of texts items created'))
     with learning_metrics_grid[6]:
         left, right = st.columns([1, 12])
         with left:
-            learning_checkboxes["Created Scroms"] = st.checkbox(' ', key="Created Scroms", label_visibility="collapsed")
+            learning_checkboxes["Created Scorms"] = st.checkbox(' ', key="Created Scorms", label_visibility="collapsed")
         with right:
-            st.metric(label="Created Scroms", value='{:,}'.format(total_scroms_count).replace(',','.'), help='Total number of scroms items created')
+            st.metric(label=_("Created Scorms"), value='{:,}'.format(total_scorms_count).replace(',','.'), help=_('Total number of scorms items created'))
     with learning_metrics_grid[7]:
         left, right = st.columns([1, 12])
         with left:

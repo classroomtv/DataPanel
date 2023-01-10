@@ -22,6 +22,15 @@ def hide_page(name: str):
             _on_pages_changed.send()
             break
 
+def load_database(path):
+    dataFrame = pd.read_csv(path, on_bad_lines="skip")
+    for (columnName,columnDataType) in zip(dataFrame.columns,dataFrame.dtypes):
+        if columnDataType == "float64":
+            dataFrame[columnName] = dataFrame[columnName].astype('Int64')
+        if columnName[-4:] == "time":
+            dataFrame[columnName] = pd.to_datetime(dataFrame[columnName], infer_datetime_format=True)
+    return dataFrame
+
 
 def nav_page(page_name, timeout_secs=3):
     print(f'nav to {page_name}')
@@ -77,7 +86,7 @@ def get_year_range(start_year, end_year=datetime.date.today().year):
 columns_for_metric = {
     "Created Courses": ["title", "create_time", "view_count", "author_id", "signed_users", "user_finished_courses", "user_failed_courses"],
     "Created Classes": ["title", "create_time", "view_count", "author_id"],
-    "Created Scroms": ["title", "create_time", "view_count", "author_id"],
+    "Created Scorms": ["title", "create_time", "view_count", "author_id"],
     "Created Tests": ["title", "create_time", "author_id"],
     "Created Texts": ["title", "create_time", "author_id"],
     "Created Surveys": ["title", "create_time", "view_count", "author_id"]
