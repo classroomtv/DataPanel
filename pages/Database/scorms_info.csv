@@ -132,8 +132,8 @@
 130,540,727,Ley 20.393,96438,5435.0,2,275,2020-04-03
 131,544,776,Inducción para el uso de Power BI Desktop,96438,5965.0,2,259,2020-04-06
 132,546,776,Introducción a Prezi,96438,5921.0,2,60,2020-04-06
-133,547,776,Rutas de Presentación e Insertar Multimedia,96438,5921.0,2,37,2020-04-06
-134,548,776,Guardar y Presentar,96438,5921.0,2,25,2020-04-06
+133,547,776,Rutas de Presentación e Insertar Multimedia,96438,5921.0,2,38,2020-04-06
+134,548,776,Guardar y Presentar,96438,5921.0,2,27,2020-04-06
 135,550,776,Introducción al Curso,96438,5070.0,2,211,2020-04-21
 136,551,776,Error en la Medición,96438,5070.0,2,126,2020-04-21
 137,552,776,Sistemas de Medición,96438,5070.0,2,101,2020-04-21
@@ -153,15 +153,15 @@
 151,574,776,6. Extracción por Solvente,96438,5068.0,2,102,2020-05-14
 152,575,776,7. Parámetros de SX,96438,5068.0,2,115,2020-05-14
 153,576,776,8. Electroobtención,96438,5068.0,2,99,2020-05-14
-154,582,776,Introducción,96438,6277.0,2,224,2020-05-26
-155,583,776,Chancado,96438,6277.0,2,224,2020-05-26
-156,584,776,Concentración y Procesos de Molienda,96438,6277.0,2,161,2020-05-26
-157,585,776,Proceso de Molienda y Variables Operativas,96438,6277.0,2,131,2020-05-26
-158,586,776,Flotación,96438,6277.0,2,131,2020-05-26
-159,587,776,Variables Operacionales Flotación,96438,6277.0,2,115,2020-05-26
-160,588,776,Espesamiento,96438,6277.0,2,116,2020-05-26
-161,589,776,Variables de Operación en Espesamiento,96438,6277.0,2,127,2020-05-26
-162,590,776,Filtrado,96438,6277.0,2,104,2020-05-26
+154,582,776,Introducción,96438,6277.0,2,228,2020-05-26
+155,583,776,Chancado,96438,6277.0,2,227,2020-05-26
+156,584,776,Concentración y Procesos de Molienda,96438,6277.0,2,165,2020-05-26
+157,585,776,Proceso de Molienda y Variables Operativas,96438,6277.0,2,136,2020-05-26
+158,586,776,Flotación,96438,6277.0,2,135,2020-05-26
+159,587,776,Variables Operacionales Flotación,96438,6277.0,2,119,2020-05-26
+160,588,776,Espesamiento,96438,6277.0,2,120,2020-05-26
+161,589,776,Variables de Operación en Espesamiento,96438,6277.0,2,131,2020-05-26
+162,590,776,Filtrado,96438,6277.0,2,109,2020-05-26
 163,598,48,M1v2,96438,6262.0,2,3,2020-05-28
 164,608,782,Módulo I: Introducción a la Seguridad de la Información,128540,6140.0,2,1924,2020-06-01
 165,612,782, Módulo 2: Sistema de Gestión de Seguridad de la Información,96438,6140.0,2,1882,2020-06-01
@@ -174,13 +174,13 @@
 172,620,782,Módulo 3 Protejemos los activos de la compañía,126871,6332.0,2,1,2020-06-03
 173,621,782,Módulo 4 Nos comprometemos a denunciar toda práctica indebida.,126871,6332.0,2,1,2020-06-03
 174,622,782,Módulo 1 Conducta Ética,128540,6332.0,2,5,2020-06-03
-175,623,776,1. Introducción,96438,6440.0,2,187,2020-06-11
-176,624,776,2. Proceso de Fundición,96438,6440.0,2,141,2020-06-11
-177,625,776,3. Secado de Concentrado,96438,6440.0,2,118,2020-06-11
-178,626,776,4. Fusión,96438,6440.0,2,117,2020-06-11
-179,627,776,5. Conversión,96438,6440.0,2,100,2020-06-11
-180,628,776,6. Refinación,96438,6440.0,2,105,2020-06-11
-181,629,776,7. Manejo de Gases de Combustión,96438,6440.0,2,95,2020-06-11
+175,623,776,1. Introducción,96438,6440.0,2,190,2020-06-11
+176,624,776,2. Proceso de Fundición,96438,6440.0,2,143,2020-06-11
+177,625,776,3. Secado de Concentrado,96438,6440.0,2,120,2020-06-11
+178,626,776,4. Fusión,96438,6440.0,2,119,2020-06-11
+179,627,776,5. Conversión,96438,6440.0,2,102,2020-06-11
+180,628,776,6. Refinación,96438,6440.0,2,107,2020-06-11
+181,629,776,7. Manejo de Gases de Combustión,96438,6440.0,2,100,2020-06-11
 182,630,782,Módulo I: Introducción a la Seguridad de la Información,128540,6458.0,2,78,2020-06-15
 183,631,782, Módulo 2: Sistema de Gestión de Seguridad de la Información,96438,6458.0,2,37,2020-06-15
 184,632,782,Módulo 3: Responsabilidad de los Colaboradores,129823,6458.0,2,15,2020-06-15
@@ -228,7 +228,7 @@
 226,695,788,Gestión Lean en la Organización - M2,96438,7559.0,2,33,2020-11-06
 227,696,788,Gestión Lean en la Organización - M3,96438,7559.0,2,29,2020-11-06
 228,697,788,Gestión Lean en la Organización - M4,96438,7559.0,2,29,2020-11-06
-229,701,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7586.0,2,16,2020-11-10
+229,701,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7586.0,2,17,2020-11-10
 230,704,782,Módulo II: Reglamento de Activos de Información y Regulación Externa,138551,7657.0,2,0,2020-11-12
 231,705,782,Módulo II: Reglamento de Activos de Información y Regulación Externa,138551,7658.0,2,0,2020-11-12
 232,706,782,Módulo II: Reglamento de Activos de Información y Regulación Externa,138551,7660.0,2,0,2020-11-12
@@ -239,7 +239,7 @@
 237,711,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7665.0,2,781,2020-11-12
 238,712,782,Módulo III: Principales Amenazas en Seguridad de la Información,96438,7665.0,2,514,2020-11-12
 239,713,782,Módulo II: Reglamento de Activos de Información y Regulación Externa,138551,7666.0,2,182,2020-11-12
-240,714,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7666.0,2,204,2020-11-12
+240,714,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7666.0,2,205,2020-11-12
 241,715,782,Módulo III: Principales Amenazas en Seguridad de la Información,96438,7666.0,2,166,2020-11-12
 242,716,782,Módulo II: Reglamento de Activos de Información y Regulación Externa,138551,7667.0,2,142,2020-11-12
 243,717,782,Módulo I: Recordando los Principales Conceptos de Seguridad de la Información,138551,7667.0,2,221,2020-11-12
@@ -317,7 +317,7 @@
 315,826,776,PUESTOS DE TRABAJO,126348,7983.0,2,50,2020-12-17
 316,827,776,PUNTOS Y DOCUMENTOS DE MEDIDA,126348,7983.0,2,35,2020-12-17
 317,828,776,OPERACIONES (AR),126348,7981.0,2,45,2020-12-17
-318,830,776,REPORTES (AF),126348,7839.0,2,55,2020-12-18
+318,830,776,REPORTES (AF),126348,7839.0,2,58,2020-12-18
 319,831,776,REPORTES (TR),126348,7980.0,2,8,2020-12-18
 320,832,776,REPORTES (AP),126348,7842.0,2,42,2020-12-18
 321,844,829,Módulo 1,96438,7935.0,2,130,2020-12-21
@@ -325,7 +325,7 @@
 323,846,829,Módulo 3,96438,7935.0,2,116,2020-12-21
 324,855,776,ÓRDEN MANTENIMIENTO,205681,7983.0,2,146,2020-12-21
 325,856,776,Avisos mantenimiento,205681,7983.0,2,145,2020-12-21
-326,857,776,GESTIÓN DE ACTIVO FIJO,205681,7839.0,2,64,2020-12-21
+326,857,776,GESTIÓN DE ACTIVO FIJO,205681,7839.0,2,66,2020-12-21
 327,858,776,DEPRECIACIÓN (AF),205681,7839.0,2,40,2020-12-21
 328,859,776,GESTION DE ASIENTOS DE MAYOR,205681,7840.0,2,60,2020-12-21
 329,860,776,BAJA DE ACTIVO FIJO,205681,7839.0,2,37,2020-12-21
@@ -368,7 +368,7 @@
 366,962,829,Módulo III: Una Mirada Social en el Cuidado y Bienestar de la Persona Mayor,126348,8275.0,2,13,2021-01-26
 367,963,829,Módulo IV: Una Mirada Psicológica: La Salud Mental del Adulto Mayor,126348,8275.0,2,23,2021-01-26
 368,964,829,Módulo V: Riesgos del Cuidado en el Envejecimiento,126348,8275.0,2,14,2021-01-26
-369,966,776,LIBERACIÓN DE SOLICITUD DE PEDIDO (SOLPED),205681,7837.0,3,169,2021-01-27
+369,966,776,LIBERACIÓN DE SOLICITUD DE PEDIDO (SOLPED),205681,7837.0,3,171,2021-01-27
 370,968,829,FLR-M1,126348,8275.0,2,0,2021-01-27
 371,969,829,FLR-M2,126348,8275.0,2,0,2021-01-27
 372,970,829,FLR-M3,126348,8275.0,2,0,2021-01-27
@@ -826,8 +826,8 @@
 824,1780,717,Introducción a Prezi,96438,9208.0,2,2,2021-04-13
 825,1781,717,Rutas de Presentación e Insertar Multimedia,96438,9208.0,2,1,2021-04-13
 826,1782,717,Guardar y Presentar,96438,9208.0,2,0,2021-04-13
-827,1785,782,Módulo II: Reglamento de Gestión de Activos de Información y Regulación Externa,129823,7586.0,2,3,2021-04-16
-828,1786,782,Módulo III: Principales Amenazas en Seguridad de la Información,129823,7586.0,2,1,2021-04-16
+827,1785,782,Módulo II: Reglamento de Gestión de Activos de Información y Regulación Externa,129823,7586.0,2,5,2021-04-16
+828,1786,782,Módulo III: Principales Amenazas en Seguridad de la Información,129823,7586.0,2,2,2021-04-16
 829,1787,782,Módulo II: Sistema de Gestión de la Seguridad de la Información,129823,8700.0,2,246,2021-04-16
 830,1788,782,Módulo III: Responsabilidad de los Colaboradores,129823,8700.0,2,144,2021-04-16
 831,1789,717,Módulo I: Introducción a la Seguridad de la Información,128540,9251.0,2,0,2021-04-16
@@ -1669,9 +1669,9 @@ formas- Prezi",126348,8950.0,2,2,2021-05-05
 1666,3044,741,Módulo de Cierre,237765,11212.0,2,334,2021-12-28
 1667,3045,776,Conociendo Mi Estilo de Liderazgo (Interactivo),126348,11458.0,2,37,2021-12-28
 1668,3046,776,Mapeo de Fortalezas de mi Equipo (interactivo),126348,11458.0,2,57,2021-12-28
-1669,3047,782,Módulo I: Introducción a la Seguridad de la Información,128540,11661.0,2,141,2021-12-29
-1670,3048,782,Módulo II: Sistema de Gestión de la Seguridad de la Información,129823,11661.0,2,147,2021-12-29
-1671,3049,782,Módulo III: Responsabilidad de los Colaboradores,129823,11661.0,2,82,2021-12-29
+1669,3047,782,Módulo I: Introducción a la Seguridad de la Información,128540,11661.0,2,142,2021-12-29
+1670,3048,782,Módulo II: Sistema de Gestión de la Seguridad de la Información,129823,11661.0,2,149,2021-12-29
+1671,3049,782,Módulo III: Responsabilidad de los Colaboradores,129823,11661.0,2,84,2021-12-29
 1672,3050,782,B. Orden de Cálculo / C. Fórmulas Esenciales,126348,11665.0,2,0,2021-12-29
 1673,3051,782,A. Estructura Excel,126348,11665.0,2,3,2021-12-29
 1674,3052,782,D. Referenciar celdas,126348,11665.0,2,0,2021-12-29
@@ -1729,8 +1729,8 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1725,3103,782,Python,126348,11684.0,2,2,2021-12-29
 1726,3104,782,Fundamentos SQL,126348,11685.0,2,0,2021-12-29
 1727,3105,782,Lenguaje R,126348,11686.0,2,0,2021-12-29
-1728,3119,850,Evaluación CRA Módulo 1,126348,11429.0,2,752,2022-01-04
-1729,3120,850,Evaluación CRA Módulo 2,126348,11429.0,2,569,2022-01-04
+1728,3119,850,Evaluación CRA Módulo 1,126348,11429.0,2,754,2022-01-04
+1729,3120,850,Evaluación CRA Módulo 2,126348,11429.0,2,572,2022-01-04
 1730,3122,850,Plataforma Check Laboral - Usuarios Contratistas,126348,11430.0,2,4,2022-01-04
 1731,3123,850,Actividad DDHH,126348,11439.0,2,2,2022-01-04
 1732,3124,850,DDHH,126348,11439.0,2,2,2022-01-04
@@ -1750,18 +1750,18 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1746,3138,782,Tablas de Mortalidad y Expectativas de Vida Capital Necesario Unitario (CNU),126348,11925.0,2,56,2022-01-04
 1747,3139,782,Pilar Solidario y Actualizaciones,126348,11925.0,2,49,2022-01-04
 1748,3140,782,Cuenta Corriente AFP NCG N°264,126348,11925.0,2,42,2022-01-04
-1749,3145,850,Calendar Nivel 1,126348,11486.0,2,367,2022-01-05
-1750,3146,850,Drive Nivel 1,126348,11486.0,2,424,2022-01-05
-1751,3147,850,Gmail Nivel 1,126348,11486.0,2,747,2022-01-05
-1752,3148,850,Meet Nivel 1,126348,11486.0,2,486,2022-01-05
-1753,3149,850,Meet Nivel Intermedio,126348,11485.0,2,246,2022-01-05
-1754,3150,850,Gmail Nivel Intermedio,126348,11485.0,2,352,2022-01-05
+1749,3145,850,Calendar Nivel 1,126348,11486.0,2,369,2022-01-05
+1750,3146,850,Drive Nivel 1,126348,11486.0,2,430,2022-01-05
+1751,3147,850,Gmail Nivel 1,126348,11486.0,2,754,2022-01-05
+1752,3148,850,Meet Nivel 1,126348,11486.0,2,489,2022-01-05
+1753,3149,850,Meet Nivel Intermedio,126348,11485.0,2,247,2022-01-05
+1754,3150,850,Gmail Nivel Intermedio,126348,11485.0,2,354,2022-01-05
 1755,3151,850,Drive Nivel Intermedio,126348,11485.0,2,258,2022-01-05
 1756,3152,850,"Documentos, Hojas y Diapositivas Nivel Intermedio",126348,11485.0,2,269,2022-01-05
 1757,3153,850,Calendar Nivel Intermedio,126348,11485.0,2,274,2022-01-05
 1758,3154,850,Meet Nivel Avanzado,126348,11484.0,2,188,2022-01-05
 1759,3155,850,Google Sites Nivel Avanzado,126348,11484.0,2,178,2022-01-05
-1760,3156,850,Gmail Nivel Avanzado,126348,11484.0,2,301,2022-01-05
+1760,3156,850,Gmail Nivel Avanzado,126348,11484.0,2,305,2022-01-05
 1761,3157,850,Formularios de Google Nivel Avanzado,126348,11484.0,2,164,2022-01-05
 1762,3158,850,"Documentos, Hojas y Diapositivas Nivel Avanzado",126348,11484.0,2,178,2022-01-05
 1763,3159,850,Calendar Nivel Avanzado,126348,11484.0,2,177,2022-01-05
@@ -1774,8 +1774,8 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1770,3166,850,Curso PeopleSoft - C6,126348,11487.0,2,0,2022-01-05
 1771,3167,850,TDV Cambiapalabra,126348,11511.0,2,17,2022-01-05
 1772,3168,850,CCU M2 JUEGO 03,126348,11510.0,1,5,2022-01-05
-1773,3169,850,H1 STP,126348,11509.0,2,86,2022-01-05
-1774,3170,850,H2 PPM,126348,11509.0,2,50,2022-01-05
+1773,3169,850,H1 STP,126348,11509.0,2,88,2022-01-05
+1774,3170,850,H2 PPM,126348,11509.0,2,51,2022-01-05
 1775,3171,850,H3 BRIEF,126348,11509.0,2,30,2022-01-05
 1776,3172,850,H4 - Identidad EDC,126348,11509.0,2,20,2022-01-05
 1777,3173,850,H5 - Herramienta Calidad,126348,11509.0,2,12,2022-01-05
@@ -1903,8 +1903,8 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1899,3428,837,Inducción Tricot,237765,12659.0,2,0,2022-01-17
 1900,3429,837,Inducción Tricot,237765,12660.0,2,0,2022-01-17
 1901,3430,837,Inducción Tricot,237765,12661.0,2,0,2022-01-17
-1902,3431,850,Evaluación y canales de consulta,135980,11443.0,2,150,2022-01-18
-1903,3432,850,Utilización de conceptos y pautas de libre competencia en los negocios,135980,11443.0,2,347,2022-01-18
+1902,3431,850,Evaluación y canales de consulta,135980,11443.0,2,151,2022-01-18
+1903,3432,850,Utilización de conceptos y pautas de libre competencia en los negocios,135980,11443.0,2,348,2022-01-18
 1904,3433,850,Utilización de conceptos y pautas de libre competencia en los negocios,135980,11442.0,2,1,2022-01-18
 1905,3434,850,Evaluación y canales de consulta,135980,11442.0,2,0,2022-01-18
 1906,3435,837,Inducción Tricot,237765,12697.0,2,0,2022-01-18
@@ -1939,8 +1939,8 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1935,3468,850,Módulo 7: Eje Marcas Innovación,135980,12683.0,2,0,2022-01-20
 1936,3469,850,Módulo 8: Eje Marcas Consumo Responsable,135980,12683.0,2,0,2022-01-20
 1937,3470,850,Módulo 9: Eje Marcas Nuestros Consumidores,135980,12683.0,2,0,2022-01-20
-1938,3471,776,Conducción defensiva condiciones Adversas,237765,11554.0,2,53,2022-01-20
-1939,3472,850,Iniciación a SAP,135980,10992.0,2,0,2022-01-20
+1938,3471,776,Conducción defensiva condiciones Adversas,237765,11554.0,2,54,2022-01-20
+1939,3472,850,Iniciación a SAP,135980,10992.0,2,1,2022-01-20
 1940,3478,717,Administración de Bodegas,237765,12735.0,2,13,2022-01-20
 1941,3479,850,Uso de Plataforma Check Laboral,126348,12736.0,2,8,2022-01-20
 1942,3481,850,Iniciación a SAP,126348,12727.0,2,32,2022-01-21
@@ -1955,7 +1955,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 1951,3493,829,Módulo 5: Riesgos del Cuidado en el Envejecimiento,237765,12779.0,2,1,2022-01-21
 1952,3494,829,Módulo 6: Vocación de servicio,237765,12779.0,2,2,2022-01-21
 1953,3495,850,Hoja de Entrada de Servicio,126348,12726.0,2,6,2022-01-24
-1954,3496,776,Orientación en la prevención de contagio de COVID-19.,126348,12923.0,2,37,2022-01-26
+1954,3496,776,Orientación en la prevención de contagio de COVID-19.,126348,12923.0,2,39,2022-01-26
 1955,3502,850,*NUEVO Travel - Gestión de Viajes,135980,12249.0,2,0,2022-02-02
 1956,3505,850, TRAVEL - Gestión de Viajes,135980,11837.0,2,3,2022-02-03
 1957,3507,850, TRAVEL - Gestión de Viajes,135980,12032.0,2,3,2022-02-03
@@ -2147,10 +2147,10 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2143,3747,850,Módulo II: Estrategias de planificación,237765,13617.0,2,6,2022-03-07
 2144,3748,850,Módulo III: Resolución de Conflictos,237765,13617.0,2,2,2022-03-07
 2145,3749,850,Módulo Cierre,237765,13617.0,2,1,2022-03-07
-2146,3750,850,Aprobación de documentos financieros,135980,13147.0,2,383,2022-03-08
+2146,3750,850,Aprobación de documentos financieros,135980,13147.0,2,385,2022-03-08
 2147,3751,850,Creación de Norma de Liquidación,135980,13310.0,2,60,2022-03-08
 2148,3752,850,Nuevo Hoja de Entrada de Servicio,135980,13328.0,2,2,2022-03-10
-2149,3753,850,Nuevo Hoja de Entrada de Servicio,135980,13328.0,2,759,2022-03-10
+2149,3753,850,Nuevo Hoja de Entrada de Servicio,135980,13328.0,2,764,2022-03-10
 2150,3754,717,- Módulo Bienvenida,237765,13010.0,2,1,2022-03-11
 2151,3755,717, Módulo I: Patologías de riesgos psicosociales y cómo enfrentarlas,237765,13010.0,2,1,2022-03-11
 2152,3756,717,Módulo II: Estrategias de planificación,237765,13010.0,2,1,2022-03-11
@@ -2162,7 +2162,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2158,3762,850,Módulo III: Resolución de conflictos,237765,13617.0,2,6,2022-03-13
 2159,3763,850,Módulo de Cierre,237765,13617.0,2,1,2022-03-13
 2160,3764,850,- Módulo Cierre,237765,13617.0,2,0,2022-03-13
-2161,3765,776,Control de Polvo,126348,13662.0,2,36,2022-03-14
+2161,3765,776,Control de Polvo,126348,13662.0,2,40,2022-03-14
 2162,3768,850,NUEVO TRAVEL - Gestión de Viajes,135980,13208.0,2,1,2022-03-15
 2163,3769,850,TRAVEL - Gestión de Viajes,135980,13208.0,2,1109,2022-03-15
 2164,3770,741,Módulo I: Política de Seguridad de la Información,237765,13714.0,2,15,2022-03-18
@@ -2188,7 +2188,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2184,3790,741,Módulo III: Incidentes de Seguridad,237765,14211.0,2,99,2022-03-25
 2185,3791,741,Módulo IV: Continuidad de Negocios,237765,14211.0,2,110,2022-03-25
 2186,3792,776,CURSO ADMINISTRACIÓN DE CONTRATOS,126348,14216.0,2,155,2022-03-25
-2187,3793,850,Modelo de Prevención del Delito,126348,14225.0,2,4982,2022-03-29
+2187,3793,850,Modelo de Prevención del Delito,126348,14225.0,2,5055,2022-03-29
 2188,3794,850,Salud Mental y Cuidado,237765,13617.0,2,16,2022-03-29
 2189,3795,850,Inicio,237765,13617.0,2,11,2022-03-29
 2190,3796,850,Organización Efectiva del Tiempo,237765,13617.0,2,2,2022-03-29
@@ -2209,8 +2209,8 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2205,3832,850,Organización Efectiva del Tiempo,237765,16761.0,2,50,2022-04-06
 2206,3833,850,Resolución de conflictos,237765,16761.0,2,0,2022-04-06
 2207,3834,850,Cierre,237765,16761.0,2,45,2022-04-06
-2208,3835,850,Inicio,237765,16762.0,2,3804,2022-04-06
-2209,3836,850,Salud Mental y Cuidado,237765,16762.0,2,4013,2022-04-06
+2208,3835,850,Inicio,237765,16762.0,2,3806,2022-04-06
+2209,3836,850,Salud Mental y Cuidado,237765,16762.0,2,4014,2022-04-06
 2210,3837,850,Organización Efectiva del Tiempo,237765,16762.0,2,2635,2022-04-06
 2211,3838,850,Resolución de conflictos,237765,16762.0,2,0,2022-04-06
 2212,3839,850,Cierre,237765,16762.0,2,2232,2022-04-06
@@ -2461,7 +2461,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2457,4189,881,Sello de Bombas,275030,17440.0,2,24,2022-06-01
 2458,4190,850,Trivia CAMA (Ejercicio),252641,,2,4,2022-06-01
 2459,4191,850,NUEVO Desafio CAMA,205848,,2,2,2022-06-02
-2460,4192,850,Desafio CAMA,205848,11528.0,2,338,2022-06-02
+2460,4192,850,Desafio CAMA,205848,11528.0,2,342,2022-06-02
 2461,4193,877,Reconociendo los peligros de internet,237765,17475.0,2,13,2022-06-02
 2462,4194,877,Nuestras herramientas de protección,237765,17475.0,2,3,2022-06-02
 2463,4195,877,Protegiendo la Información en el Trabajo,237765,17475.0,2,4,2022-06-02
@@ -2496,7 +2496,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2492,4241,894,Enami - Elementos de proteción personal,279171,17546.0,2,0,2022-06-10
 2493,4242,894,Enami - Protegiéndonos del ruido en el lugar de trabajo,279171,17546.0,2,0,2022-06-10
 2494,4243,894,Enami - Protegiéndonos del ruido en el lugar de trabajo,279171,17546.0,2,0,2022-06-10
-2495,4244,776,OPR ENAMI Leccion 0,275030,17558.0,2,3,2022-06-13
+2495,4244,776,OPR ENAMI Leccion 0,275030,17558.0,2,4,2022-06-13
 2496,4245,776,OPR ENAMI Leccion 1,275030,17558.0,2,3,2022-06-13
 2497,4246,776,OPR ENAMI Leccion 2,275030,17558.0,2,2,2022-06-13
 2498,4247,717,Seguridad en el trabajo ,275264,17035.0,2,2,2022-06-14
@@ -2580,16 +2580,16 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2576,4338,829,Módulo 1,96438,,2,183,2022-07-06
 2577,4339,829,Módulo 2,96438,17769.0,2,222,2022-07-06
 2578,4340,829,Módulo 3,96438,17769.0,2,164,2022-07-06
-2579,4348,717,New ideas and new business,275264,13246.0,2,3,2022-07-08
+2579,4348,717,New ideas and new business,275264,13246.0,2,4,2022-07-08
 2580,4349,717,Career improvement or career break?,275264,13246.0,2,2,2022-07-08
 2581,4350,717,Facts and figures ,275264,13246.0,2,2,2022-07-08
-2582,4351,717,Modern life,275264,13245.0,2,12,2022-07-08
+2582,4351,717,Modern life,275264,13245.0,2,16,2022-07-08
 2583,4352,717,Environment – Opinions and abilities,275264,13245.0,2,2,2022-07-08
 2584,4353,717,Opportunities,275264,13245.0,2,7,2022-07-08
-2585,4354,746,Work and communication,275264,17786.0,2,303,2022-07-08
+2585,4354,746,Work and communication,275264,17786.0,2,304,2022-07-08
 2586,4355,746,Location and workplace,275264,17786.0,2,56,2022-07-08
 2587,4356,746,Teamwork and schedules,275264,17786.0,2,34,2022-07-08
-2588,4357,746,Modern life,275264,17787.0,2,32,2022-07-08
+2588,4357,746,Modern life,275264,17787.0,2,36,2022-07-08
 2589,4358,746,Environment – Opinions and abilities,275264,17787.0,2,9,2022-07-08
 2590,4359,746,Opportunities,275264,17787.0,2,12,2022-07-08
 2591,4360,746,New ideas and new business,275264,17788.0,2,14,2022-07-08
@@ -2602,11 +2602,11 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2598,4367,776,Módulo 4: Higiene y salud ocupacional,275264,17809.0,2,64,2022-07-12
 2599,4368,776,Módulo 5: Compromiso de trabajo seguro,275264,17809.0,2,65,2022-07-12
 2600,4369,776,Módulo Cierre,275264,17809.0,2,67,2022-07-12
-2601,4370,776,Módulo de Bienvenida ,275264,17810.0,2,48,2022-07-12
-2602,4371,776,Módulo 1: Seguridad en el trabajo,275264,17810.0,2,49,2022-07-12
-2603,4372,776,Módulo 2: Aseguramiento  de controles en terreno,275264,17810.0,2,61,2022-07-12
-2604,4373,776,Módulo 3: Emergencias,275264,17810.0,2,51,2022-07-12
-2605,4374,776,Módulo 4: Higiene y salud ocupacional,275264,17810.0,2,50,2022-07-12
+2601,4370,776,Módulo de Bienvenida ,275264,17810.0,2,50,2022-07-12
+2602,4371,776,Módulo 1: Seguridad en el trabajo,275264,17810.0,2,50,2022-07-12
+2603,4372,776,Módulo 2: Aseguramiento  de controles en terreno,275264,17810.0,2,62,2022-07-12
+2604,4373,776,Módulo 3: Emergencias,275264,17810.0,2,52,2022-07-12
+2605,4374,776,Módulo 4: Higiene y salud ocupacional,275264,17810.0,2,51,2022-07-12
 2606,4375,776,Módulo 5: Compromiso de trabajo seguro,275264,17810.0,2,47,2022-07-12
 2607,4376,776,Módulo Cierre,275264,17810.0,2,47,2022-07-12
 2608,4377,776,Módulo de Bienvenida ,275264,17811.0,2,64,2022-07-12
@@ -2727,13 +2727,13 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2723,4492,764,Documentación de la administración,237765,17866.0,2,23,2022-07-15
 2724,4493,764,Control de Inventarios,237765,17866.0,2,20,2022-07-15
 2725,4494,764,Módulo Cierre,237765,17866.0,2,20,2022-07-15
-2726,4495,776,Módulo de Bienvenida ,275264,17920.0,2,84,2022-07-18
-2727,4496,776,Módulo 1: Seguridad en el trabajo,275264,17920.0,2,89,2022-07-18
-2728,4497,776,Módulo 2: Aseguramiento  de controles en terreno,275264,17920.0,2,84,2022-07-18
-2729,4498,776,Módulo 3: Emergencias,275264,17920.0,2,71,2022-07-18
-2730,4499,776,Módulo 4: Higiene y salud ocupacional,275264,17920.0,2,71,2022-07-18
-2731,4500,776,Módulo 5: Compromiso de trabajo seguro,275264,17920.0,2,62,2022-07-18
-2732,4501,776,Módulo Cierre,275264,17920.0,2,56,2022-07-18
+2726,4495,776,Módulo de Bienvenida ,275264,17920.0,2,87,2022-07-18
+2727,4496,776,Módulo 1: Seguridad en el trabajo,275264,17920.0,2,93,2022-07-18
+2728,4497,776,Módulo 2: Aseguramiento  de controles en terreno,275264,17920.0,2,88,2022-07-18
+2729,4498,776,Módulo 3: Emergencias,275264,17920.0,2,76,2022-07-18
+2730,4499,776,Módulo 4: Higiene y salud ocupacional,275264,17920.0,2,76,2022-07-18
+2731,4500,776,Módulo 5: Compromiso de trabajo seguro,275264,17920.0,2,65,2022-07-18
+2732,4501,776,Módulo Cierre,275264,17920.0,2,60,2022-07-18
 2733,4502,877,Work and communication,275264,17933.0,2,9,2022-07-19
 2734,4503,877,Location and workplace,275264,17933.0,2,1,2022-07-19
 2735,4504,877,Teamwork and schedules,275264,17933.0,2,3,2022-07-19
@@ -2783,7 +2783,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2779,4553,884,Buenas prácticas de una alimentación saludable,275264,18017.0,2,0,2022-07-28
 2780,4554,884,Componentes de la alimentación,275264,18017.0,2,0,2022-07-28
 2781,4555,884,Técnicas de alimentación saludable,275264,18017.0,2,0,2022-07-28
-2782,4556,717,Work and communication,275264,13036.0,2,8,2022-07-28
+2782,4556,717,Work and communication,275264,13036.0,2,13,2022-07-28
 2783,4557,717,Location and workplace,275264,13036.0,2,6,2022-07-28
 2784,4558,717,Teamwork and schedules,275264,13036.0,2,5,2022-07-28
 2785,4559,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,18026.0,2,3,2022-07-28
@@ -2848,13 +2848,13 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2844,4618,900,Componentes de la alimentación,275264,18242.0,2,1,2022-08-12
 2845,4619,900,Buenas prácticas de una alimentación saludable,275264,18242.0,2,2,2022-08-12
 2846,4620,900,Técnicas de alimentación saludable,275264,18242.0,2,0,2022-08-12
-2847,4621,881,Módulo de Bienvenida ,275264,18260.0,2,452,2022-08-16
-2848,4622,881,Módulo 1: Seguridad en el trabajo,275264,18260.0,2,611,2022-08-16
-2849,4623,881,Módulo 2: Aseguramiento  de controles en terreno,275264,18260.0,2,499,2022-08-16
-2850,4624,881,Módulo 3: Emergencias,275264,18260.0,2,419,2022-08-16
-2851,4625,881,Módulo 4: Higiene y salud ocupacional,275264,18260.0,2,406,2022-08-16
-2852,4626,881,Módulo 5: Compromiso de trabajo seguro,275264,18260.0,2,401,2022-08-16
-2853,4627,881,Módulo Cierre,275264,18260.0,2,329,2022-08-16
+2847,4621,881,Módulo de Bienvenida ,275264,18260.0,2,454,2022-08-16
+2848,4622,881,Módulo 1: Seguridad en el trabajo,275264,18260.0,2,616,2022-08-16
+2849,4623,881,Módulo 2: Aseguramiento  de controles en terreno,275264,18260.0,2,505,2022-08-16
+2850,4624,881,Módulo 3: Emergencias,275264,18260.0,2,424,2022-08-16
+2851,4625,881,Módulo 4: Higiene y salud ocupacional,275264,18260.0,2,409,2022-08-16
+2852,4626,881,Módulo 5: Compromiso de trabajo seguro,275264,18260.0,2,404,2022-08-16
+2853,4627,881,Módulo Cierre,275264,18260.0,2,331,2022-08-16
 2854,4628,850,Reportes,135980,17505.0,2,1,2022-08-16
 2855,4629,850,Reportes,135980,,2,0,2022-08-16
 2856,4630,850,Reportes,135980,,2,0,2022-08-16
@@ -2867,7 +2867,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 2863,4637,850,Creación de Norma de Liquidación,241638,,2,0,2022-08-17
 2864,4638,850,Reposición de Fondo Fijo,241638,16781.0,2,0,2022-08-17
 2865,4639,850,TRAVEL - Gestion de Viajes,241638,16781.0,2,0,2022-08-17
-2866,4640,776,Gestión de Riesgos,275030,18299.0,2,1538,2022-08-19
+2866,4640,776,Gestión de Riesgos,275030,18299.0,2,1542,2022-08-19
 2867,4641,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,18337.0,2,97,2022-08-24
 2868,4642,829,Módulo 2: Aspectos corporales en el cuidado de las personas mayores.,237765,18337.0,2,96,2022-08-24
 2869,4643,829,Módulo 3: Aspectos sociales  en el  cuidado y bienestar de las personas mayores.,237765,18337.0,2,60,2022-08-24
@@ -3034,12 +3034,12 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3030,4816,880,Modern life,275264,18771.0,2,0,2022-10-13
 3031,4817,880,Environment – Opinions and abilities,275264,18771.0,2,0,2022-10-13
 3032,4818,880,Opportunities,275264,18771.0,2,0,2022-10-13
-3033,4819,880,Work and communication,275264,18772.0,2,1,2022-10-13
+3033,4819,880,Work and communication,275264,18772.0,2,3,2022-10-13
 3034,4820,880,Location and workplace,275264,18772.0,2,0,2022-10-13
 3035,4821,880,Teamwork and schedules,275264,18772.0,2,0,2022-10-13
 3036,4822,880,Bienvenida,237765,18802.0,2,0,2022-10-13
 3037,4823,880,Procedimientos de la administración,237765,18802.0,2,0,2022-10-13
-3038,4824,880,"Planos de bodega y distribución, Naturaleza de los productos y Normas de Apilamiento",237765,18802.0,2,0,2022-10-13
+3038,4824,880,"Planos de bodega y distribución, Naturaleza de los productos y Normas de Apilamiento",237765,18802.0,2,1,2022-10-13
 3039,4825,880,Documentación de la administración,237765,18802.0,2,0,2022-10-13
 3040,4826,880,Control de Inventarios,237765,18802.0,2,0,2022-10-13
 3041,4827,880,Módulo Cierre,237765,18802.0,2,0,2022-10-13
@@ -3049,7 +3049,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3045,4831,880,Técnicas de alimentación saludable,275264,18811.0,2,0,2022-10-13
 3046,4832,878,Gestión de Riesgos,273793,,2,0,2022-10-14
 3047,4833,877,"HABITAT: Relator animado, actividad interactiva, voz en off",275264,17145.0,1,9,2022-10-14
-3048,4834,776,CURSO BUSES DE CAMPO,236067,18858.0,2,7,2022-10-18
+3048,4834,776,CURSO BUSES DE CAMPO,236067,18858.0,2,9,2022-10-18
 3049,4835,877,Normas de higiene y seguridad,126348,18867.0,2,3,2022-10-19
 3050,4836,880,Normas de higiene y seguridad,126348,18887.0,2,0,2022-10-21
 3051,4837,825,Manejo de Clientes Difíciles -,128540,18890.0,2,109,2022-10-21
@@ -3096,9 +3096,9 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3092,4882,908,Módulo 2,275264,18952.0,2,0,2022-11-02
 3093,4883,908,Módulo 3,275264,18952.0,2,0,2022-11-02
 3094,4884,908,Cierre,275264,18952.0,2,0,2022-11-02
-3095,4885,908,Bienvenida,275264,18953.0,2,1,2022-11-02
+3095,4885,908,Bienvenida,275264,18953.0,2,2,2022-11-02
 3096,4886,908,Módulo 1,275264,18953.0,2,2,2022-11-02
-3097,4887,908,Módulo 2,275264,18953.0,2,1,2022-11-02
+3097,4887,908,Módulo 2,275264,18953.0,2,2,2022-11-02
 3098,4888,908,Módulo 3,275264,18953.0,2,1,2022-11-02
 3099,4889,908,Cierre,275264,18953.0,2,1,2022-11-02
 3100,4890,915,Bienvenida,237765,18956.0,2,18,2022-11-02
@@ -3203,12 +3203,12 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3199,4997,782,Módulo 3,275264,19151.0,2,15,2022-11-15
 3200,4998,782,Módulo 2,275264,19151.0,2,13,2022-11-15
 3201,4999,782,Módulo 1,275264,19151.0,2,22,2022-11-15
-3202,5000,782,Módulo 4,275264,19151.0,2,9,2022-11-15
+3202,5000,782,Módulo 4,275264,19151.0,2,12,2022-11-15
 3203,5001,782,Módulo 12,275264,19151.0,2,10,2022-11-15
 3204,5002,892,Reconociendo los peligros de internet,237765,19177.0,2,62,2022-11-16
-3205,5003,892,Nuestras herramientas de protección,237765,19177.0,2,55,2022-11-16
-3206,5004,892,Protegiendo la Información en el Trabajo,237765,19177.0,2,45,2022-11-16
-3207,5005,892,Ciberseguridad en Organizaciones y Empresas,237765,19177.0,2,42,2022-11-16
+3205,5003,892,Nuestras herramientas de protección,237765,19177.0,2,57,2022-11-16
+3206,5004,892,Protegiendo la Información en el Trabajo,237765,19177.0,2,47,2022-11-16
+3207,5005,892,Ciberseguridad en Organizaciones y Empresas,237765,19177.0,2,46,2022-11-16
 3208,5007,892,Módulo 2: El rol del consultor NTT Data,275264,,1,1,2022-11-18
 3209,5008,892,Módulo 2: El rol del consultor NTT Data,275264,18939.0,3,16,2022-11-18
 3210,5013,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,19384.0,2,56,2022-11-21
@@ -3223,7 +3223,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3219,5022,829,Módulo 4: Una mirada psicológica: la salud mental de la persona mayor,237765,19385.0,2,11,2022-11-21
 3220,5023,829,Módulo 5: Riesgos del Cuidado en el Envejecimiento,237765,19385.0,2,11,2022-11-21
 3221,5024,829,Módulo 6: Vocación de servicio,237765,19385.0,2,10,2022-11-21
-3222,5025,877,"STARBUCKS: Animación genérica, relato a cámara en terreno, actividad interactiva",275264,17145.0,2,11,2022-11-21
+3222,5025,877,"STARBUCKS: Animación genérica, relato a cámara en terreno, actividad interactiva",275264,17145.0,2,12,2022-11-21
 3223,5026,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,19398.0,2,65,2022-11-21
 3224,5027,829,Módulo 2: Aspectos corporales en el cuidado de las personas mayores.,237765,19398.0,2,33,2022-11-21
 3225,5028,829,Módulo 3: Aspectos sociales  en el  cuidado y bienestar de las personas mayores.,237765,19398.0,2,37,2022-11-21
@@ -3261,10 +3261,10 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3257,5060,782,Módulo 4,276299,19495.0,2,105,2022-11-30
 3258,5061,782,Módulo 5,276299,19495.0,2,75,2022-11-30
 3259,5062,782,Módulo 6,276299,19495.0,2,71,2022-11-30
-3260,5063,782,Módulo 7,276299,19495.0,2,69,2022-11-30
-3261,5064,782,Módulo 8,276299,19495.0,2,74,2022-11-30
-3262,5065,782,Módulo 9,276299,19495.0,2,68,2022-11-30
-3263,5066,782,Módulo 10,276299,19495.0,2,59,2022-11-30
+3260,5063,782,Módulo 7,276299,19495.0,2,73,2022-11-30
+3261,5064,782,Módulo 8,276299,19495.0,2,80,2022-11-30
+3262,5065,782,Módulo 9,276299,19495.0,2,71,2022-11-30
+3263,5066,782,Módulo 10,276299,19495.0,2,64,2022-11-30
 3264,5067,764,Reconociendo los peligros de internet,237765,19496.0,2,3,2022-11-30
 3265,5068,764,Nuestras herramientas de protección,237765,19496.0,2,0,2022-11-30
 3266,5069,764,Protegiendo la Información en el Trabajo,237765,19496.0,2,0,2022-11-30
@@ -3320,7 +3320,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3316,5119,717,Módulo 2,275264,19580.0,2,0,2022-12-06
 3317,5120,717,Módulo 1,275264,19580.0,2,0,2022-12-06
 3318,5121,717,Módulo Bienvenida,275264,19580.0,2,0,2022-12-06
-3319,5122,807,Anticorrupción global,283778,19511.0,2,20,2022-12-06
+3319,5122,807,Anticorrupción global,283778,19511.0,2,22,2022-12-06
 3320,5123,717,Bienvenida,275264,18439.0,2,0,2022-12-07
 3321,5124,717,Módulo 1,275264,18439.0,2,6,2022-12-07
 3322,5125,717,Módulo 2,275264,18439.0,2,3,2022-12-07
@@ -3385,14 +3385,14 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3381,5187,764,Nuestras herramientas de protección,237765,19697.0,2,2,2022-12-13
 3382,5188,764,Protegiendo la Información en el Trabajo,237765,19697.0,2,1,2022-12-13
 3383,5189,764,Ciberseguridad en Organizaciones y Empresas,237765,19697.0,2,1,2022-12-13
-3384,5190,807,Bienvenidos a Clínica Dávila,283778,19680.0,2,26,2022-12-13
-3385,5191,807,Seguridad y Calidad del Paciente Dávila,283778,19681.0,2,1,2022-12-13
-3386,5192,807,Calidad y Acreditación M1,283778,19682.0,2,1,2022-12-13
-3387,5193,807,Calidad y Acreditación M2,283778,19682.0,2,1,2022-12-13
-3388,5194,807,Prevención de Riesgo clínico M1,283778,19683.0,2,1,2022-12-13
-3389,5195,807,Prevención de Riesgo clínico M2,283778,19683.0,2,1,2022-12-13
-3390,5196,807,IAAS M1,283778,19684.0,2,1,2022-12-13
-3391,5197,807,IAAS M2,283778,19684.0,2,2,2022-12-13
+3384,5190,807,Bienvenidos a Clínica Dávila,283778,19680.0,2,44,2022-12-13
+3385,5191,807,Seguridad y Calidad del Paciente Dávila,283778,19681.0,2,2,2022-12-13
+3386,5192,807,Calidad y Acreditación M1,283778,19682.0,2,2,2022-12-13
+3387,5193,807,Calidad y Acreditación M2,283778,19682.0,2,2,2022-12-13
+3388,5194,807,Prevención de Riesgo clínico M1,283778,19683.0,2,2,2022-12-13
+3389,5195,807,Prevención de Riesgo clínico M2,283778,19683.0,2,2,2022-12-13
+3390,5196,807,IAAS M1,283778,19684.0,2,2,2022-12-13
+3391,5197,807,IAAS M2,283778,19684.0,2,3,2022-12-13
 3392,5198,764,Normas de higiene y seguridad,126348,19707.0,2,0,2022-12-13
 3393,5203,923,Modern life,275264,19730.0,2,0,2022-12-15
 3394,5204,923,Environment – Opinions and abilities,275264,19730.0,2,0,2022-12-15
@@ -3400,35 +3400,35 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3396,5206,923,Work and communication,275264,19731.0,2,0,2022-12-15
 3397,5207,923,Location and workplace,275264,19731.0,2,0,2022-12-15
 3398,5208,923,Teamwork and schedules,275264,19731.0,2,0,2022-12-15
-3399,5209,807,Términos Contractuales-Médico,283778,19725.0,2,2,2022-12-15
-3400,5210,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,19728.0,3,2,2022-12-15
-3401,5211,807,Inicio,283778,19680.0,2,21,2022-12-15
-3402,5212,782,Módulo 1,276299,19748.0,2,16,2022-12-15
-3403,5213,782,Módulo 2,276299,19748.0,2,8,2022-12-15
-3404,5214,782,Módulo 3,276299,19748.0,2,9,2022-12-15
-3405,5215,782,Módulo 4,276299,19748.0,2,6,2022-12-15
-3406,5216,782,Módulo 5,276299,19748.0,2,6,2022-12-15
-3407,5217,782,Módulo 6,276299,19748.0,2,4,2022-12-15
-3408,5218,782,Módulo 7,276299,19748.0,2,7,2022-12-15
-3409,5219,782,Módulo 8,276299,19748.0,2,5,2022-12-15
-3410,5220,782,Módulo 9,276299,19748.0,2,6,2022-12-15
-3411,5221,782,Módulo 10,276299,19748.0,2,4,2022-12-15
-3412,5222,807,Equipo y rol de Compliance - Clínica Dávila,283778,19749.0,2,8,2022-12-16
-3413,5223,807,Ámbito regulatorio - Clínica Dávila,283778,19749.0,2,6,2022-12-16
+3399,5209,807,Términos Contractuales-Médico,283778,19725.0,2,4,2022-12-15
+3400,5210,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,19728.0,3,4,2022-12-15
+3401,5211,807,Inicio,283778,19680.0,2,25,2022-12-15
+3402,5212,782,Módulo 1,276299,19748.0,2,24,2022-12-15
+3403,5213,782,Módulo 2,276299,19748.0,2,11,2022-12-15
+3404,5214,782,Módulo 3,276299,19748.0,2,15,2022-12-15
+3405,5215,782,Módulo 4,276299,19748.0,2,14,2022-12-15
+3406,5216,782,Módulo 5,276299,19748.0,2,10,2022-12-15
+3407,5217,782,Módulo 6,276299,19748.0,2,7,2022-12-15
+3408,5218,782,Módulo 7,276299,19748.0,2,9,2022-12-15
+3409,5219,782,Módulo 8,276299,19748.0,2,8,2022-12-15
+3410,5220,782,Módulo 9,276299,19748.0,2,11,2022-12-15
+3411,5221,782,Módulo 10,276299,19748.0,2,6,2022-12-15
+3412,5222,807,Equipo y rol de Compliance - Clínica Dávila,283778,19749.0,2,9,2022-12-16
+3413,5223,807,Ámbito regulatorio - Clínica Dávila,283778,19749.0,2,7,2022-12-16
 3414,5224,807,Componentes del Modelo de Prevención - Clínica Dávila,283778,,2,10,2022-12-16
-3415,5225,807,Nociones básicas sobre la protección de los datos,283778,19751.0,3,8,2022-12-16
-3416,5226,807,Seguridad de la Información Módulo 1,283778,19752.0,3,3,2022-12-16
-3417,5227,807,Seguridad de la Información Módulo 2,283778,19752.0,3,2,2022-12-16
-3418,5228,807,Seguridad de la Información Módulo 3,283778,19752.0,3,2,2022-12-16
-3419,5229,807,Seguridad de la información Módulo 4,283778,19752.0,3,2,2022-12-16
-3420,5230,807,Seguridad de la información Módulo 5,283778,19752.0,3,2,2022-12-16
-3421,5231,807,InclusiónLaboral_M2_V3,283778,19754.0,3,5,2022-12-16
-3422,5232,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,19761.0,2,22,2022-12-19
-3423,5233,829,Módulo 2: Aspectos corporales en el cuidado de las personas mayores.,237765,19761.0,2,11,2022-12-19
-3424,5234,829,Módulo 3: Aspectos sociales  en el  cuidado y bienestar de las personas mayores.,237765,19761.0,2,15,2022-12-19
-3425,5235,829,Módulo 4: Una mirada psicológica: la salud mental de la persona mayor,237765,19761.0,2,13,2022-12-19
-3426,5236,829,Módulo 5: Riesgos del Cuidado en el Envejecimiento,237765,19761.0,2,10,2022-12-19
-3427,5237,829,Módulo 6: Vocación de servicio,237765,19761.0,2,7,2022-12-19
+3415,5225,807,Nociones básicas sobre la protección de los datos,283778,19751.0,3,11,2022-12-16
+3416,5226,807,Seguridad de la Información Módulo 1,283778,19752.0,3,4,2022-12-16
+3417,5227,807,Seguridad de la Información Módulo 2,283778,19752.0,3,3,2022-12-16
+3418,5228,807,Seguridad de la Información Módulo 3,283778,19752.0,3,3,2022-12-16
+3419,5229,807,Seguridad de la información Módulo 4,283778,19752.0,3,3,2022-12-16
+3420,5230,807,Seguridad de la información Módulo 5,283778,19752.0,3,3,2022-12-16
+3421,5231,807,InclusiónLaboral_M2_V3,283778,19754.0,3,7,2022-12-16
+3422,5232,829,Módulo 1: Aspectos éticos y legales en el cuidado de las personas mayores ,237765,19761.0,2,24,2022-12-19
+3423,5233,829,Módulo 2: Aspectos corporales en el cuidado de las personas mayores.,237765,19761.0,2,12,2022-12-19
+3424,5234,829,Módulo 3: Aspectos sociales  en el  cuidado y bienestar de las personas mayores.,237765,19761.0,2,20,2022-12-19
+3425,5235,829,Módulo 4: Una mirada psicológica: la salud mental de la persona mayor,237765,19761.0,2,14,2022-12-19
+3426,5236,829,Módulo 5: Riesgos del Cuidado en el Envejecimiento,237765,19761.0,2,11,2022-12-19
+3427,5237,829,Módulo 6: Vocación de servicio,237765,19761.0,2,9,2022-12-19
 3428,5238,775,Nociones básicas sobre la protección de los datos,276299,18727.0,2,0,2022-12-19
 3429,5239,775,Nociones básicas sobre la protección de los datos,276299,18727.0,2,0,2022-12-19
 3430,5240,906,Inicio_Propuesta_V3,276299,,2,1,2022-12-19
@@ -3439,32 +3439,32 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3435,5245,807,Componentes del Modelo de Prevención - Clínica Dávila,276299,,2,2,2022-12-19
 3436,5246,807,Componentes del Modelo de Prevención - Clínica Dávila,276299,,2,2,2022-12-19
 3437,5247,807,Componentes del Modelo de Prevención - Clínica Dávila,276299,,2,4,2022-12-19
-3438,5248,807,Componentes del Modelo de Prevención - Clínica Dávila,276299,19749.0,2,5,2022-12-19
+3438,5248,807,Componentes del Modelo de Prevención - Clínica Dávila,276299,19749.0,2,6,2022-12-19
 3439,5253,906,SUBIR Código de Conducta - Modulo 1,276299,19764.0,2,1,2022-12-19
 3440,5254,807,subir Código de Conducta - Modulo 1,276299,,2,0,2022-12-19
 3441,5255,807,TEST ELIAS Código de Conducta - Modulo 2,276299,,2,1,2022-12-19
-3442,5256,807,Código de Conducta - Modulo 1,276299,19750.0,2,6,2022-12-19
-3443,5257,807,Código de Conducta - Modulo 3,276299,19750.0,2,2,2022-12-19
-3444,5258,807,Código de Conducta - Modulo 2,276299,19750.0,2,4,2022-12-19
-3445,5259,807,Código de Conducta - Modulo 4,276299,19750.0,2,2,2022-12-19
+3442,5256,807,Código de Conducta - Modulo 1,276299,19750.0,2,7,2022-12-19
+3443,5257,807,Código de Conducta - Modulo 3,276299,19750.0,2,3,2022-12-19
+3444,5258,807,Código de Conducta - Modulo 2,276299,19750.0,2,5,2022-12-19
+3445,5259,807,Código de Conducta - Modulo 4,276299,19750.0,2,3,2022-12-19
 3446,5260,764,Modern life,275264,19770.0,2,0,2022-12-19
 3447,5261,764,Environment – Opinions and abilities,275264,19770.0,2,0,2022-12-19
 3448,5262,764,Opportunities,275264,19770.0,2,0,2022-12-19
-3449,5263,764,Work and communication,275264,19771.0,2,3,2022-12-19
-3450,5264,764,Location and workplace,275264,19771.0,2,0,2022-12-19
-3451,5265,764,Teamwork and schedules,275264,19771.0,2,0,2022-12-19
-3452,5266,807,Anticorrupción global,283778,19773.0,2,3,2022-12-20
+3449,5263,764,Work and communication,275264,19771.0,2,7,2022-12-19
+3450,5264,764,Location and workplace,275264,19771.0,2,1,2022-12-19
+3451,5265,764,Teamwork and schedules,275264,19771.0,2,1,2022-12-19
+3452,5266,807,Anticorrupción global,283778,19773.0,2,6,2022-12-20
 3453,5267,764,UHC_QualityandPatientSafetyinAction_02.2020_Help,276498,18060.0,2,1,2022-12-20
 3454,5268,764,Work and communication,275264,19781.0,2,3,2022-12-21
 3455,5269,764,Location and workplace,275264,19781.0,2,0,2022-12-21
 3456,5270,764,Teamwork and schedules,275264,19781.0,2,0,2022-12-21
 3457,5271,764,Código de Conducta - Modulo 1,276498,18060.0,2,1,2022-12-21
-3458,5272,807,Bienvenidos a Clínica Bío Bío,283778,19783.0,3,3,2022-12-21
-3459,5273,807,UHC_QualityandPatientSafetyinAction_02.2020_Help,283778,19785.0,3,2,2022-12-21
-3460,5274,807,IAAS_M1_V13,283778,19786.0,3,2,2022-12-21
-3461,5275,807,IAAS_M2_V11,283778,19786.0,3,2,2022-12-21
-3462,5276,807,Nociones básicas sobre la protección de los datos,276299,19797.0,2,2,2022-12-22
-3463,5277,807,Nociones básicas sobre la protección de los datos,276299,19797.0,2,0,2022-12-22
+3458,5272,807,Bienvenidos a Clínica Bío Bío,283778,19783.0,3,4,2022-12-21
+3459,5273,807,UHC_QualityandPatientSafetyinAction_02.2020_Help,283778,19785.0,3,3,2022-12-21
+3460,5274,807,IAAS_M1_V13,283778,19786.0,3,3,2022-12-21
+3461,5275,807,IAAS_M2_V11,283778,19786.0,3,3,2022-12-21
+3462,5276,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2022-12-22
+3463,5277,807,Nociones básicas sobre la protección de los datos,276299,,2,0,2022-12-22
 3464,5278,869,Bienvenida,237765,19802.0,2,3,2022-12-22
 3465,5279,869,Procedimientos de la administración,237765,19802.0,2,3,2022-12-22
 3466,5280,869,"Planos de bodega y distribución, Naturaleza de los productos y Normas de Apilamiento",237765,19802.0,2,6,2022-12-22
@@ -3528,7 +3528,7 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3524,5341,807,Nociones básicas sobre la protección de los datos - estructura 2,96438,,2,5,2022-12-26
 3525,5342,807,Clínica Ciudad del Mar,292641,,2,6,2022-12-26
 3526,5343,807,Iniciación a SAP,283778,,2,0,2022-12-26
-3527,5344,807,Iniciación a SAP,283778,19555.0,2,4,2022-12-26
+3527,5344,807,Iniciación a SAP,283778,19555.0,2,13,2022-12-26
 3528,5345,807,Prueba_2,292641,,2,1,2022-12-26
 3529,5346,807,000_Inicio_V3_Clínica Santa María_PRUEBA 3,292641,,2,2,2022-12-26
 3530,5347,877,Alimentación saludable,275264,19824.0,2,0,2022-12-26
@@ -3544,26 +3544,26 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3540,5357,882,Modern life,275264,19827.0,2,0,2022-12-27
 3541,5358,882,Environment – Opinions and abilities,275264,19827.0,2,0,2022-12-27
 3542,5359,882,Opportunities,275264,19827.0,2,0,2022-12-27
-3543,5360,807,Inclusión Laboral,276299,19831.0,2,2,2022-12-27
+3543,5360,807,Inclusión Laboral,276299,19831.0,2,4,2022-12-27
 3544,5361,807,Bienvenidos a Clínica Dávila - Nuevo,292639,19833.0,3,2,2022-12-28
 3545,5362,807,000_Bienvenida_Curso-Seguridad y calidad del Paciente en acción_,292641,,2,2,2022-12-28
-3546,5363,807,Términos Contractuales-Médico,283778,19841.0,2,1,2022-12-28
-3547,5364,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,19843.0,2,0,2022-12-28
-3548,5365,776,Conflictos de Interes,275030,19848.0,2,12,2022-12-29
-3549,5366,807,Equipo y rol de Compliance - Clínica Biobío,283778,19850.0,2,1,2022-12-29
-3550,5367,807,Componentes del Modelo de Prevención - Clínica Biobío,283778,19850.0,2,0,2022-12-29
-3551,5368,807,Ámbito regulatorio - Clínica Biobío,283778,19850.0,2,0,2022-12-29
+3546,5363,807,Términos Contractuales-Médico,283778,19841.0,2,2,2022-12-28
+3547,5364,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,19843.0,2,2,2022-12-28
+3548,5365,776,Conflictos de Interes,275030,19848.0,2,17,2022-12-29
+3549,5366,807,Equipo y rol de Compliance - Clínica Biobío,283778,19850.0,2,17,2022-12-29
+3550,5367,807,Componentes del Modelo de Prevención - Clínica Biobío,283778,19850.0,2,9,2022-12-29
+3551,5368,807,Ámbito regulatorio - Clínica Biobío,283778,19850.0,2,14,2022-12-29
 3552,5369,807,Anticorrupción global,283778,,2,8,2022-12-29
-3553,5370,807,Código de Conducta - Modulo 1,283778,19853.0,2,1,2022-12-29
-3554,5371,807,Código de Conducta - Modulo 2,283778,19853.0,2,1,2022-12-29
-3555,5372,807,Código de Conducta - Modulo 3,283778,19853.0,2,1,2022-12-29
-3556,5373,807,Código de Conducta - Modulo 4,283778,19853.0,2,1,2022-12-29
-3557,5374,807,Nociones básicas sobre la protección de los datos,283778,19854.0,2,1,2022-12-29
-3558,5375,807,Seguridad de la Información Módulo 1,283778,19855.0,2,1,2022-12-29
-3559,5376,807,Seguridad de la Información Módulo 2,283778,19855.0,2,1,2022-12-29
-3560,5377,807,Seguridad de la Información Módulo 3,283778,19855.0,2,1,2022-12-29
-3561,5378,807,Seguridad de la información Módulo 4,283778,19855.0,2,1,2022-12-29
-3562,5379,807,Seguridad de la información Módulo 5,283778,19855.0,2,1,2022-12-29
+3553,5370,807,Código de Conducta - Modulo 1,283778,19853.0,2,6,2022-12-29
+3554,5371,807,Código de Conducta - Modulo 2,283778,19853.0,2,5,2022-12-29
+3555,5372,807,Código de Conducta - Modulo 3,283778,19853.0,2,4,2022-12-29
+3556,5373,807,Código de Conducta - Modulo 4,283778,19853.0,2,4,2022-12-29
+3557,5374,807,Nociones básicas sobre la protección de los datos,283778,19854.0,2,10,2022-12-29
+3558,5375,807,Seguridad de la Información Módulo 1,283778,19855.0,2,3,2022-12-29
+3559,5376,807,Seguridad de la Información Módulo 2,283778,19855.0,2,3,2022-12-29
+3560,5377,807,Seguridad de la Información Módulo 3,283778,19855.0,2,3,2022-12-29
+3561,5378,807,Seguridad de la información Módulo 4,283778,19855.0,2,3,2022-12-29
+3562,5379,807,Seguridad de la información Módulo 5,283778,19855.0,2,3,2022-12-29
 3563,5380,807,000_Inicio_V4_Clínica Santa María,292641,,2,1,2022-12-29
 3564,5381,807,000_Inicio_V4_Clínica Dávila Vespucio,292641,,2,1,2022-12-29
 3565,5382,807,000_Inicio_V4_Clínica Ciudad del Mar,292641,,2,1,2022-12-29
@@ -3571,17 +3571,17 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3567,5384,807,000_Inicio_V4_CENTROMED,292641,,2,1,2022-12-29
 3568,5385,807,000_Inicio_V4_Clínica Biobío,292641,,2,1,2022-12-29
 3569,5386,807,Bienvenidos a Centromed,276299,,2,1,2022-12-29
-3570,5387,807,Bienvenidos a Centromed,276299,19856.0,2,2,2022-12-29
-3571,5388,807,UHC_QualityandPatientSafetyinAction_02.2020_Help,276299,19857.0,2,2,2022-12-29
-3572,5389,807,IAAS_M2_V11,276299,19858.0,2,2,2022-12-29
-3573,5390,807,IAAS_M1_V13,276299,19858.0,2,1,2022-12-29
-3574,5391,807,Términos Contractuales-Médico-Sin24hrs,276299,19860.0,2,1,2022-12-29
+3570,5387,807,Bienvenidos a Centromed,276299,19856.0,2,7,2022-12-29
+3571,5388,807,UHC_QualityandPatientSafetyinAction_02.2020_Help,276299,19857.0,2,4,2022-12-29
+3572,5389,807,IAAS_M2_V11,276299,19858.0,2,3,2022-12-29
+3573,5390,807,IAAS_M1_V13,276299,19858.0,2,2,2022-12-29
+3574,5391,807,Términos Contractuales-Médico-Sin24hrs,276299,19860.0,2,3,2022-12-29
 3575,5392,807,Equipo y rol de Compliance - Centromed,276299,,2,1,2022-12-29
 3576,5393,807,Componentes del Modelo de Prevención - Centromed,276299,,2,1,2022-12-29
 3577,5394,807,Ámbito regulatorio - Centromed,276299,,2,1,2022-12-29
 3578,5395,807,Ámbito regulatorio - Centromed,276299,,2,1,2022-12-29
 3579,5396,807,Anticorrupción global,276299,,2,0,2022-12-30
-3580,5397,807,Anticorrupción global,276299,19851.0,2,4,2022-12-30
+3580,5397,807,Anticorrupción global,276299,19851.0,2,8,2022-12-30
 3581,5398,807,000_Inicio_V4_Vidaintegra,292641,19805.0,2,1,2023-01-03
 3582,5399,807,000_Inicio_V4_TISAL,292641,19805.0,2,1,2023-01-03
 3583,5400,807,000_Inicio_V4_MEDICAL HILFE,292641,19805.0,2,1,2023-01-03
@@ -3598,41 +3598,394 @@ formas- Prezi",126348,11677.0,2,0,2021-12-29
 3594,5411,764,Módulo Cierre,237765,19874.0,2,0,2023-01-03
 3595,5412,807,SI UHC_QualityandPatientSafetyinAction_02.2020_Help,276299,,2,1,2023-01-03
 3596,5413,807,Anticorrupción global,276299,,2,2,2023-01-03
-3597,5414,807,SI Anticorrupción global,276299,19867.0,2,1,2023-01-03
-3598,5415,807,Código de Conducta - Modulo 1,276299,19868.0,2,3,2023-01-03
-3599,5416,807,Código de Conducta - Modulo 3,276299,19868.0,2,1,2023-01-03
-3600,5417,807,Código de Conducta - Modulo 4,276299,19868.0,2,1,2023-01-03
-3601,5418,807,Código de Conducta - Modulo 2,276299,19868.0,2,1,2023-01-03
+3597,5414,807,SI Anticorrupción global,276299,19867.0,2,2,2023-01-03
+3598,5415,807,Código de Conducta - Modulo 1,276299,19868.0,2,5,2023-01-03
+3599,5416,807,Código de Conducta - Modulo 3,276299,19868.0,2,3,2023-01-03
+3600,5417,807,Código de Conducta - Modulo 4,276299,19868.0,2,3,2023-01-03
+3601,5418,807,Código de Conducta - Modulo 2,276299,19868.0,2,3,2023-01-03
 3602,5419,807,Nociones básicas sobre la protección de los datos,276299,,2,3,2023-01-03
 3603,5420,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-03
 3604,5421,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-03
-3605,5422,829,Módulo 2,96438,19903.0,2,6,2023-01-04
-3606,5423,829,Módulo 3,96438,19903.0,2,1,2023-01-04
-3607,5424,829,Módulo 1,96438,19903.0,2,7,2023-01-04
+3605,5422,829,Módulo 2,96438,19903.0,2,68,2023-01-04
+3606,5423,829,Módulo 3,96438,19903.0,2,44,2023-01-04
+3607,5424,829,Módulo 1,96438,19903.0,2,55,2023-01-04
 3608,5425,807,Equipo y rol de Compliance - Centromed,276299,,2,2,2023-01-04
 3609,5426,807,Componentes del Modelo de Prevención - Centromed,276299,,2,1,2023-01-04
 3610,5427,807,Ámbito regulatorio - Centromed,276299,,2,1,2023-01-04
 3611,5428,807,Ámbito regulatorio - Centromed,276299,,2,1,2023-01-04
-3612,5429,807,Equipo y rol de Compliance - Centromed,276299,19861.0,2,2,2023-01-04
-3613,5430,807,Componentes del Modelo de Prevención - Centromed,276299,19861.0,2,2,2023-01-04
-3614,5431,807,Ámbito regulatorio - Centromed,276299,19861.0,2,1,2023-01-04
+3612,5429,807,Equipo y rol de Compliance - Centromed,276299,19861.0,2,3,2023-01-04
+3613,5430,807,Componentes del Modelo de Prevención - Centromed,276299,19861.0,2,6,2023-01-04
+3614,5431,807,Ámbito regulatorio - Centromed,276299,19861.0,2,4,2023-01-04
 3615,5432,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-04
 3616,5433,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-04
 3617,5434,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-04
 3618,5435,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-04
 3619,5436,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-04
-3620,5437,807,Nociones básicas sobre la protección de los datos,276299,19869.0,2,2,2023-01-04
-3621,5438,807,Nociones básicas sobre la protección de los datos,276299,19869.0,2,2,2023-01-04
-3622,5439,807,Nociones básicas sobre la protección de los datos,276299,19869.0,2,1,2023-01-04
+3620,5437,807,Nociones básicas sobre la protección de los datos,276299,,2,3,2023-01-04
+3621,5438,807,Nociones básicas sobre la protección de los datos,276299,,2,3,2023-01-04
+3622,5439,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-04
 3623,5440,807,Seguridad de la Información Módulo 1,276299,,2,1,2023-01-04
 3624,5441,807,Seguridad de la Información Módulo 2,276299,,2,2,2023-01-04
 3625,5442,807,Seguridad de la Información Módulo 3,276299,,2,0,2023-01-04
 3626,5443,807,Seguridad de la información Módulo 4,276299,,2,0,2023-01-04
 3627,5444,807,Seguridad de la información Módulo 5,276299,,2,0,2023-01-04
-3628,5445,807,Seguridad de la Información Módulo 1,276299,19870.0,2,2,2023-01-04
-3629,5446,807,Seguridad de la Información Módulo 2,276299,19870.0,2,3,2023-01-04
-3630,5447,807,Seguridad de la Información Módulo 3,276299,19870.0,2,3,2023-01-04
-3631,5448,807,Seguridad de la información Módulo 4,276299,19870.0,2,2,2023-01-04
-3632,5449,807,Seguridad de la información Módulo 5,276299,19870.0,2,1,2023-01-04
+3628,5445,807,Seguridad de la Información Módulo 1,276299,19870.0,2,3,2023-01-04
+3629,5446,807,Seguridad de la Información Módulo 2,276299,19870.0,2,4,2023-01-04
+3630,5447,807,Seguridad de la Información Módulo 3,276299,19870.0,2,4,2023-01-04
+3631,5448,807,Seguridad de la información Módulo 4,276299,19870.0,2,3,2023-01-04
+3632,5449,807,Seguridad de la información Módulo 5,276299,19870.0,2,2,2023-01-04
 3633,5450,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-04
-3634,5451,807,InclusiónLaboral_M2_V3,276299,19872.0,2,1,2023-01-04
+3634,5451,807,InclusiónLaboral_M2_V3,276299,19872.0,2,11,2023-01-04
+3635,5452,807,2. Componentes del Modelo de Prevención - Clínica Biobío,276299,,2,2,2023-01-05
+3636,5453,807,3Componentes del Modelo de Prevención - Clínica Biobío,276299,,2,1,2023-01-05
+3637,5454,807,Bienvenidos a CSC Banmédica,276299,,2,1,2023-01-06
+3638,5455,807,Bienvenidos a CSC Banmédica,276299,19878.0,2,6,2023-01-06
+3639,5456,807,Términos Contractuales-Administrativo,276299,,2,1,2023-01-06
+3640,5457,807,Términos Contractuales-Administrativo,276299,19880.0,2,3,2023-01-06
+3641,5458,807,Equipo y rol de Compliance,276299,19904.0,2,3,2023-01-06
+3642,5459,807,Ámbito regulatorio,276299,19904.0,2,8,2023-01-06
+3643,5460,807,Componentes del Modelo de Prevención - CSC Banmedica,276299,,2,1,2023-01-06
+3644,5461,807,Componentes del Modelo de Prevención - CSC Banmedica,276299,19904.0,2,3,2023-01-06
+3645,5462,807,Anticorrupción global,276299,,2,3,2023-01-06
+3646,5463,807,Anticorrupción global,276299,,2,1,2023-01-06
+3647,5464,807,Anticorrupción global,276299,,2,1,2023-01-06
+3648,5465,807,Anticorrupción global,276299,,2,2,2023-01-06
+3649,5466,807,Anticorrupción global,276299,,2,1,2023-01-06
+3650,5467,807,ORIGINAL Anticorrupción global,276299,,2,2,2023-01-06
+3651,5468,807,CARGADO EDITADO 1 Anticorrupción global,276299,,2,1,2023-01-06
+3652,5469,807,CARGADO EDITADO ENTERO Anticorrupción global,276299,,2,1,2023-01-06
+3653,5470,807,Código de Conducta - Modulo 1,276299,19906.0,2,4,2023-01-06
+3654,5471,807,Código de Conducta - Modulo 3,276299,19906.0,2,3,2023-01-06
+3655,5472,807,Código de Conducta - Modulo 2,276299,19906.0,2,3,2023-01-06
+3656,5473,807,Código de Conducta - Modulo 4,276299,19906.0,2,3,2023-01-06
+3657,5474,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-06
+3658,5475,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-06
+3659,5476,807,ORIGINAL Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-06
+3660,5477,807,EDITADO 1 Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-06
+3661,5478,807,EDITADO TODO Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-06
+3662,5479,807,Seguridad de la Información Módulo 1,276299,,2,1,2023-01-06
+3663,5480,807,Seguridad de la Información Módulo 2,276299,,2,1,2023-01-06
+3664,5481,807,Seguridad de la Información Módulo 3,276299,,2,1,2023-01-06
+3665,5482,807,Seguridad de la información Módulo 4,276299,,2,1,2023-01-06
+3666,5483,807,Seguridad de la información Módulo 5,276299,,2,1,2023-01-06
+3667,5484,807,Seguridad de la Información Módulo 1,276299,19908.0,2,3,2023-01-06
+3668,5485,807,Seguridad de la Información Módulo 2,276299,19908.0,2,3,2023-01-06
+3669,5486,807,Seguridad de la Información Módulo 3,276299,19908.0,2,2,2023-01-06
+3670,5487,807,Seguridad de la información Módulo 4,276299,19908.0,2,2,2023-01-06
+3671,5488,807,Seguridad de la información Módulo 5,276299,19908.0,2,2,2023-01-06
+3672,5489,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-06
+3673,5490,807,InclusiónLaboral_M2_V3,276299,19910.0,2,6,2023-01-06
+3674,5491,835,New ideas and new business,275264,19986.0,2,0,2023-01-09
+3675,5492,835,Career improvement or career break?,275264,19986.0,2,0,2023-01-09
+3676,5493,835,Facts and figures ,275264,19986.0,2,0,2023-01-09
+3677,5494,835,Work and communication,275264,19987.0,2,0,2023-01-09
+3678,5495,835,Location and workplace,275264,19987.0,2,0,2023-01-09
+3679,5496,835,Teamwork and schedules,275264,19987.0,2,0,2023-01-09
+3680,5497,835,Modern life,275264,19988.0,2,0,2023-01-09
+3681,5498,835,Environment – Opinions and abilities,275264,19988.0,2,0,2023-01-09
+3682,5499,835,Opportunities,275264,19988.0,2,0,2023-01-09
+3683,5500,835,Modern life,275264,19991.0,2,2,2023-01-09
+3684,5501,835,Environment – Opinions and abilities,275264,19991.0,2,2,2023-01-09
+3685,5502,835,Opportunities,275264,19991.0,2,0,2023-01-09
+3686,5503,807,Bienvenidos a Banmédica S.A,276299,,2,1,2023-01-09
+3687,5504,807,Bienvenidos a Banmédica S.A,276299,19889.0,2,1,2023-01-09
+3688,5505,807,Términos Contractuales-Administrativo,276299,,2,1,2023-01-09
+3689,5506,807,Términos Contractuales-Administrativo,276299,19891.0,2,1,2023-01-09
+3690,5507,807,Equipo y rol de Compliance,276299,19893.0,2,2,2023-01-09
+3691,5508,807,Ámbito regulatorio,276299,19893.0,2,1,2023-01-09
+3692,5509,807,Componentes del Modelo de Prevención,276299,,2,1,2023-01-09
+3693,5510,807,Componentes del Modelo de Prevención,276299,19893.0,2,1,2023-01-09
+3694,5511,807,Anticorrupción global,276299,,2,1,2023-01-09
+3695,5512,807,Anticorrupción global,276299,,2,1,2023-01-09
+3696,5513,807,Anticorrupción global,276299,,2,1,2023-01-09
+3697,5514,807,Anticorrupción global,276299,,2,2,2023-01-09
+3698,5515,807,Anticorrupción global,276299,,2,1,2023-01-09
+3699,5516,807,Anticorrupción global,276299,,2,1,2023-01-09
+3700,5517,807,Código de Conducta - Modulo 1,276299,19895.0,2,1,2023-01-09
+3701,5518,807,Código de Conducta - Modulo 3,276299,19895.0,2,2,2023-01-09
+3702,5519,807,Código de Conducta - Modulo 2,276299,19895.0,2,1,2023-01-09
+3703,5520,807,Código de Conducta - Modulo 4,276299,19895.0,2,1,2023-01-09
+3704,5521,807,Nociones básicas sobre la protección de los datos,276299,,2,3,2023-01-09
+3705,5522,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-09
+3706,5523,807,Nociones básicas sobre la protección de los datos,276299,,2,1,2023-01-09
+3707,5524,807,Anticorrupción global,276299,,2,2,2023-01-09
+3708,5525,807,Anticorrupción global,276299,,2,1,2023-01-09
+3709,5526,807,Anticorrupción global,276299,,2,4,2023-01-09
+3710,5527,807,Seguridad de la Información Módulo 1,276299,,2,1,2023-01-09
+3711,5528,807,Seguridad de la Información Módulo 2,276299,,2,1,2023-01-09
+3712,5529,807,Seguridad de la Información Módulo 3,276299,,2,1,2023-01-09
+3713,5530,807,Seguridad de la información Módulo 4,276299,,2,1,2023-01-09
+3714,5531,807,Seguridad de la información Módulo 5,276299,,2,1,2023-01-09
+3715,5532,807,Seguridad de la Información Módulo 1,276299,19897.0,2,1,2023-01-09
+3716,5533,807,Seguridad de la Información Módulo 2,276299,19897.0,2,1,2023-01-09
+3717,5534,807,Seguridad de la Información Módulo 3,276299,19897.0,2,1,2023-01-09
+3718,5535,807,Seguridad de la información Módulo 4,276299,19897.0,2,1,2023-01-09
+3719,5536,807,Seguridad de la información Módulo 5,276299,19897.0,2,1,2023-01-09
+3720,5537,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-09
+3721,5538,807,InclusiónLaboral_M2_V3,276299,19899.0,2,2,2023-01-09
+3722,5539,807,Bienvenidos a Help Seguros,276299,,2,1,2023-01-10
+3723,5540,807,Bienvenidos a Help Seguros,276299,19948.0,2,2,2023-01-10
+3724,5541,782,Módulo I: Introducción a la Seguridad de la Información,128540,20035.0,2,0,2023-01-10
+3725,5542,782,Módulo II: Sistema de Gestión de la Seguridad de la Información,129823,20035.0,2,0,2023-01-10
+3726,5543,782,Módulo III: Responsabilidad de los Colaboradores,129823,20035.0,2,0,2023-01-10
+3727,5544,807,Términos Contractuales-Administrativo-Help Seguros,276299,,2,1,2023-01-10
+3728,5545,807,Términos Contractuales-Administrativo-Help Seguros,276299,19950.0,2,3,2023-01-10
+3729,5546,807,Componentes del Modelo de Prevención - HELP Seguros.,276299,,2,1,2023-01-10
+3730,5547,807,Equipo y rol de Compliance - HELP Seguros.,276299,,2,1,2023-01-10
+3731,5548,807,Ámbito regulatorio - HELP Seguros.,276299,,2,1,2023-01-10
+3732,5549,807,Componentes del Modelo de Prevención - HELP Seguros.,276299,19952.0,2,2,2023-01-10
+3733,5550,807,Ámbito regulatorio - HELP Seguros.,276299,19952.0,2,2,2023-01-10
+3734,5551,807,Equipo y rol de Compliance - HELP Seguros.,276299,19952.0,2,2,2023-01-10
+3735,5552,807,Anticorrupción global,276299,,2,1,2023-01-10
+3736,5553,807,Anticorrupción global,276299,,2,1,2023-01-10
+3737,5554,807,Anticorrupción global,276299,,2,2,2023-01-10
+3738,5555,807,Anticorrupción global,276299,,2,2,2023-01-10
+3739,5556,807,Anticorrupción global,276299,,2,2,2023-01-10
+3740,5557,807,Código de Conducta - Modulo 1,276299,19954.0,2,2,2023-01-10
+3741,5558,807,Código de Conducta - Modulo 3,276299,19954.0,2,2,2023-01-10
+3742,5559,807,Código de Conducta - Modulo 4,276299,19954.0,2,2,2023-01-10
+3743,5560,807,Código de Conducta - Modulo 2,276299,19954.0,2,2,2023-01-10
+3744,5561,807,Nociones básicas sobre la protección de los datos,276299,,2,3,2023-01-10
+3745,5562,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-10
+3746,5563,807,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-10
+3747,5564,807,Seguridad de la Información Módulo 1,276299,,2,1,2023-01-10
+3748,5565,807,Seguridad de la Información Módulo 2,276299,,2,1,2023-01-10
+3749,5566,807,Seguridad de la Información Módulo 3,276299,,2,1,2023-01-10
+3750,5567,807,Seguridad de la información Módulo 4,276299,,2,1,2023-01-10
+3751,5568,807,Seguridad de la información Módulo 5,276299,,2,1,2023-01-10
+3752,5569,807,Seguridad de la Información Módulo 1,276299,19956.0,2,2,2023-01-10
+3753,5570,807,Seguridad de la Información Módulo 2,276299,19956.0,2,2,2023-01-10
+3754,5571,807,Seguridad de la Información Módulo 3,276299,19956.0,2,2,2023-01-10
+3755,5572,807,Seguridad de la información Módulo 4,276299,19956.0,2,2,2023-01-10
+3756,5573,807,Seguridad de la información Módulo 5,276299,19956.0,2,2,2023-01-10
+3757,5574,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-10
+3758,5575,807,InclusiónLaboral_M2_V3,276299,19958.0,2,2,2023-01-10
+3759,5576,807,Bienvenidos a Clínica Santa María,276299,,2,1,2023-01-10
+3760,5577,807,Bienvenidos a Clínica Santa María,276299,19999.0,2,2,2023-01-10
+3761,5578,807,Seguridad y Calidad del Paciente Clínica Santa Maria,276299,,2,2,2023-01-10
+3762,5579,807,Seguridad y Calidad del Paciente Clínica Santa Maria,276299,20000.0,2,2,2023-01-10
+3763,5580,807,IAAS_M1_V13,276299,,2,1,2023-01-10
+3764,5581,807,IAAS_M1_V13,276299,20001.0,2,2,2023-01-10
+3765,5582,807,IAAS_M2_V11,276299,,2,1,2023-01-10
+3766,5583,807,IAAS_M2_V11,276299,20001.0,2,2,2023-01-10
+3767,5584,807,Términos Contractuales-Médico,276299,,2,1,2023-01-10
+3768,5585,807,Términos Contractuales-Médico,276299,20005.0,2,2,2023-01-10
+3769,5586,807,Ley 19.628 y Circular N° 6 Minsal_V1,276299,,2,1,2023-01-10
+3770,5587,807,Ley 19.628 y Circular N° 6 Minsal_V1,276299,20008.0,2,2,2023-01-10
+3771,5588,807,Equipo y rol de Compliance - Clínica Santa María,276299,,2,1,2023-01-10
+3772,5589,807,Equipo y rol de Compliance - Clínica Santa María,276299,20009.0,2,2,2023-01-10
+3773,5590,807,Ámbito regulatorio - Clínica Santa María,276299,,2,1,2023-01-10
+3774,5591,807,Ámbito regulatorio - Clínica Santa María,276299,20009.0,2,2,2023-01-10
+3775,5592,807,Componentes del Modelo de Prevención - Clínica Santa María,276299,,2,1,2023-01-10
+3776,5593,807,Componentes del Modelo de Prevención - Clínica Santa María,276299,20009.0,2,2,2023-01-10
+3777,5594,807,Anticorrupción global,276299,,2,4,2023-01-10
+3778,5595,807,Anticorrupción global,276299,,2,2,2023-01-10
+3779,5596,807,Anticorrupción global,276299,,2,2,2023-01-10
+3780,5597,807,Código de Conducta - Modulo 1,276299,20011.0,2,3,2023-01-10
+3781,5598,807,Código de Conducta - Modulo 3,276299,20011.0,2,2,2023-01-10
+3782,5599,807,Código de Conducta - Modulo 2,276299,20011.0,2,2,2023-01-10
+3783,5600,807,Código de Conducta - Modulo 4,276299,20011.0,2,2,2023-01-10
+3784,5601,775,Nociones básicas sobre la protección de los datos,276299,,3,3,2023-01-10
+3785,5602,807,Seguridad de la Información Módulo 1,276299,,2,1,2023-01-10
+3786,5603,775,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-10
+3787,5604,807,Seguridad de la Información Módulo 1,276299,20013.0,2,2,2023-01-10
+3788,5605,775,Nociones básicas sobre la protección de los datos,276299,,2,2,2023-01-10
+3789,5606,807,Seguridad de la Información Módulo 2,276299,,2,1,2023-01-10
+3790,5607,807,Seguridad de la Información Módulo 2,276299,20013.0,2,2,2023-01-10
+3791,5608,807,Seguridad de la Información Módulo 3,276299,20013.0,2,2,2023-01-10
+3792,5609,807,Seguridad de la información Módulo 4,276299,20013.0,2,2,2023-01-10
+3793,5610,807,Seguridad de la información Módulo 5,276299,20013.0,2,2,2023-01-10
+3794,5611,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-10
+3795,5612,807,InclusiónLaboral_M2_V3,276299,,2,1,2023-01-10
+3796,5613,807,InclusiónLaboral_M2_V3,276299,20015.0,2,2,2023-01-10
+3797,5614,807,Bienvenidos a Vidaintegra,283778,20059.0,2,1,2023-01-10
+3798,5615,807,Seguridad y Calidad del Paciente en Accio?n,283778,20073.0,2,2,2023-01-10
+3799,5616,807,IAAS M1,283778,20074.0,2,1,2023-01-10
+3800,5617,807,IAAS M2,283778,20074.0,2,1,2023-01-10
+3801,5618,807,Términos Contractuales-Médico,283778,20078.0,2,1,2023-01-10
+3802,5619,807,Ley 19.628 y Circular N° 6 Minsal,283778,20079.0,2,1,2023-01-10
+3803,5620,807,Ámbito regulatorio - Vidaintegra,283778,20080.0,2,1,2023-01-10
+3804,5621,807,Componentes del Modelo de Prevención - Vidaintegra,283778,20080.0,2,1,2023-01-10
+3805,5622,807,Equipo y rol de Compliance - Vidaintegra,283778,20080.0,2,1,2023-01-10
+3806,5623,807,Anticorrupción global,283778,20081.0,2,3,2023-01-10
+3807,5624,807,Código de Conducta - Modulo 1,283778,20082.0,2,3,2023-01-10
+3808,5625,807,Código de Conducta - Modulo 2,283778,20082.0,2,2,2023-01-10
+3809,5626,807,Código de Conducta - Modulo 3,283778,20082.0,2,1,2023-01-10
+3810,5627,807,Código de Conducta - Modulo 4,283778,20082.0,2,1,2023-01-10
+3811,5628,807,Nociones básicas sobre la protección de los datos,283778,20083.0,2,2,2023-01-10
+3812,5629,807,Seguridad de la Información Módulo 1,283778,20084.0,2,2,2023-01-10
+3813,5630,807,Seguridad de la Información Módulo 2,283778,20084.0,2,2,2023-01-10
+3814,5631,807,Seguridad de la Información Módulo 3,283778,20084.0,2,2,2023-01-10
+3815,5632,807,Seguridad de la información Módulo 4,283778,20084.0,2,1,2023-01-10
+3816,5633,807,Seguridad de la información Módulo 5,283778,20084.0,2,1,2023-01-10
+3817,5634,807,Inclusión Laboral,283778,20086.0,2,1,2023-01-10
+3818,5635,807,Bienvenidos a Clínica Dávila Vespucio,283778,20052.0,2,1,2023-01-11
+3819,5636,807,Seguridad y Calidad del Paciente en Accio?n,283778,20071.0,2,1,2023-01-11
+3820,5637,807,IAAS_M1_V13,283778,20072.0,2,1,2023-01-11
+3821,5638,807,IAAS_M2_V11,283778,20072.0,2,1,2023-01-11
+3822,5639,807,Términos Contractuales-Médico,283778,20092.0,2,1,2023-01-11
+3823,5640,807,Ley 19.628 y Circular N° 6 Minsal,283778,20095.0,2,1,2023-01-11
+3824,5641,807,Componentes del Modelo de Prevención - Clínica Vespucio,283778,,2,2,2023-01-11
+3825,5642,807,Equipo y rol de Compliance - Clínica Vespucio,283778,20097.0,2,1,2023-01-11
+3826,5643,807,Ámbito regulatorio - Clínica Vespucio,283778,20097.0,2,1,2023-01-11
+3827,5644,807,Anticorrupción global,283778,20098.0,2,1,2023-01-11
+3828,5645,807,Código de Conducta - Modulo 1,283778,20099.0,2,1,2023-01-11
+3829,5646,807,Código de Conducta - Modulo 2,283778,20099.0,2,1,2023-01-11
+3830,5647,807,Código de Conducta - Modulo 3,283778,20099.0,2,1,2023-01-11
+3831,5648,807,Código de Conducta - Modulo 4,283778,20099.0,2,1,2023-01-11
+3832,5649,807,Nociones básicas sobre la protección de los datos,283778,20100.0,2,1,2023-01-11
+3833,5650,807,Seguridad de la Información Módulo 1,283778,20101.0,2,1,2023-01-11
+3834,5651,807,Seguridad de la Información Módulo 2,283778,20101.0,2,1,2023-01-11
+3835,5652,807,Seguridad de la Información Módulo 3,283778,20101.0,2,1,2023-01-11
+3836,5653,807,Seguridad de la información Módulo 4,283778,20101.0,2,1,2023-01-11
+3837,5654,807,Seguridad de la información Módulo 5,283778,20101.0,2,1,2023-01-11
+3838,5655,807,Inclusión Laboral,283778,20103.0,2,1,2023-01-11
+3839,5656,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,20020.0,2,1,2023-01-11
+3840,5657,807,Términos Contractuales-Médico,283778,20017.0,2,1,2023-01-11
+3841,5658,807,Bienvenidos a Home y Hilfe,283778,19994.0,2,1,2023-01-11
+3842,5659,807,UHC_QualityandPatientSafetyinAction_02.2020,283778,19995.0,2,2,2023-01-11
+3843,5660,807,IAAS_M1_V13,283778,19996.0,2,2,2023-01-11
+3844,5661,807,IAAS_M2_V11,283778,19996.0,2,1,2023-01-11
+3845,5662,807,Equipo y rol de Compliance - Hilfe,283778,,2,0,2023-01-11
+3846,5663,807,Ámbito regulatorio - Hilfe,283778,,2,0,2023-01-11
+3847,5664,807,Componentes del Modelo de Prevención - Hilfe,283778,,2,0,2023-01-11
+3848,5665,807,Anticorrupción global,283778,,2,0,2023-01-11
+3849,5666,807,Código de Conducta - Modulo 1,283778,20040.0,2,1,2023-01-11
+3850,5667,807,Código de Conducta - Modulo 2,283778,20040.0,2,1,2023-01-11
+3851,5668,807,Código de Conducta - Modulo 3,283778,20040.0,2,1,2023-01-11
+3852,5669,807,Código de Conducta - Modulo 4,283778,20040.0,2,1,2023-01-11
+3853,5670,807,Nociones básicas sobre la protección de los datos,283778,20041.0,2,2,2023-01-11
+3854,5671,807,Seguridad de la Información Módulo 1,283778,20042.0,2,3,2023-01-11
+3855,5672,807,Seguridad de la Información Módulo 2,283778,20042.0,2,2,2023-01-11
+3856,5673,807,Seguridad de la Información Módulo 3,283778,20042.0,2,2,2023-01-11
+3857,5674,807,Seguridad de la información Módulo 4,283778,20042.0,2,2,2023-01-11
+3858,5675,807,Seguridad de la información Módulo 5,283778,20042.0,2,1,2023-01-11
+3859,5676,807,Inclusión Laboral,283778,20044.0,2,1,2023-01-11
+3860,5677,807,Equipo y rol de Compliance - HMC,283778,20038.0,2,1,2023-01-11
+3861,5678,807,Ámbito regulatorio - HMC,283778,20038.0,2,1,2023-01-11
+3862,5679,807,Componentes del Modelo de Prevención - HMC,283778,20038.0,2,1,2023-01-11
+3863,5680,807,Anticorrupción global,283778,20039.0,2,2,2023-01-11
+3864,5681,807,Bienvenidos a Home y Hilfe,283778,19929.0,2,1,2023-01-11
+3865,5682,807,UHC_QualityandPatientSafetyinAction_02.2020,283778,19930.0,2,1,2023-01-11
+3866,5683,807,IAAS_M1_V13,283778,19931.0,2,1,2023-01-11
+3867,5684,807,IAAS_M2_V11,283778,19931.0,2,1,2023-01-11
+3868,5685,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,,2,1,2023-01-11
+3869,5686,807,Términos Contractuales-Médico,283778,19947.0,2,2,2023-01-11
+3870,5687,807,Bienvenidos a Clínica Ciudad del Mar,283778,,2,1,2023-01-11
+3871,5688,807,Seguridad y Calidad del Paciente Ciudad del Mar,283778,20105.0,2,3,2023-01-11
+3872,5689,807,IAAS_M1_Ciudad de mar,283778,20106.0,2,2,2023-01-11
+3873,5690,807,IAAS_M2_Ciudad del mar_v1,283778,20106.0,2,2,2023-01-11
+3874,5691,807,Términos Contractuales-Médico,283778,20110.0,2,0,2023-01-11
+3875,5692,807,Reporte de eventos adversos,283778,20112.0,2,0,2023-01-11
+3876,5693,807,Ley 19.628 y Circular N° 6 Minsal_V1,283778,20113.0,2,0,2023-01-11
+3877,5694,717,M1Clip2,275264,19120.0,2,2,2023-01-11
+3878,5695,807,Términos Contractuales-Médico,283778,20115.0,2,1,2023-01-11
+3879,5696,807,Reporte de eventos adversos,283778,20117.0,2,1,2023-01-11
+3880,5697,807,Ley 19.628 y Circular N° 6 Minsal,283778,,2,1,2023-01-11
+3881,5698,807,000_Bienvenida_Infecciones asociadas a la atención en Salud (IAAS),292641,19805.0,2,1,2023-01-11
+3882,5699,807,Inicio Banmédica SA,283778,19889.0,2,1,2023-01-11
+3883,5700,807,Anticorrupción global,276299,19894.0,2,1,2023-01-11
+3884,5701,807,Nociones básicas sobre la protección de los datos,276299,19896.0,2,1,2023-01-11
+3885,5702,807,Anticorrupción global,276299,19953.0,2,3,2023-01-11
+3886,5703,807,Nociones básicas sobre la protección de los datos,276299,19955.0,2,2,2023-01-11
+3887,5704,807,Anticorrupción global,276299,20010.0,2,3,2023-01-11
+3888,5705,807,Bienvenida Centromed,283778,19856.0,2,3,2023-01-11
+3889,5706,775,Nociones básicas sobre la protección de los datos,276299,20012.0,2,2,2023-01-11
+3890,5707,807,000_Bienvenida_Curso-Seguridad y calidad del Paciente en acción_,283778,19857.0,2,3,2023-01-11
+3891,5708,807,000_Bienvenida_Infecciones asociadas a la atención en Salud (IAAS),292641,,2,0,2023-01-11
+3892,5709,807,000_Bienvenida_Calidad y Acreditación,292641,19805.0,2,2,2023-01-11
+3893,5710,807,Bienvenida CSC Banmédica,283778,19878.0,2,4,2023-01-11
+3894,5711,807,Nociones básicas sobre la protección de los datos,276299,19869.0,2,2,2023-01-11
+3895,5712,807,Anticorrupción global,276299,19905.0,2,1,2023-01-11
+3896,5713,807,Nociones básicas sobre la protección de los datos,276299,19907.0,2,1,2023-01-11
+3897,5714,892,Reconociendo los peligros de internet,237765,20119.0,2,0,2023-01-11
+3898,5715,892,Nuestras herramientas de protección,237765,20119.0,2,0,2023-01-11
+3899,5716,892,Protegiendo la Información en el Trabajo,237765,20119.0,2,0,2023-01-11
+3900,5717,892,Ciberseguridad en Organizaciones y Empresas,237765,20119.0,2,0,2023-01-11
+3901,5718,807,Bienvenidos a TISAL,276299,,2,1,2023-01-11
+3902,5719,807,Bienvenidos a TISAL,276299,19970.0,2,1,2023-01-11
+3903,5720,807,Términos Contractuales-Administrativo-Tisal,276299,19972.0,2,1,2023-01-11
+3904,5721,807,000_Bienvenida_Prevención del Riesgo Clínico,292641,19805.0,2,3,2023-01-11
+3905,5722,807,Ámbito regulatorio - Tisal,276299,19974.0,2,1,2023-01-11
+3906,5723,807,Equipo y rol de Compliance - Tisal,276299,19974.0,2,1,2023-01-11
+3907,5724,807,Componentes del Modelo de Prevención - Tisal,276299,19974.0,2,1,2023-01-11
+3908,5725,807,Anticorrupción global,276299,19975.0,2,1,2023-01-11
+3909,5726,807,Código de Conducta - Modulo 1,276299,19976.0,2,1,2023-01-11
+3910,5727,807,Código de Conducta - Modulo 2,276299,19976.0,2,1,2023-01-11
+3911,5728,807,Código de Conducta - Modulo 3,276299,19976.0,2,1,2023-01-11
+3912,5729,807,Código de Conducta - Modulo 4,276299,19976.0,2,1,2023-01-11
+3913,5730,807,Nociones básicas sobre la protección de los datos,276299,19977.0,2,1,2023-01-11
+3914,5731,807,Seguridad de la Información Módulo 1,276299,19978.0,2,1,2023-01-11
+3915,5732,807,Seguridad de la Información Módulo 2,276299,19978.0,2,1,2023-01-11
+3916,5733,807,Seguridad de la Información Módulo 3,276299,19978.0,2,1,2023-01-11
+3917,5734,807,Seguridad de la información Módulo 4,276299,19978.0,2,1,2023-01-11
+3918,5735,807,Seguridad de la información Módulo 5,276299,19978.0,2,1,2023-01-11
+3919,5736,807,InclusiónLaboral_M2_V3,276299,19980.0,2,1,2023-01-11
+3920,5737,807,Bienvenidos a Help,276299,20054.0,2,1,2023-01-11
+3921,5738,807,UHC_QualityandPatientSafetyinAction_02.2020_Help,276299,20055.0,2,1,2023-01-11
+3922,5739,807,IAAS_M1_V13,276299,20056.0,2,2,2023-01-11
+3923,5740,807,IAAS_M2_V11,276299,20056.0,2,1,2023-01-11
+3924,5741,807,Términos Contractuales-Médico,276299,20061.0,2,1,2023-01-11
+3925,5742,807,Ley 19.628 y Circular N° 6 Minsal_V1,276299,20063.0,2,1,2023-01-11
+3926,5743,807,Equipo y rol de Compliance - Help,276299,20064.0,2,1,2023-01-11
+3927,5744,807,Componentes del Modelo de Prevención - Help,276299,20064.0,2,1,2023-01-11
+3928,5745,807,Ámbito regulatorio - Help,276299,20064.0,2,1,2023-01-11
+3929,5746,807,Anticorrupción global,276299,20065.0,2,1,2023-01-11
+3930,5747,807,Código de Conducta - Modulo 1,276299,20066.0,2,1,2023-01-11
+3931,5748,807,Código de Conducta - Modulo 3,276299,20066.0,2,1,2023-01-11
+3932,5749,807,Código de Conducta - Modulo 2,276299,20066.0,2,1,2023-01-11
+3933,5750,807,000_Bienvenida_Activación Sistema de Emergencia,292641,,2,2,2023-01-11
+3934,5751,807,Código de Conducta - Modulo 4,276299,20066.0,2,1,2023-01-11
+3935,5752,807,Seguridad de la Información Módulo 1,276299,20068.0,2,1,2023-01-11
+3936,5753,807,Seguridad de la Información Módulo 2,276299,20068.0,2,1,2023-01-11
+3937,5754,807,Seguridad de la Información Módulo 3,276299,20068.0,2,1,2023-01-11
+3938,5755,807,Seguridad de la información Módulo 4,276299,20068.0,2,1,2023-01-11
+3939,5756,807,Seguridad de la información Módulo 5,276299,20068.0,2,1,2023-01-11
+3940,5757,807,Nociones básicas sobre la protección de los datos,276299,20067.0,2,1,2023-01-11
+3941,5758,807,InclusiónLaboral_M2_V3,276299,20070.0,2,0,2023-01-11
+3942,5759,807,Bienvenidos a Clínica Ciudad del Mar,276299,,2,2,2023-01-11
+3943,5760,807,Bienvenidos a Clínica Ciudad del Mar,276299,20104.0,2,1,2023-01-11
+3944,5761,807,Seguridad y Calidad del Paciente Ciudad del Mar,276299,,2,1,2023-01-11
+3945,5762,807,Ley 19.628 y Circular N° 6 Minsal_V1,276299,20118.0,2,1,2023-01-11
+3946,5763,807,Equipo y rol de Compliance - Clínica Ciudad del Mar,276299,20120.0,2,2,2023-01-11
+3947,5764,807,Ámbito regulatorio - Clínica Ciudad del Mar,276299,20120.0,2,1,2023-01-11
+3948,5765,807,Componentes del Modelo de Prevención - Clínica Ciudad del Mar,276299,20120.0,2,1,2023-01-11
+3949,5766,807,Anticorrupción global,276299,20121.0,2,1,2023-01-11
+3950,5767,807,Código de Conducta - Modulo 1,276299,20122.0,2,2,2023-01-11
+3951,5768,807,Código de Conducta - Modulo 2,276299,20122.0,2,1,2023-01-11
+3952,5769,807,Código de Conducta - Modulo 3,276299,20122.0,2,1,2023-01-11
+3953,5770,807,Código de Conducta - Modulo 4,276299,20122.0,2,1,2023-01-11
+3954,5771,807,Nociones básicas sobre la protección de los datos,276299,20123.0,2,1,2023-01-11
+3955,5772,807,Seguridad de la Información Módulo 1,276299,20124.0,2,1,2023-01-11
+3956,5773,807,Seguridad de la Información Módulo 2,276299,20124.0,2,1,2023-01-11
+3957,5774,807,Seguridad de la Información Módulo 3,276299,20124.0,2,1,2023-01-11
+3958,5775,807,Seguridad de la información Módulo 4,276299,20124.0,2,1,2023-01-11
+3959,5776,807,Seguridad de la información Módulo 5,276299,20124.0,2,1,2023-01-11
+3960,5777,807,InclusiónLaboral_M2_V3,276299,20126.0,2,1,2023-01-11
+3961,5778,807,Componentes del Modelo de Prevención - Clínica Vespucio,276299,,2,1,2023-01-11
+3962,5779,807,Componentes del Modelo de Prevención - Clínica Vespucio,276299,20097.0,2,0,2023-01-11
+3963,5780,807,Ley 19.628 y Circular N° 6 Minsal_V1,276299,19937.0,2,2,2023-01-11
+3964,5781,807,Equipo y rol de Compliance - Hilfe,276299,19938.0,2,1,2023-01-11
+3965,5782,807,Ámbito regulatorio - Hilfe,276299,19938.0,2,1,2023-01-11
+3966,5783,807,Componentes del Modelo de Prevención - Hilfe,276299,19938.0,2,1,2023-01-11
+3967,5784,807,Anticorrupción global,276299,19939.0,2,1,2023-01-11
+3968,5785,807,Código de Conducta - Modulo 1,276299,19940.0,2,1,2023-01-11
+3969,5786,807,Código de Conducta - Modulo 3,276299,19940.0,2,1,2023-01-11
+3970,5787,807,Código de Conducta - Modulo 3,276299,19940.0,2,1,2023-01-11
+3971,5788,807,Código de Conducta - Modulo 2,276299,19940.0,2,1,2023-01-11
+3972,5789,807,Nociones básicas sobre la protección de los datos,276299,19941.0,2,1,2023-01-11
+3973,5790,807,Seguridad de la Información Módulo 1,276299,19942.0,2,1,2023-01-11
+3974,5791,807,Seguridad de la Información Módulo 2,276299,19942.0,2,1,2023-01-11
+3975,5792,807,Seguridad de la Información Módulo 3,276299,19942.0,2,1,2023-01-11
+3976,5793,807,Seguridad de la información Módulo 4,276299,19942.0,2,1,2023-01-11
+3977,5794,807,Seguridad de la información Módulo 5,276299,19942.0,2,1,2023-01-11
+3978,5795,807,InclusiónLaboral_M2_V3,276299,19944.0,2,1,2023-01-11
+3979,5796,764,New ideas and new business,275264,20127.0,2,0,2023-01-11
+3980,5797,764,Career improvement or career break?,275264,20127.0,2,0,2023-01-11
+3981,5798,764,Facts and figures ,275264,20127.0,2,0,2023-01-11
+3982,5799,764,Modern life,275264,20128.0,2,0,2023-01-11
+3983,5800,764,Environment – Opinions and abilities,275264,20128.0,2,0,2023-01-11
+3984,5801,764,Opportunities,275264,20128.0,2,0,2023-01-11
+3985,5802,764,Work and communication,275264,20129.0,2,0,2023-01-11
+3986,5803,764,Location and workplace,275264,20129.0,2,0,2023-01-11
+3987,5804,764,Teamwork and schedules,275264,20129.0,2,0,2023-01-11

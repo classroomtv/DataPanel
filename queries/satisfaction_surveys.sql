@@ -3,7 +3,7 @@ SELECT
     ins.id as 'institution_id',
 	ins.name as 'institution_name',
     i.id as item_id,
-    t.title as test_title,
+    t.title as title,
     class_id,
     i.author_id,
     t.course_id as 'course_id',
@@ -16,7 +16,7 @@ SELECT
 	ia.content as 'answer',
     max_ptje,
     min_ptje,
-	FROM_UNIXTIME(i.create_time,  '%Y-%m-%d') as item_create_time
+	FROM_UNIXTIME(i.create_time,  '%Y-%m-%d') as create_time
 from prod_classroomtv.ctv_courses as c
 inner join prod_classroomtv.ctv_institutions as ins on c.institution_id = ins.id
 inner join prod_classroomtv.ctv_tests as t on c.id = t.course_id

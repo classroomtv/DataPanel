@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
 import gettext
-from utils.auxiliar_functions import to_excel, plotly_fig2array, get_year_range, hide_page, nav_page
+from utils.auxiliar_functions import to_excel, plotly_fig2array, get_year_range, hide_page, nav_page, load_database
 from streamlit_google_oauth import logout_button
 
 ########## libraries for building the pdf reports
@@ -17,7 +17,7 @@ st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="
 
 language = st.sidebar.selectbox('', ['en', 'es'])
 try:
-    localizator = gettext.translation('General_Statistics', localedir='pages/locales', languages=[language])
+    localizator = gettext.translation('General_Statistics', localedir='translation/locales', languages=[language])
     localizator.install()
     _ = localizator.gettext 
 except:
@@ -33,10 +33,10 @@ else:
     nav_page('')
 
 ### Data loading
-institutions_df = pd.read_csv("pages/Database/institutions.csv" )
-users_df = pd.read_csv("pages/Database/users_by_date.csv" )
-courses_info_df = pd.read_csv("pages/Database/courses_info.csv", on_bad_lines='skip')
-
+institutions_df = load_database("pages/Database/institutions.csv" )
+users_info_df = load_database("pages/Database/users_info.csv" )
+courses_info_df = load_database("pages/Database/courses_info.csv")
+logs_by_date_df = load_database("pages/Database/logs_by_date.csv")
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 
 # ---- SIDEBAR ----
@@ -51,41 +51,35 @@ institution = st.sidebar.multiselect(
     default=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(),
 )
 
-
-df_selection = institutions_df.query(
+df_institutions_selection = institutions_df.query(
     "name == @institution")
-df_users_selection = users_df.query(
-    "Cliente == @institution")
+
+df_users_selection = users_info_df[users_info_df["institution_id"].isin(df_institutions_selection["id"])]
+
 df_course_selection = courses_info_df.query(
     "name == @institution")
 
-# Total number of institutions
-total_institutions = int(df_selection.shape[0])
+df_logs_by_date_selection = logs_by_date_df[logs_by_date_df["institution_id"].isin(df_institutions_selection["id"])]
 
-year_list = [2018, 2019, 2020, 2021, 2022] #get_year_range(2018)
+# Total number of institutions
+total_institutions = int(df_institutions_selection.shape[0])
+
+
 # Users by year
-users_by_year = [
-    df_users_selection["Usuarios cargados 2018"].sum(),
-    df_users_selection["Usuarios cargados 2019"].sum(),
-    df_users_selection["Usuarios cargados 2020"].sum(),
-    df_users_selection["Usuarios cargados 2021"].sum(),
-    df_users_selection["Usuarios cargados 2022"].sum()]
+users_by_year = df_users_selection.groupby(df_users_selection.create_time.dt.year).agg({"user_id": "count"})
 
 # Logged users by year
-logged_users_by_year = [
-    df_users_selection["Usuarios con ingreso a plataforma 2019"].sum(),
-    df_users_selection["Usuarios con ingreso a plataforma 2020"].sum(),
-    df_users_selection["Usuarios con ingreso a plataforma 2021"].sum(),
-    df_users_selection["Usuarios con ingreso a plataforma 2022"].sum()]
+logged_users_by_year = df_logs_by_date_selection.groupby(df_logs_by_date_selection.create_time.dt.year).agg({"user_id": "count"})
+
 
 #Collaborators Users by institution
 collaborators_by_institution = (
-    df_selection.groupby(by=["name"]).sum()[["collaborator_users"]].sort_values(by="collaborator_users").tail(15)
+    df_institutions_selection.groupby(by=["name"]).sum()[["collaborator_users"]].sort_values(by="collaborator_users").tail(15)
 )
 
 # Admin by institution
 admin_by_institution = (
-    df_selection.groupby(by=["name"]).sum()[["admin_users"]].sort_values(by="admin_users").tail(15)
+    df_institutions_selection.groupby(by=["name"]).sum()[["admin_users"]].sort_values(by="admin_users").tail(15)
 )
 
 # Created courses by date
@@ -106,17 +100,16 @@ st.metric(label=_("Total Institutions"), value='{:,}'.format(total_institutions)
 ### Top Metrics
 # Metrics for users
 st.header(_("Users"))
-
-total_users = int(df_users_selection["Usuarios totales"].sum()) 
-total_active_users = int(df_users_selection["Usuarios activos"].sum()) 
-total_collaborator_users = int(df_selection["collaborator_users"].sum()) 
-total_admin_users = int(df_selection["admin_users"].sum())
+total_users = int(df_users_selection["user_id"].count()) 
+total_active_users = int(df_users_selection[df_users_selection["active"]==1]["user_id"].count()) 
+total_collaborator_users = int(df_users_selection[df_users_selection["is_admin"]!=1]["user_id"].count()) 
+total_admin_users = int(df_users_selection[df_users_selection["is_admin"]==1]["user_id"].count()) 
 
 # Plot 1: Amount of users by year
 fig_users_by_year = px.bar(
     users_by_year,
-    x=year_list ,
-    y=users_by_year,
+    x=users_by_year.index ,
+    y=users_by_year.user_id,
     orientation="v",
     title="<b>{}</b>".format(_("Total users by year")),
     color_discrete_sequence=["#0083B8"] * len(users_by_year),
@@ -131,8 +124,8 @@ fig_users_by_year.update_layout(
 # Plot 2: Amount of logged users by year
 fig_logs_by_year = px.bar(
     logged_users_by_year,
-    x=year_list[1:] ,
-    y=logged_users_by_year,
+    x=logged_users_by_year.index ,
+    y=logged_users_by_year.user_id,
     orientation="v",
     title="<b>{}</b>".format(_("Logged users by year")),
     color_discrete_sequence=["#0083B8"] * len(logged_users_by_year),
@@ -191,9 +184,33 @@ with st.expander("**{}**".format(_("Metrics")), expanded=True):
     with users_metric_grid[3]:
         st.metric(label=_("Admin Users"), value='{:,}'.format(total_admin_users).replace(',','.'), help=_("Total number of admins"))
 
+    tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
+        
+    with tab1:
+        st.header(_("All users"))
+        st.header(_("Created users by date"))
+        left_column, right_column = st.columns(2)
+        left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+        right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
+        
+    with tab2:
+        st.header(_("Collaborators"))
+        st.header(_("Created collaborators by date"))
+        left_column, right_column = st.columns(2)
+        left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+        right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
+
+    with tab3:
+        st.header(_("Admins"))
+        st.header(_("Created admin users by date"))
+        left_column, right_column = st.columns(2)
+        left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+        right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
+
     left_column, right_column = st.columns(2)
     left_column.plotly_chart(fig_users_by_year, use_container_width=True)
     right_column.plotly_chart(fig_logs_by_year, use_container_width=True)
+    st.markdown("""---""")
 
     left_column, right_column = st.columns(2)
     left_column.plotly_chart(fig_users_by_institution, use_container_width=True)
@@ -203,16 +220,16 @@ with st.expander("**{}**".format(_("Metrics")), expanded=True):
 st.markdown("""---""")
 st.header(_("Courses"))
 
-total_contents = int(df_selection["classes_count"].sum()) + int(df_selection["text_count"].sum()) + int(df_selection["scorm_count"].sum())
-total_programs_count = int(df_selection["programs_count"].sum())
-total_created_tests_count = int(df_selection["created_tests_count"].sum())
-total_created_questions = int(df_selection["created_questions"].sum())
-total_courses_count = int(df_selection["courses_count"].sum())
-total_finished_courses = int(df_selection["finished_courses"].sum())
-total_answered_questions_count = int(df_selection["answered_questions_count"].sum())
-total_correct_answers_count = int(df_selection["correct_answers_count"].sum())
-total_incorrect_answers_count = int(df_selection["incorrect_answers_count"].sum())
-total_attempts_count = int(df_selection["attempts_count"].sum())
+total_contents = int(df_institutions_selection["classes_count"].sum()) + int(df_institutions_selection["text_count"].sum()) + int(df_institutions_selection["scorm_count"].sum())
+total_programs_count = int(df_institutions_selection["programs_count"].sum())
+total_created_tests_count = int(df_institutions_selection["created_tests_count"].sum())
+total_created_questions = int(df_institutions_selection["created_questions"].sum())
+total_courses_count = int(df_institutions_selection["courses_count"].sum())
+total_finished_courses = int(df_institutions_selection["finished_courses"].sum())
+total_answered_questions_count = int(df_institutions_selection["answered_questions_count"].sum())
+total_correct_answers_count = int(df_institutions_selection["correct_answers_count"].sum())
+total_incorrect_answers_count = int(df_institutions_selection["incorrect_answers_count"].sum())
+total_attempts_count = int(df_institutions_selection["attempts_count"].sum())
 total_courses_views_count = int(df_course_selection["view_count"].sum())
 
 with st.expander("**{}**".format(_("Metrics")), expanded=True):
@@ -290,10 +307,10 @@ with st.expander("**{}**".format(_("Metrics")), expanded=True):
 st.markdown("""---""")
 st.header(_("News"))
 
-total_created_news_count = int(df_selection["created_news_count"].sum())
-total_news_likes_count = int(df_selection["likes_count"].sum())
-total_news_views_count = int(df_selection["new_views_count"].sum())
-total_news_comments_count = int(df_selection["comments_count"].sum())
+total_created_news_count = int(df_institutions_selection["created_news_count"].sum())
+total_news_likes_count = int(df_institutions_selection["likes_count"].sum())
+total_news_views_count = int(df_institutions_selection["new_views_count"].sum())
+total_news_comments_count = int(df_institutions_selection["comments_count"].sum())
 
 with st.expander("**{}**".format(_("Metric")), expanded=True):
     news_metrics_grid = []

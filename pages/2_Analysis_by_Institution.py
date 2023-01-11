@@ -64,7 +64,9 @@ logs_by_date_df = load_database("pages/Database/logs_by_date.csv")
 
 users_created_by_date_df = load_database("pages/Database/users_created_by_date.csv")
 
-admin_created_by_date_df = load_database("pages/Database/admin_created_by_date.csv")
+collaborators_created_by_date_df = users_created_by_date_df.loc[["is_admin"]==0]
+
+admin_created_by_date_df = users_created_by_date_df.loc[["is_admin"]==1]
 
 courses_info_df = load_database("pages/Database/courses_info.csv")
 
@@ -95,7 +97,7 @@ available_institutions = institutions_df[institutions_df["collaborator_users"]>=
 forus_id = np.where(available_institutions == "Forus")[0][0]
 institution = st.sidebar.selectbox(
     _("Select an institution")+":",
-    options=institutions_df[institutions_df["collaborator_users"]>=3]["name"].unique(), index=int(forus_id))
+    options=available_institutions, index=int(forus_id))
 
 df_institutions_selection = institutions_df.query(
     "name == @institution")
@@ -183,15 +185,12 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
 
     tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
         
-    
-
-
     with tab1:
         st.header(_("All users"))
-        st.header(_("Logged users by date"))
         left_column, right_column = st.columns(2)
         left_column.plotly_chart(fig_users_by_year, use_container_width=True)
         right_column.plotly_chart(fig_logged_users_by_year, use_container_width=True)
+        st.header(_("Logged users by date"))
         show_data_by_date("Logged Users", logs_by_date_df, df_institutions_selection,language, "Users")
 
     with tab2:
@@ -223,7 +222,6 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
     total_incorrect_answers_count = int(df_institutions_selection["incorrect_answers_count"].sum())
     total_attempts_count = int(df_institutions_selection["attempts_count"].sum())
     total_courses_views_count = int(df_course_selection["view_count"].sum())
-    total_satisfaction_surveys_count = int(len(satisfaction_surveys_df[satisfaction_surveys_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]))
 
     # Defining the grid to display the metrics
     rows = 3
@@ -292,8 +290,6 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
             st.header(f"{key} by date")
             show_data_by_date(key, dataframes_dict[key], df_institutions_selection,language,"Data")
 
-
-
     
 # Questions metrics
 st.header(_("Test Questions"))
@@ -328,6 +324,29 @@ with st.expander("**"+ _("Metrics")+"**"):
     with news_metrics_grid[3]:
         st.metric(label=_("Total Comments"), value='{:,}'.format(total_news_comments_count).replace(',','.'), help=_('Total number of comments'))
 
+# Satisfaction Surveys metrics
+st.header(_("Satisfaction Surveys"))
+with st.expander("**"+ _("Metrics")+"**"):
+    satisfaction_surveys_metrics_grid = []
+    for row in range(rows):
+        satisfaction_surveys_metrics_grid.extend(st.columns(cols))
+    satisfaction_surveys_checkboxes = {}
+    total_satisfaction_surveys_count = int(len(satisfaction_surveys_df[satisfaction_surveys_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]))
+
+    for row in range(1):
+        satisfaction_surveys_metrics_grid.extend(st.columns(4))
+
+    with satisfaction_surveys_metrics_grid[0]:
+        left, right = st.columns([1, 12])
+        with left:
+            satisfaction_surveys_checkboxes["Created Surveys"] = st.checkbox(' ', key="Created Surveys", label_visibility="collapsed")
+        with right:
+            st.metric(label=_("Created Surveys"), value='{:,}'.format(total_satisfaction_surveys_count).replace(',','.'), help=_('Total number of news items created'))
+
+    for key, value in satisfaction_surveys_checkboxes.items():
+        if value == True:
+            st.header(f"{key} by date")
+            show_data_by_date(key, dataframes_dict[key], df_institutions_selection,language,"Data")
 
 st.markdown("""---""")
 

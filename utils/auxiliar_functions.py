@@ -23,7 +23,7 @@ def hide_page(name: str):
             break
 
 def load_database(path):
-    dataFrame = pd.read_csv(path, on_bad_lines="skip")
+    dataFrame = pd.read_csv(path, on_bad_lines="skip", index_col=0)
     for (columnName,columnDataType) in zip(dataFrame.columns,dataFrame.dtypes):
         if columnDataType == "float64":
             dataFrame[columnName] = dataFrame[columnName].astype('Int64')
@@ -92,7 +92,8 @@ columns_for_metric = {
     "Created Surveys": ["test_title", "create_time", "view_count", "author_id", "reactive", "answer"],
     "Created Users": ["create_time", "created_users"],
     "Logged Users": ["create_time", "logged_users"],
-    "Created Admin": ["create_time", "created_admins"]
+    "Created Admin": ["create_time", "created_admins"],
+    "Created Surveys": ["create_time","title", "course_title", "reactive","answer","author_id"]
 
 }
 
@@ -115,7 +116,8 @@ input_texts = {"date_input_text": {"en": "Select the date range to deploy the in
                 "Created Surveys":{"en": "Created Surveys", "es": "Encuestas Creadas"},
                 "Created Users":{"en": "Created Users", "es": "Usuarios Creados"},
                 "Created Admin":{"en": "Created Admin", "es": "Administradores Creados"},
-                "Logged Users":{"en": "Logged Users", "es": "Usuarios con ingreso"}}
+                "Logged Users":{"en": "Logged Users", "es": "Usuarios con ingreso"},
+                "Created Surveys":{"en": "Created Satisfaction Surveys", "es": "Encuestas de Satisfacción Creadas"}}
 
 def show_data_by_date(title, data, df_institutions_selection,language,infoType):
     st.markdown("""---""")
@@ -138,7 +140,7 @@ def show_data_by_date(title, data, df_institutions_selection,language,infoType):
     if infoType=="Data":
         created_elements_by_date = data_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
     if infoType=="Users":
-        created_elements_by_date = data_df.groupby(by=["create_time"]).agg("sum")[[columns_to_show[1]]].sort_values(by="create_time")
+        created_elements_by_date = data_df.groupby(by=["create_time"]).agg("sum")["user_id"].sort_values(by="create_time")
 
     if len(data_df.index) == 0:
         st.markdown("##### {}".format(input_texts["no_items_created"][language]))
