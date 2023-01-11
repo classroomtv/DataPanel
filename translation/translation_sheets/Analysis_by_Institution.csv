@@ -1,0 +1,65 @@
+id,en,es
+Stats by Institution,Stats by Institution,Estadísticas por institución
+Logout,Logout,Cerrar sesión
+Welcome,Welcome,Bienvenido
+Select an institution,Select an institution,Seleccione una institución
+Metrics for,Metrics for,Métricas para
+Users Created by Year,Users Created by Year,Usuarios creados por año
+Logged Users by Year,Logged Users by Year,Usuarios registrados por año
+Users,Users,Usuarios
+Year,Year,Año
+Metrics,Metrics,Métricas 
+Total Users,Total Users,Usuarios totales
+Total number of users,Total number of users,Número total de usuarios
+Active Users,Active Users,Usuarios activos
+Total number of active users,Total number of active users,Número total de usuarios activos
+Collaborators Users,Collaborators Users,Usuarios de colaboradores
+Total number of collaborators,Total number of collaborators,Número total de colaboradores
+Admin Users,Admin Users,Usuarios administrativos
+Total number of admins,Total number of admins,Número total de administradores
+All users,All users,Todos los usuarios
+Collaborators,Collaborators,Colaboradores
+Admins,Admins,Administradores
+Logged users by date,Logged users by date,Usuarios registrados por fecha
+Select the date range for the logged users,Select the date range for the logged users,Seleccione el rango de fechas para los usuarios registrados
+There were no created users on this time period,There were no created users on this time period,No había usuarios creados en este período de tiempo
+There were,There were,Había
+users created on,users created on,usuarios creados en
+Quantity of logged users by date,Quantity of logged users by date,Cantidad de usuarios registrados por fecha
+Created users by date,Created users by date,Usuarios creados por fecha
+Select the date range for the created users,Select the date range for the created users,Seleccione el rango de fechas para los usuarios creados
+Quantity of created users by date,Quantity of created users by date,Cantidad de usuarios creados por fecha
+Created admin users by date,Created admin users by date,Usuarios de administración creados por fecha
+Select the date range for the admin created users,Select the date range for the admin created users,Seleccione el rango de fechas para los usuarios creados por el administrador
+There're no created admin users on this time period,There're no created admin users on this time period,No hay usuarios administrativos creados en este período de tiempo
+Quantity of created admin users by date,Quantity of created admin users by date,Cantidad de usuarios administrativos creados por fecha
+Learning Contents,Learning Contents,Contenido de aprendizaje
+Created Programs,Created Programs,Programas creados
+Total number of programs created,Total number of programs created,Número total de programas creados
+Finished Courses,Finished Courses,Cursos terminados
+Total number of content items created,Total number of content items created,Número total de elementos de contenido creados
+Courses Views,Courses Views,Vistas de cursos
+Created Classes,Created Classes,Clases creadas
+Total number of classes items created,Total number of classes items created,Número total de elementos de clases creados
+Created Tests,Created Tests,Pruebas creadas
+Test Questions,Test Questions,Preguntas de prueba
+Created Questions,Created Questions,Preguntas creadas
+Answered Questions,Answered Questions,Preguntas respondidas
+Total number of answers for all questions,Total number of answers for all questions,Número total de respuestas para todas las preguntas
+Correct Answers,Correct Answers,Respuestas correctas
+Total number of correct answers for all questions,Total number of correct answers for all questions,Número total de respuestas correctas para todas las preguntas
+Incorrect Answers,Incorrect Answers,Respuestas incorrectas
+Total number of incorrect answers for all questions,Total number of incorrect answers for all questions,Número total de respuestas incorrectas para todas las preguntas
+Total Tries,Total Tries,Total intentos
+Total number of times a ___ has been tried to be answered,Total number of times a ___ has been tried to be answered,El número total de veces se ha intentado una ___
+News,News,Noticias
+Created News,Created News,Noticias creadas
+Total number of news items created,Total number of news items created,Número total de noticias creadas
+Total Views,Total Views,Vistas totales
+Total number of views,Total number of views,Número total de vistas
+Total Likes,Total Likes,Total Me gusta
+Total number of likes,Total number of likes,Número total de me gusta
+Total Comments,Total Comments,Total Comentarios
+Total number of comments,Total number of comments,Número total de comentarios
+Download as csv,Download as csv,Descargar como CSV
+Download pdf report,Download pdf report,Descargar informe PDF

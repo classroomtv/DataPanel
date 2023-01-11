@@ -20,7 +20,8 @@ st.set_page_config(page_title=_("Stats by Institution"), page_icon=":bar_chart:"
 
 language = st.sidebar.selectbox('', ['en', 'es'])
 try:
-    localizator = gettext.translation('Analysis_by_Institution', localedir='pages/locales', languages=[language])
+    localizator = gettext.translation('Analysis_by_Institution', localedir='translation/locales', languages=[language])
+    print(localizator)
     localizator.install()
     _ = localizator.gettext 
 except:

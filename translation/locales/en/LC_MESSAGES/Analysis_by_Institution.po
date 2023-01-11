@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-01-10 15:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: pages/2_Analysis_by_Institution.py:19
+msgid "Stats by Institution"
+msgstr "Stats by Institution"
+
+#: pages/2_Analysis_by_Institution.py:36
+msgid "Logout"
+msgstr "Logout"
+
+#: pages/2_Analysis_by_Institution.py:104
+msgid "Welcome"
+msgstr "Welcome"
+
+#: pages/2_Analysis_by_Institution.py:109
+msgid "Select an institution"
+msgstr "Select an institution"
+
+#: pages/2_Analysis_by_Institution.py:135
+msgid "Metrics for"
+msgstr "Metrics for"
+
+#: pages/2_Analysis_by_Institution.py:149
+msgid "Users Created by Year"
+msgstr "Users Created by Year"
+
+#: pages/2_Analysis_by_Institution.py:167
+msgid "Logged Users by Year"
+msgstr "Logged Users by Year"
+
+#: pages/2_Analysis_by_Institution.py:170
+msgid "Users"
+msgstr "Users"
+
+#: pages/2_Analysis_by_Institution.py:170
+msgid "Year"
+msgstr "Year"
+
+#: pages/2_Analysis_by_Institution.py:179
+#: pages/2_Analysis_by_Institution.py:303
+#: pages/2_Analysis_by_Institution.py:393
+#: pages/2_Analysis_by_Institution.py:411
+msgid "Metrics"
+msgstr "Metrics"
+
+#: pages/2_Analysis_by_Institution.py:186
+msgid "Total Users"
+msgstr "Total Users"
+
+#: pages/2_Analysis_by_Institution.py:186
+msgid "Total number of users"
+msgstr "Total number of users"
+
+#: pages/2_Analysis_by_Institution.py:188
+msgid "Active Users"
+msgstr "Active Users"
+
+#: pages/2_Analysis_by_Institution.py:188
+msgid "Total number of active users"
+msgstr "Total number of active users"
+
+#: pages/2_Analysis_by_Institution.py:190
+msgid "Collaborators Users"
+msgstr "Collaborators Users"
+
+#: pages/2_Analysis_by_Institution.py:190
+msgid "Total number of collaborators"
+msgstr "Total number of collaborators"
+
+#: pages/2_Analysis_by_Institution.py:192
+msgid "Admin Users"
+msgstr "Admin Users"
+
+#: pages/2_Analysis_by_Institution.py:192
+msgid "Total number of admins"
+msgstr "Total number of admins"
+
+#: pages/2_Analysis_by_Institution.py:196
+msgid "All users"
+msgstr "All users"
+
+#: pages/2_Analysis_by_Institution.py:198
+msgid "Collaborators"
+msgstr "Collaborators"
+
+#: pages/2_Analysis_by_Institution.py:200
+msgid "Admins"
+msgstr "Admins"
+
+#: pages/2_Analysis_by_Institution.py:213
+msgid "Logged users by date"
+msgstr "Logged users by date"
+
+#: pages/2_Analysis_by_Institution.py:214
+msgid "Select the date range for the logged users"
+msgstr "Select the date range for the logged users"
+
+#: pages/2_Analysis_by_Institution.py:226
+#: pages/2_Analysis_by_Institution.py:256
+msgid "There were no created users on this time period"
+msgstr "There were no created users on this time period"
+
+#: pages/2_Analysis_by_Institution.py:229
+#: pages/2_Analysis_by_Institution.py:259
+#: pages/2_Analysis_by_Institution.py:290
+msgid "There were"
+msgstr "There were"
+
+#: pages/2_Analysis_by_Institution.py:229
+#: pages/2_Analysis_by_Institution.py:259
+#: pages/2_Analysis_by_Institution.py:290
+msgid "users created on"
+msgstr "users created on"
+
+#: pages/2_Analysis_by_Institution.py:237
+msgid "Quantity of logged users by date"
+msgstr "Quantity of logged users by date"
+
+#: pages/2_Analysis_by_Institution.py:244
+msgid "Created users by date"
+msgstr "Created users by date"
+
+#: pages/2_Analysis_by_Institution.py:245
+msgid "Select the date range for the created users"
+msgstr "Select the date range for the created users"
+
+#: pages/2_Analysis_by_Institution.py:267
+msgid "Quantity of created users by date"
+msgstr "Quantity of created users by date"
+
+#: pages/2_Analysis_by_Institution.py:274
+msgid "Created admin users by date"
+msgstr "Created admin users by date"
+
+#: pages/2_Analysis_by_Institution.py:275
+msgid "Select the date range for the admin created users"
+msgstr "Select the date range for the admin created users"
+
+#: pages/2_Analysis_by_Institution.py:287
+msgid "There're no created admin users on this time period"
+msgstr "There're no created admin users on this time pe..."
+
+#: pages/2_Analysis_by_Institution.py:298
+msgid "Quantity of created admin users by date"
+msgstr "Quantity of created admin users by date"
+
+#: pages/2_Analysis_by_Institution.py:302
+msgid "Learning Contents"
+msgstr "Learning Contents"
+
+#: pages/2_Analysis_by_Institution.py:343
+msgid "Created Programs"
+msgstr "Created Programs"
+
+#: pages/2_Analysis_by_Institution.py:343
+msgid "Total number of programs created"
+msgstr "Total number of programs created"
+
+#: pages/2_Analysis_by_Institution.py:353
+msgid "Finished Courses"
+msgstr "Finished Courses"
+
+#: pages/2_Analysis_by_Institution.py:353
+#: pages/2_Analysis_by_Institution.py:357
+#: pages/2_Analysis_by_Institution.py:381
+#: pages/2_Analysis_by_Institution.py:398
+msgid "Total number of content items created"
+msgstr "Total number of content items created"
+
+#: pages/2_Analysis_by_Institution.py:357
+msgid "Courses Views"
+msgstr "Courses Views"
+
+#: pages/2_Analysis_by_Institution.py:363
+msgid "Created Classes"
+msgstr "Created Classes"
+
+#: pages/2_Analysis_by_Institution.py:363
+msgid "Total number of classes items created"
+msgstr "Total number of classes items created"
+
+#: pages/2_Analysis_by_Institution.py:381
+msgid "Created Tests"
+msgstr "Created Tests"
+
+#: pages/2_Analysis_by_Institution.py:392
+msgid "Test Questions"
+msgstr "Test Questions"
+
+#: pages/2_Analysis_by_Institution.py:398
+msgid "Created Questions"
+msgstr "Created Questions"
+
+#: pages/2_Analysis_by_Institution.py:400
+msgid "Answered Questions"
+msgstr "Answered Questions"
+
+#: pages/2_Analysis_by_Institution.py:400
+msgid "Total number of answers for all questions"
+msgstr "Total number of answers for all questions"
+
+#: pages/2_Analysis_by_Institution.py:402
+msgid "Correct Answers"
+msgstr "Correct Answers"
+
+#: pages/2_Analysis_by_Institution.py:402
+msgid "Total number of correct answers for all questions"
+msgstr "Total number of correct answers for all questions"
+
+#: pages/2_Analysis_by_Institution.py:404
+msgid "Incorrect Answers"
+msgstr "Incorrect Answers"
+
+#: pages/2_Analysis_by_Institution.py:404
+msgid "Total number of incorrect answers for all questions"
+msgstr "Total number of incorrect answers for all quest..."
+
+#: pages/2_Analysis_by_Institution.py:406
+msgid "Total Tries"
+msgstr "Total Tries"
+
+#: pages/2_Analysis_by_Institution.py:406
+msgid "Total number of times a ___ has been tried to be answered"
+msgstr "Total number of times a ___ has been tried to b..."
+
+#: pages/2_Analysis_by_Institution.py:410
+msgid "News"
+msgstr "News"
+
+#: pages/2_Analysis_by_Institution.py:416
+msgid "Created News"
+msgstr "Created News"
+
+#: pages/2_Analysis_by_Institution.py:416
+msgid "Total number of news items created"
+msgstr "Total number of news items created"
+
+#: pages/2_Analysis_by_Institution.py:418
+msgid "Total Views"
+msgstr "Total Views"
+
+#: pages/2_Analysis_by_Institution.py:418
+msgid "Total number of views"
+msgstr "Total number of views"
+
+#: pages/2_Analysis_by_Institution.py:420
+msgid "Total Likes"
+msgstr "Total Likes"
+
+#: pages/2_Analysis_by_Institution.py:420
+msgid "Total number of likes"
+msgstr "Total number of likes"
+
+#: pages/2_Analysis_by_Institution.py:422
+msgid "Total Comments"
+msgstr "Total Comments"
+
+#: pages/2_Analysis_by_Institution.py:422
+msgid "Total number of comments"
+msgstr "Total number of comments"
+
+#: pages/2_Analysis_by_Institution.py:483
+msgid "Download as csv"
+msgstr "Download as csv"
+
+#: pages/2_Analysis_by_Institution.py:559
+msgid "Download pdf report"
+msgstr "Download pdf report"

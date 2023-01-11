@@ -17,7 +17,7 @@ st.set_page_config(page_title="General Stats", page_icon=":bar_chart:", layout="
 
 language = st.sidebar.selectbox('', ['en', 'es'])
 try:
-    localizator = gettext.translation('General_Statistics', localedir='pages/locales', languages=[language])
+    localizator = gettext.translation('General_Statistics', localedir='translation/locales', languages=[language])
     localizator.install()
     _ = localizator.gettext 
 except:
