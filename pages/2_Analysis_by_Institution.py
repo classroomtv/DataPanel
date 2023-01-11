@@ -28,6 +28,7 @@ except:
 
 
 # Load page only if logged in
+print(st.experimental_get_query_params())
 code = st.experimental_get_query_params()['code'][0]
 if code == '/logged_in':
     #hide_page('main')
@@ -146,7 +147,7 @@ fig_users_by_year.update_layout(
 # Plot 2: Amount of logged users by year
 users_by_year = [df_users_selection["Usuarios con ingreso a plataforma 2019"].sum(),df_users_selection["Usuarios con ingreso a plataforma 2020"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2021"].sum(), df_users_selection["Usuarios con ingreso a plataforma 2022"].sum()]
 
-fig_admins_by_year = px.bar(
+fig_logged_users_by_year = px.bar(
     users_by_year,
     x=year_list[1:] ,
     y=users_by_year,
@@ -156,18 +157,20 @@ fig_admins_by_year = px.bar(
     template="plotly_white",
     labels={"x": _("Year"), "y":_('Users')}
 )
-fig_admins_by_year.update_layout(
+fig_logged_users_by_year.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
     xaxis=(dict(showgrid=False)),
 )
 
 st.title("Users")
 
+
 with st.expander("**"+ _("Metrics")+"**", expanded=False):
     # Defining the grid to display the users metrics
     users_metric_grid = []
     for row in range(1):
         users_metric_grid.extend(st.columns(4))
+
 
     with users_metric_grid[0]:
         st.metric(label=_("Total Users"), value='{:,}'.format(total_users).replace(',','.'), help=_("Total number of users"))
@@ -179,112 +182,29 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
         st.metric(label=_("Admin Users"), value='{:,}'.format(total_admin_users).replace(',','.'), help=_("Total number of admins"))
 
     tab1, tab2, tab3 = st.tabs(["All users", "Collaborators", "Admins"])
+        
+    
+
+
     with tab1:
         st.header(_("All users"))
+        st.header(_("Logged users by date"))
+        left_column, right_column = st.columns(2)
+        left_column.plotly_chart(fig_users_by_year, use_container_width=True)
+        right_column.plotly_chart(fig_logged_users_by_year, use_container_width=True)
+        show_data_by_date("Logged Users", logs_by_date_df, df_institutions_selection,language, "Users")
+
     with tab2:
         st.header(_("Collaborators"))
+        st.header(_("Created users by date"))
+        show_data_by_date("Created Users", users_created_by_date_df, df_institutions_selection,language, "Users")
+
     with tab3:
         st.header(_("Admins"))
-
-    left_column, right_column = st.columns(2)
-
-    left_column.plotly_chart(fig_users_by_year, use_container_width=True)
-    right_column.plotly_chart(fig_admins_by_year, use_container_width=True)
+        st.header(_("Created admin users by date"))
+        show_data_by_date("Created Admin", admin_created_by_date_df, df_institutions_selection,language, "Users")
 
 
-    #Filter by date
-    min_date = pd.to_datetime("today") - dt.timedelta(days=365)
-    max_date = pd.to_datetime("today")
-
-    #logs by date
-    st.header(_("Logged users by date"))
-    logs_range_dates = st.date_input(_("Select the date range for the logged users"), (min_date, max_date))
-    logs_start_date = np.datetime64(logs_range_dates[0])
-    logs_end_date = pd.to_datetime("today")
-    if len(logs_range_dates)!=1:
-        logs_end_date = np.datetime64(logs_range_dates[1])
-
-    logs_selected_institution = logs_by_date_df[logs_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    logs_date_range = (logs_selected_institution["create_time"] >= logs_start_date) & (logs_selected_institution["create_time"] <= logs_end_date)
-    logged_users_df = logs_selected_institution.loc[logs_date_range]
-    left_column, right_column = st.columns(2)
-
-    if len(logged_users_df.index) == 0:
-        st.markdown("##### {}".format(_("There were no created users on this time period")))
-
-    if len(logged_users_df.index) == 1:
-        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),logged_users_df.iloc[0]["logged_users"],logged_users_df.iloc[0]["create_time"]))
-
-    if len(logged_users_df.index) > 1:
-        with left_column:
-            date_users_df = logged_users_df[["create_time", "logged_users"]]
-            st.dataframe(date_users_df)
-
-        with right_column:
-            st.markdown("##### {} ".format(_("Quantity of logged users by date")))
-            fig_logged_users = plt.plot(logged_users_df["create_time"], logged_users_df["logged_users"])
-            st.line_chart(data = date_users_df, x="create_time", y="logged_users", use_container_width=True)
-
-    st.markdown("""---""")
-
-    #Created users by date
-    st.header(_("Created users by date"))
-    users_created_range_dates = st.date_input(_("Select the date range for the created users"), (min_date, max_date))
-    users_created_start_date = np.datetime64(users_created_range_dates[0])
-    users_created_end_date = pd.to_datetime("today")
-    if len(users_created_range_dates)!=1:
-        users_created_end_date = np.datetime64(users_created_range_dates[1])
-    users_created_selected_institution = users_created_by_date_df[users_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    users_created_date_range = (users_created_selected_institution["create_time"] >= users_created_start_date) & (users_created_selected_institution["create_time"] <= users_created_end_date)
-    users_created_df = users_created_selected_institution.loc[users_created_date_range]
-    left_column, right_column = st.columns(2)
-
-    if len(users_created_df.index) == 0:
-        st.markdown("##### {}".format(_("There were no created users on this time period")))
-
-    if len(users_created_df.index) == 1:
-        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),users_created_df.iloc[0]["created_users"],users_created_df.iloc[0]["create_time"]))
-
-    if len(users_created_df.index) > 1:
-        with left_column:
-            date_users_df = users_created_df[["create_time", "created_users"]]
-            st.dataframe(date_users_df)
-
-        with right_column:
-            st.markdown("##### {} ".format(_("Quantity of created users by date")))
-            fig_created_users = plt.plot(users_created_df["create_time"], users_created_df["created_users"])
-            st.line_chart(data = date_users_df, x="create_time", y="created_users", use_container_width=True)
-
-    st.markdown("""---""")
-
-    #Admin users created by date
-    st.header(_("Created admin users by date"))
-    admin_created_range_dates = st.date_input(_("Select the date range for the admin created users"), (min_date, max_date))
-    admin_created_start_date = np.datetime64(admin_created_range_dates[0])
-    admin_created_end_date = pd.to_datetime("today")
-    if len(admin_created_range_dates)!=1:
-        admin_created_end_date = np.datetime64(admin_created_range_dates[1])
-
-    admin_created_selected_institution = admin_created_by_date_df[admin_created_by_date_df["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    admin_created_date_range = (admin_created_selected_institution["create_time"] >= users_created_start_date) & (admin_created_selected_institution["create_time"] <= admin_created_end_date)
-    admin_created_df = admin_created_selected_institution.loc[admin_created_date_range]
-    left_column, right_column = st.columns(2)
-
-    if len(admin_created_df.index) == 0:
-        st.markdown("##### {}".format(_("There're no created admin users on this time period")))
-
-    if len(admin_created_df.index) == 1:
-        st.markdown("##### {} {} {} {}".format(_("There were"),_("users created on"),admin_created_df.iloc[0]["created_admins"],admin_created_df.iloc[0]["create_time"]))
-
-    if len(admin_created_df.index) > 1:
-        with left_column:
-            date_users_df = admin_created_df[["create_time", "created_admins"]]
-            st.dataframe(date_users_df)
-
-        with right_column:
-            st.markdown("##### {} ".format(_("Quantity of created admin users by date")))
-            fig_created_users = plt.plot(admin_created_df["create_time"], admin_created_df["created_admins"])
-            st.line_chart(data = date_users_df, x="create_time", y="created_admins", use_container_width=True)
         
 st.header(_("Learning Contents"))
 with st.expander("**"+ _("Metrics")+"**", expanded=False):
@@ -370,7 +290,7 @@ with st.expander("**"+ _("Metrics")+"**", expanded=False):
     for key, value in learning_checkboxes.items():
         if value == True:
             st.header(f"{key} by date")
-            show_data_by_date(key, dataframes_dict[key], df_institutions_selection)
+            show_data_by_date(key, dataframes_dict[key], df_institutions_selection,language,"Data")
 
 
 
@@ -519,7 +439,7 @@ canvas.drawString(490, 567, '{:,}'.format(total_admin_users).replace(',','.'))
 
 # Plots
 plot1 = plotly_fig2array(fig_users_by_year)
-plot2 = plotly_fig2array(fig_admins_by_year)
+plot2 = plotly_fig2array(fig_logged_users_by_year)
 
 plot_w = 120
 plot_h = 120

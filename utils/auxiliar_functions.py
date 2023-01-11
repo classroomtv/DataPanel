@@ -89,17 +89,42 @@ columns_for_metric = {
     "Created Scorms": ["title", "create_time", "view_count", "author_id"],
     "Created Tests": ["title", "create_time", "author_id"],
     "Created Texts": ["title", "create_time", "author_id"],
-    "Created Surveys": ["title", "create_time", "view_count", "author_id"]
+    "Created Surveys": ["test_title", "create_time", "view_count", "author_id", "reactive", "answer"],
+    "Created Users": ["create_time", "created_users"],
+    "Logged Users": ["create_time", "logged_users"],
+    "Created Admin": ["create_time", "created_admins"]
+
 }
 
-def show_data_by_date(title, data, df_institutions_selection):
+column_names = {"en": {"title": "Title", "create_time": "Create time", "view_count": "View count", "author_id" : "Author id",
+                "signed_users": "Signed users", "user_finished_courses" : "User that finished the course", "user_failed_courses":"User that failed the course",
+                 "created_users": "Created users", "logged_users":"Logged users", "created_admins": "Created admins"},
+                "es": {"title": "Título", "create_time": "Fecha de creación", "view_count": "Cantidad de visitas", "author_id": "Id del autor",
+                "signed_users": "Usuarios inscritos", "user_finished_courses": "Usuarios que han finalizado el curso", "user_failed_courses": "Usuarios que han fallado el curso",
+                "created_users": "Usuarios creados", "logged_users": "Usuarios con ingreso", "created_admins":"Administradores creados"}}
+
+input_texts = {"date_input_text": {"en": "Select the date range to deploy the information", "es": "Seleccione un rango de fechas para mostrar la información"},
+                "no_items_created": {"en": "There're no created items on this time period", "es": "No hay items creados en este período de tiempo"},
+                "one_item_created": {"en": "There was one item created on", "es": "Se creó solo un item en "},
+                "by_date": {"en": "by date", "es": "por fecha"} ,
+                "Created Courses":{"en": "Created Courses", "es": "Cursos Creados"},
+                "Created Classes":{"en": "Created Classes", "es": "Clases Creadas"},
+                "Created Scorms":{"en": "Created Scorms", "es": "Scorms Creados"},
+                "Created Tests":{"en": "Created Tests", "es": "Evaluaciones Creadas"},
+                "Created Texts":{"en": "Created Texts", "es": "Textos Creados"},
+                "Created Surveys":{"en": "Created Surveys", "es": "Encuestas Creadas"},
+                "Created Users":{"en": "Created Users", "es": "Usuarios Creados"},
+                "Created Admin":{"en": "Created Admin", "es": "Administradores Creados"},
+                "Logged Users":{"en": "Logged Users", "es": "Usuarios con ingreso"}}
+
+def show_data_by_date(title, data, df_institutions_selection,language,infoType):
     st.markdown("""---""")
     min_date = pd.to_datetime("today") - dt.timedelta(days=365)
     max_date = pd.to_datetime("today")
     columns_to_show = columns_for_metric[title]
 
     data_selected_institution = data[data["institution_id"] == df_institutions_selection.iloc[0]["id"]]
-    data_range_dates = st.date_input("Select the date range to deploy the information", (min_date, max_date), key=f'{title}_date_input')
+    data_range_dates = st.date_input(input_texts["date_input_text"][language], (min_date, max_date), key=f'{title}_date_input')
     data_start_date = np.datetime64(data_range_dates[0])
     data_end_date = pd.to_datetime("today")
     
@@ -109,16 +134,24 @@ def show_data_by_date(title, data, df_institutions_selection):
     data_date_range = (data_selected_institution["create_time"] >= data_start_date) & (data_selected_institution["create_time"] <= data_end_date)
     data_df = data_selected_institution.loc[data_date_range]
     left_column, right_column = st.columns(2)
-    created_elements_by_date = data_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+
+    if infoType=="Data":
+        created_elements_by_date = data_df.groupby(by=["create_time"]).agg("count")[["title"]].sort_values(by="create_time")
+    if infoType=="Users":
+        created_elements_by_date = data_df.groupby(by=["create_time"]).agg("sum")[[columns_to_show[1]]].sort_values(by="create_time")
 
     if len(data_df.index) == 0:
-        st.markdown("##### There're no created items on this time period")
+        st.markdown("##### {}".format(input_texts["no_items_created"][language]))
     if len(data_df.index) == 1:
-        st.markdown("##### There was one item created on {}".format(data_df.iloc[0]["create_time"]))
+        st.markdown("##### {} {}".format(input_texts["one_item_created"][language],data_df.iloc[0]["create_time"]))
     if len(data_df.index) > 1:
         with left_column:
-            st.dataframe(data_df[columns_to_show].sort_values(by="create_time"))
+            translatedNames = column_names[language]
+            st.dataframe(data_df[columns_to_show].rename(columns=translatedNames).sort_values(by=translatedNames["create_time"]))
         with right_column:
-            st.markdown(f"##### {title} by date")
+            st.markdown("##### {} {}".format(input_texts[title][language],input_texts["by_date"][language]))
             st.line_chart(data=created_elements_by_date, use_container_width=True)
     return
+    
+    
+
