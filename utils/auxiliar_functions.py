@@ -8,6 +8,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import datetime as dt
+import plotly.express as px 
 
 
 DEFAULT_PAGE = "main.py"
@@ -22,6 +23,49 @@ def hide_page(name: str):
             _on_pages_changed.send()
             break
 
+def plot_users(user_dataframe ,title, x_label, y_label):
+    users_by_year = user_dataframe.groupby(user_dataframe["create_time"].dt.year).agg({"user_id": "count"})
+    users_by_year = users_by_year[users_by_year.index > 1970]
+
+    fig_users_by_year = px.bar(
+        users_by_year,
+        x=users_by_year.index ,
+        y=users_by_year.user_id,
+        orientation="v",
+        title="<b>{}</b>".format(title),
+        color_discrete_sequence=["#0083B8"] * len(users_by_year),
+        template="plotly_white",
+        labels={"create_time": x_label, "user_id": y_label}
+        )
+
+    fig_users_by_year.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False)),
+    )
+    return fig_users_by_year
+
+def plot_top_institutions(df_selection, selected_col, title, x_label, y_label):
+    group_by_institution = (
+        df_selection.groupby(by=["name"]).sum()[[selected_col]].sort_values(by=selected_col).tail(15)
+    )
+        # Plot 5
+    fig_created_courses_by_institution = px.bar(
+        group_by_institution,
+        x=selected_col,
+        y=group_by_institution.index,
+        orientation="h",
+        title="<b>{}</b>".format(title),
+        color_discrete_sequence=["#0083B8"] * len(group_by_institution),
+        template="plotly_white",
+        labels={selected_col: x_label, "name": y_label}
+    )
+    fig_created_courses_by_institution.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False)),
+    )
+    return fig_created_courses_by_institution
+
+
 def load_database(path):
     dataFrame = pd.read_csv(path, on_bad_lines="skip", index_col=0)
     for (columnName,columnDataType) in zip(dataFrame.columns,dataFrame.dtypes):
@@ -30,7 +74,6 @@ def load_database(path):
         if columnName[-4:] == "time":
             dataFrame[columnName] = pd.to_datetime(dataFrame[columnName], infer_datetime_format=True)
     return dataFrame
-
 
 def nav_page(page_name, timeout_secs=3):
     print(f'nav to {page_name}')
